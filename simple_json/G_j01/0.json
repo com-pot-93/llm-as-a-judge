@@ -1,0 +1,461 @@
+{
+  "tasks": [
+    {
+      "id": "sid-5C827E99-0C63-46F5-9FA9-0E2C847E5362",
+      "name": "Brag about materials",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-D930775E-B7B9-44BA-94E4-6596D5ED7357",
+      "name": "Send materials to friends",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-CB807621-D8E9-46BD-A920-35749B05D0AA",
+      "name": "Check available ressources",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-1B70311E-7B11-44BB-9BB2-FE4E9175EC85",
+      "name": "Check for available tools",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-3EDDB006-CE1C-4534-B2EE-A3F35180FB22",
+      "name": "Create Farming List",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-0F0569F7-9F1F-4888-89D0-615254998440",
+      "name": "Collect Materials",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-F84606A2-AD87-4244-99C8-912F99001139",
+      "name": "Check Inventory",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-F64BCAA4-5485-40E4-B2DA-373953015C75",
+      "name": "Adjust Farming List",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-46074AF8-BA87-48B8-8473-BBED49D0277B",
+      "name": "Notify player",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-2B982F62-7D1B-4718-AE4B-36FF9D9DB9CF",
+      "name": "Create available tools",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-13BD54F2-7F94-429F-B300-97CB0D419459",
+      "name": "Check Inventory for damages",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-494BB65A-D6EA-4C96-BD60-ED58E30AB2B4",
+      "name": "Create available tools",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-DF1D0528-93D9-4BDF-AF16-9AC22C490E6C",
+      "name": "Check tool list",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-90B6181F-3F6E-4364-BE87-969086C3AF39",
+      "name": "Check Tool List",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-55926A0D-56F8-4C9A-9EBC-EBE424060984",
+      "name": "Notify player",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-7EF07C2A-6EE9-4DFD-A404-1BAFCAB0E35D",
+      "name": "Deactivate Farming Bot",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-5448820A-6EDF-4257-8DD2-5F168FBA3B75",
+      "name": "Activate Farming Bot",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A2F2B47C-06B3-4E58-9AD6-5A645185DB7F",
+      "name": "Play Game",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-7E5CEF85-109F-4606-8C85-3D223CDBFDBE",
+      "name": "Quit Game",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-03D918F7-52A8-430B-872B-BCC211EB7C09",
+      "name": "Farming Bot finished",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-688A5831-9459-40FA-BF68-DDD4AE109AF4",
+      "name": "Start Game",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-8ACC41FA-D2BF-4E27-A4A0-BB210BFD1082",
+      "name": "Natural Disaster",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "signalEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-811659D3-2E0D-4A18-AF19-0E5CE3B13255",
+      "name": "1 hour",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-4FE312A5-CC56-4EFA-BB85-722CE16A360A",
+      "name": "farming bot deactivated",
+      "type": "endEvent",
+      "eventDefinitions": [
+        "terminateEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-5C275C34-57A4-463C-9D35-6DC018B4C861",
+      "name": "Game session ended",
+      "type": "endEvent",
+      "eventDefinitions": [
+        "terminateEventDefinition"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-FA4B2AB3-7A34-46C0-BA03-D0B89EEE30A1",
+      "type": "inclusiveGateway"
+    },
+    {
+      "id": "sid-FB604D89-5B99-47FD-9607-F69FCF4F98DB",
+      "type": "inclusiveGateway"
+    },
+    {
+      "id": "sid-26401FC2-7461-433C-BB24-0B74DAAB707F",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-4AF13AE6-8D4C-4BDE-8D56-92E657780D17",
+      "type": "exclusiveGateway",
+      "name": "Adjust the List"
+    },
+    {
+      "id": "sid-4BC41CAB-2A22-4DEC-A79F-42C98D895555",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-F4B2A8DE-C045-4350-A7C5-8BE76BE9021B",
+      "type": "eventBasedGateway"
+    },
+    {
+      "id": "sid-886F11E2-1E28-447F-92AE-678621995336",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-30BDCB51-AB91-4922-8B6C-721442F0A404",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-BFC76267-3635-48AF-AC8D-92D27C63361E",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-13551884-3D36-4270-9273-9593462AF4F4",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-2D106786-32A1-455F-9A7C-615EC45FCBA0",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-C6823BE1-C2F4-4891-ADB8-DDEE6EA9F7AB",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-FDB3BE47-6315-4D37-948F-6300A4D9FE6C",
+      "type": "exclusiveGateway",
+      "name": "satisfied"
+    },
+    {
+      "id": "sid-20AE63BB-F6C8-497D-A5ED-D3EEEE1E1B96",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-7883737F-F03B-44DF-9457-0345568CB74F",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-15B5F57E-3289-4A3A-826E-407A69DB7CBA",
+      "sourceRef": "sid-D930775E-B7B9-44BA-94E4-6596D5ED7357",
+      "targetRef": "sid-FB604D89-5B99-47FD-9607-F69FCF4F98DB"
+    },
+    {
+      "id": "sid-849522B0-CB96-4600-A4B1-215C6E6F51E2",
+      "sourceRef": "sid-5C827E99-0C63-46F5-9FA9-0E2C847E5362",
+      "targetRef": "sid-FB604D89-5B99-47FD-9607-F69FCF4F98DB"
+    },
+    {
+      "id": "sid-5FC44B61-1155-4B24-872F-570539EAE11B",
+      "sourceRef": "sid-FB604D89-5B99-47FD-9607-F69FCF4F98DB",
+      "targetRef": "sid-03D918F7-52A8-430B-872B-BCC211EB7C09"
+    },
+    {
+      "id": "sid-3F29C448-7D2F-4B40-8B62-32784638B11F",
+      "sourceRef": "sid-688A5831-9459-40FA-BF68-DDD4AE109AF4",
+      "targetRef": "sid-7883737F-F03B-44DF-9457-0345568CB74F"
+    },
+    {
+      "id": "sid-51890215-5A95-4A3D-80FF-6156C8A61D99",
+      "sourceRef": "sid-CB807621-D8E9-46BD-A920-35749B05D0AA",
+      "targetRef": "sid-1B70311E-7B11-44BB-9BB2-FE4E9175EC85"
+    },
+    {
+      "id": "sid-FC9B48DC-FC00-4D25-B3D8-B9A9C711C453",
+      "sourceRef": "sid-1B70311E-7B11-44BB-9BB2-FE4E9175EC85",
+      "targetRef": "sid-3EDDB006-CE1C-4534-B2EE-A3F35180FB22"
+    },
+    {
+      "id": "sid-408CFE49-C638-49F2-8BA9-AB87B9463753",
+      "sourceRef": "sid-3EDDB006-CE1C-4534-B2EE-A3F35180FB22",
+      "targetRef": "sid-26401FC2-7461-433C-BB24-0B74DAAB707F"
+    },
+    {
+      "id": "sid-C9B50E23-9BEC-43D7-B5B4-103FD9BE59F9",
+      "sourceRef": "sid-26401FC2-7461-433C-BB24-0B74DAAB707F",
+      "targetRef": "sid-0F0569F7-9F1F-4888-89D0-615254998440"
+    },
+    {
+      "id": "sid-7E4DADC1-9E89-4B6F-99F0-52B7D9BCB798",
+      "sourceRef": "sid-F64BCAA4-5485-40E4-B2DA-373953015C75",
+      "targetRef": "sid-26401FC2-7461-433C-BB24-0B74DAAB707F"
+    },
+    {
+      "id": "sid-25AF212E-30C2-44B3-89C1-AA124E50DD79",
+      "sourceRef": "sid-0F0569F7-9F1F-4888-89D0-615254998440",
+      "targetRef": "sid-4AF13AE6-8D4C-4BDE-8D56-92E657780D17"
+    },
+    {
+      "id": "sid-3832A3EA-A00B-4887-AA4E-F2006CC8C42B",
+      "sourceRef": "sid-4BC41CAB-2A22-4DEC-A79F-42C98D895555",
+      "targetRef": "sid-F64BCAA4-5485-40E4-B2DA-373953015C75"
+    },
+    {
+      "id": "sid-17716D86-2A14-4EDD-82E1-86863CD25400",
+      "sourceRef": "sid-F4B2A8DE-C045-4350-A7C5-8BE76BE9021B",
+      "targetRef": "sid-8ACC41FA-D2BF-4E27-A4A0-BB210BFD1082"
+    },
+    {
+      "id": "sid-D547CFFE-E4B5-4390-89C4-52D59F314809",
+      "sourceRef": "sid-BFC76267-3635-48AF-AC8D-92D27C63361E",
+      "targetRef": "sid-2D106786-32A1-455F-9A7C-615EC45FCBA0"
+    },
+    {
+      "id": "sid-13B5B23F-B380-4072-9E40-011795F2FA5A",
+      "sourceRef": "sid-8ACC41FA-D2BF-4E27-A4A0-BB210BFD1082",
+      "targetRef": "sid-13BD54F2-7F94-429F-B300-97CB0D419459"
+    },
+    {
+      "id": "sid-47093A21-5E46-4D2F-A2FF-A1CF13786293",
+      "sourceRef": "sid-811659D3-2E0D-4A18-AF19-0E5CE3B13255",
+      "targetRef": "sid-F84606A2-AD87-4244-99C8-912F99001139"
+    },
+    {
+      "id": "sid-0392F120-207D-4105-9660-AF8C6029A211",
+      "sourceRef": "sid-F4B2A8DE-C045-4350-A7C5-8BE76BE9021B",
+      "targetRef": "sid-811659D3-2E0D-4A18-AF19-0E5CE3B13255"
+    },
+    {
+      "id": "sid-0B82D21E-C477-4CDE-95E2-4C3495423C78",
+      "sourceRef": "sid-F84606A2-AD87-4244-99C8-912F99001139",
+      "targetRef": "sid-90B6181F-3F6E-4364-BE87-969086C3AF39"
+    },
+    {
+      "id": "sid-BF27FABC-427A-460D-928D-61E69383F876",
+      "sourceRef": "sid-FA4B2AB3-7A34-46C0-BA03-D0B89EEE30A1",
+      "targetRef": "sid-5C827E99-0C63-46F5-9FA9-0E2C847E5362",
+      "condition": "brag"
+    },
+    {
+      "id": "sid-002E9051-F69A-440E-9751-89B0EF1A0542",
+      "sourceRef": "sid-4AF13AE6-8D4C-4BDE-8D56-92E657780D17",
+      "targetRef": "sid-4BC41CAB-2A22-4DEC-A79F-42C98D895555",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-2282DD91-A623-4737-BE50-3475B20FDD0C",
+      "sourceRef": "sid-4AF13AE6-8D4C-4BDE-8D56-92E657780D17",
+      "targetRef": "sid-F4B2A8DE-C045-4350-A7C5-8BE76BE9021B",
+      "condition": "No"
+    },
+    {
+      "id": "sid-AECA97F5-9060-42D2-899D-6274955FF61C",
+      "sourceRef": "sid-FA4B2AB3-7A34-46C0-BA03-D0B89EEE30A1",
+      "targetRef": "sid-D930775E-B7B9-44BA-94E4-6596D5ED7357",
+      "condition": "send"
+    },
+    {
+      "id": "sid-6F13D069-1F67-4D1F-93BC-7CF03142E71F",
+      "sourceRef": "sid-DF1D0528-93D9-4BDF-AF16-9AC22C490E6C",
+      "targetRef": "sid-886F11E2-1E28-447F-92AE-678621995336"
+    },
+    {
+      "id": "sid-B8021730-CF22-46F3-8828-232F35DC84E2",
+      "sourceRef": "sid-90B6181F-3F6E-4364-BE87-969086C3AF39",
+      "targetRef": "sid-13551884-3D36-4270-9273-9593462AF4F4"
+    },
+    {
+      "id": "sid-6A6B2833-22D9-4FA1-BA48-983E77C7DB68",
+      "sourceRef": "sid-55926A0D-56F8-4C9A-9EBC-EBE424060984",
+      "targetRef": "sid-2D106786-32A1-455F-9A7C-615EC45FCBA0"
+    },
+    {
+      "id": "sid-8D2D1D00-BBBC-4A03-B10D-DF0BD963B978",
+      "sourceRef": "sid-2D106786-32A1-455F-9A7C-615EC45FCBA0",
+      "targetRef": "sid-FDB3BE47-6315-4D37-948F-6300A4D9FE6C"
+    },
+    {
+      "id": "sid-98708C38-1554-4356-8AC2-A0786575F280",
+      "sourceRef": "sid-C6823BE1-C2F4-4891-ADB8-DDEE6EA9F7AB",
+      "targetRef": "sid-55926A0D-56F8-4C9A-9EBC-EBE424060984",
+      "condition": "all tools are already available"
+    },
+    {
+      "id": "sid-319585D0-E9C9-4543-B0A3-E59EAF9F1226",
+      "sourceRef": "sid-30BDCB51-AB91-4922-8B6C-721442F0A404",
+      "targetRef": "sid-2B982F62-7D1B-4718-AE4B-36FF9D9DB9CF"
+    },
+    {
+      "id": "sid-3A6B8FB3-76C3-43FA-B4CF-BB97F57D9C4F",
+      "sourceRef": "sid-30BDCB51-AB91-4922-8B6C-721442F0A404",
+      "targetRef": "sid-46074AF8-BA87-48B8-8473-BBED49D0277B"
+    },
+    {
+      "id": "sid-A5ADD027-2FF6-426D-AF97-C4CE1AE54022",
+      "sourceRef": "sid-46074AF8-BA87-48B8-8473-BBED49D0277B",
+      "targetRef": "sid-BFC76267-3635-48AF-AC8D-92D27C63361E"
+    },
+    {
+      "id": "sid-5BB430DA-8A88-47EB-9474-33314B2592CD",
+      "sourceRef": "sid-2B982F62-7D1B-4718-AE4B-36FF9D9DB9CF",
+      "targetRef": "sid-BFC76267-3635-48AF-AC8D-92D27C63361E"
+    },
+    {
+      "id": "sid-AF329DD1-E481-46B4-AEE9-507BDD3C0BE2",
+      "sourceRef": "sid-FDB3BE47-6315-4D37-948F-6300A4D9FE6C",
+      "targetRef": "sid-FA4B2AB3-7A34-46C0-BA03-D0B89EEE30A1",
+      "condition": "satisfied with materials"
+    },
+    {
+      "id": "sid-835AD3F9-370D-482D-A28B-2CB7315E3FB8",
+      "sourceRef": "sid-886F11E2-1E28-447F-92AE-678621995336",
+      "targetRef": "sid-494BB65A-D6EA-4C96-BD60-ED58E30AB2B4",
+      "condition": "materials available"
+    },
+    {
+      "id": "sid-BAF4C26D-9A48-48EF-8C38-A03CEA6522FC",
+      "sourceRef": "sid-494BB65A-D6EA-4C96-BD60-ED58E30AB2B4",
+      "targetRef": "sid-20AE63BB-F6C8-497D-A5ED-D3EEEE1E1B96"
+    },
+    {
+      "id": "sid-4DD8A798-9A56-4F92-AB51-3BDDDD47CBBD",
+      "sourceRef": "sid-20AE63BB-F6C8-497D-A5ED-D3EEEE1E1B96",
+      "targetRef": "sid-4BC41CAB-2A22-4DEC-A79F-42C98D895555"
+    },
+    {
+      "id": "sid-CEEE8C65-67B3-44F9-9340-7CF311D63070",
+      "sourceRef": "sid-886F11E2-1E28-447F-92AE-678621995336",
+      "targetRef": "sid-20AE63BB-F6C8-497D-A5ED-D3EEEE1E1B96",
+      "condition": "not enough materials available"
+    },
+    {
+      "id": "sid-106291BF-4E86-4F95-95EE-5162F4246541",
+      "sourceRef": "sid-13BD54F2-7F94-429F-B300-97CB0D419459",
+      "targetRef": "sid-DF1D0528-93D9-4BDF-AF16-9AC22C490E6C"
+    },
+    {
+      "id": "sid-92A0AD77-2125-404A-BCCF-EC93EAD24A33",
+      "sourceRef": "sid-13551884-3D36-4270-9273-9593462AF4F4",
+      "targetRef": "sid-C6823BE1-C2F4-4891-ADB8-DDEE6EA9F7AB",
+      "condition": "milestone reached"
+    },
+    {
+      "id": "sid-D0E9FBB3-56A7-4C05-AD58-9AF7578AFE6E",
+      "sourceRef": "sid-FDB3BE47-6315-4D37-948F-6300A4D9FE6C",
+      "targetRef": "sid-4BC41CAB-2A22-4DEC-A79F-42C98D895555",
+      "condition": "player wants more materials"
+    },
+    {
+      "id": "sid-6989C2C0-0783-4A9C-A8FE-5098BC1AB5FC",
+      "sourceRef": "sid-7EF07C2A-6EE9-4DFD-A404-1BAFCAB0E35D",
+      "targetRef": "sid-4FE312A5-CC56-4EFA-BB85-722CE16A360A"
+    },
+    {
+      "id": "sid-89EBF13A-E4A1-42AE-98BC-8FA4EDCB60F8",
+      "sourceRef": "sid-13551884-3D36-4270-9273-9593462AF4F4",
+      "targetRef": "sid-26401FC2-7461-433C-BB24-0B74DAAB707F",
+      "condition": "milestone not reached continue farming"
+    },
+    {
+      "id": "sid-9AF3D575-1A26-4484-9B37-496A43F9AE1C",
+      "sourceRef": "sid-C6823BE1-C2F4-4891-ADB8-DDEE6EA9F7AB",
+      "targetRef": "sid-30BDCB51-AB91-4922-8B6C-721442F0A404",
+      "condition": "New tools are still needed"
+    },
+    {
+      "id": "sid-741315C3-8928-46C7-BAF5-DB8C315188AA",
+      "sourceRef": "sid-13551884-3D36-4270-9273-9593462AF4F4",
+      "targetRef": "sid-7EF07C2A-6EE9-4DFD-A404-1BAFCAB0E35D",
+      "condition": "milestone not reached end farming anyway"
+    },
+    {
+      "id": "sid-526B02B0-D94E-4FAF-A754-61971B2FE066",
+      "sourceRef": "sid-5448820A-6EDF-4257-8DD2-5F168FBA3B75",
+      "targetRef": "sid-CB807621-D8E9-46BD-A920-35749B05D0AA"
+    },
+    {
+      "id": "sid-EA57368F-E029-4384-8012-E5F02FBEB374",
+      "sourceRef": "sid-A2F2B47C-06B3-4E58-9AD6-5A645185DB7F",
+      "targetRef": "sid-7E5CEF85-109F-4606-8C85-3D223CDBFDBE"
+    },
+    {
+      "id": "sid-B8682E8B-D8E6-458C-8BCE-3FCFBE78ADB4",
+      "sourceRef": "sid-7E5CEF85-109F-4606-8C85-3D223CDBFDBE",
+      "targetRef": "sid-5C275C34-57A4-463C-9D35-6DC018B4C861"
+    },
+    {
+      "id": "sid-FD189C9D-0784-4EB1-AFB2-91898B402B55",
+      "sourceRef": "sid-7883737F-F03B-44DF-9457-0345568CB74F",
+      "targetRef": "sid-5448820A-6EDF-4257-8DD2-5F168FBA3B75",
+      "condition": "Use farming Bot"
+    },
+    {
+      "id": "sid-EEA29B4A-FE85-4682-B494-6F9CEC7EBA42",
+      "sourceRef": "sid-7883737F-F03B-44DF-9457-0345568CB74F",
+      "targetRef": "sid-A2F2B47C-06B3-4E58-9AD6-5A645185DB7F",
+      "condition": "Play game regularly"
+    }
+  ],
+  "messageFlows": []
+}

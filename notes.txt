@@ -1,0 +1,36 @@
+#------------------test--------------------------------------------
+
+python human_evaluation_pipeline.py -r small -l gpt -e false
+python human_evaluation_pipeline.py -r small -l gemini -e false
+python human_evaluation_pipeline.py -r small -l anthropic -e false
+
+python human_evaluation_pipeline.py -r small -l gpt -e true
+python human_evaluation_pipeline.py -r small -l gemini -e true
+python human_evaluation_pipeline.py -r small -l anthropic -e true
+
+#----------------------------i--to be run-------------------------------
+
+python human_evaluation_pipeline.py -r mermaid_js -l gpt -e false
+python human_evaluation_pipeline.py -r mermaid_js -l gemini -e false
+python human_evaluation_pipeline.py -r mermaid_js -l anthropic -e false
+
+python human_evaluation_pipeline.py -r mermaid_js -l gpt -e true
+python human_evaluation_pipeline.py -r mermaid_js -l gemini -e true
+python human_evaluation_pipeline.py -r mermaid_js -l anthropic -e true
+
+python human_evaluation_pipeline.py -r bpmn -l gpt -e false
+python human_evaluation_pipeline.py -r bpmn -l gemini -e false
+python human_evaluation_pipeline.py -r bpmn -l anthropic -e false
+
+python human_evaluation_pipeline.py -r bpmn -l gpt -e true
+python human_evaluation_pipeline.py -r bpmn -l gemini -e true
+python human_evaluation_pipeline.py -r bpmn -l anthropic -e true
+
+python human_evaluation_pipeline.py -r simple_json -l gpt -e false
+python human_evaluation_pipeline.py -r simple_json -l gemini -e false
+python human_evaluation_pipeline.py -r simple_json -l anthropic -e false
+
+python human_evaluation_pipeline.py -r simple_json -l gpt -e true
+python human_evaluation_pipeline.py -r simple_json -l gemini -e true
+python human_evaluation_pipeline.py -r simple_json -l anthropic -e true
+

@@ -1,0 +1,159 @@
+{
+  "tasks": [
+    {
+      "id": "sid-BF85B346-0300-4C5B-A3E8-4B79E1C1EC02",
+      "name": "create a CV according to Austrian standards",
+      "type": "task"
+    },
+    {
+      "id": "sid-33B7D4C5-D0CF-462F-8672-3828F346B9CA",
+      "name": "get hired by the company signed the contract",
+      "type": "task"
+    },
+    {
+      "id": "sid-C436DD65-0B6C-4B27-BEB0-E89810DE6C96",
+      "name": "apply for a working permit visa",
+      "type": "task"
+    },
+    {
+      "id": "sid-41F7FEE9-799B-4FCA-8E2E-11B367869075",
+      "name": "apply for a job",
+      "type": "subProcess"
+    },
+    {
+      "id": "sid-84182BFC-18E5-4A33-B2F2-F6F8D4E3BCB3",
+      "name": "send application to AMS",
+      "type": "subProcess"
+    },
+    {
+      "id": "sid-85638F92-2B92-4E28-9B01-60F5A2205EB7",
+      "name": "collect the needed documentation",
+      "type": "task"
+    },
+    {
+      "id": "sid-943CDC8D-BEA6-410A-8A71-6584A43D2B47",
+      "name": "start to work",
+      "type": "task"
+    },
+    {
+      "id": "sid-4A066933-2508-4E12-9BE0-DD53A26C097C",
+      "name": "application approved",
+      "type": "subProcess"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-4F614628-8360-4CFE-B38E-9C1263A4750E",
+      "name": "",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-8CB8194A-0DE3-40A4-AD9C-B28D746A811A",
+      "name": "",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-D1912FCC-8710-425D-A0F8-8A6FA6E66DB1",
+      "name": "wait some days",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-2235C860-662D-4A12-BDEF-89720DA155DE",
+      "name": "wait up to 8 weeks",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-00677B62-FF73-44B4-B00D-EC66156A695B",
+      "type": "exclusiveGateway",
+      "name": "citizenschip passport"
+    },
+    {
+      "id": "sid-240FAEE7-E6B7-48D8-BF58-0B0C158E1020",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-C5F9B1EB-697D-4F6F-9ABE-74AF55D289FD",
+      "sourceRef": "sid-4F614628-8360-4CFE-B38E-9C1263A4750E",
+      "targetRef": "sid-BF85B346-0300-4C5B-A3E8-4B79E1C1EC02"
+    },
+    {
+      "id": "sid-5BA38A40-2643-4A4F-880E-D6F39A233D2C",
+      "sourceRef": "sid-BF85B346-0300-4C5B-A3E8-4B79E1C1EC02",
+      "targetRef": "sid-41F7FEE9-799B-4FCA-8E2E-11B367869075"
+    },
+    {
+      "id": "sid-7DF75691-4A31-4847-9AE1-90E29641F5E0",
+      "sourceRef": "sid-41F7FEE9-799B-4FCA-8E2E-11B367869075",
+      "targetRef": "sid-33B7D4C5-D0CF-462F-8672-3828F346B9CA"
+    },
+    {
+      "id": "sid-5A5804C4-0AA6-49DB-B1E2-A84DC9536338",
+      "sourceRef": "sid-84182BFC-18E5-4A33-B2F2-F6F8D4E3BCB3",
+      "targetRef": "sid-00677B62-FF73-44B4-B00D-EC66156A695B"
+    },
+    {
+      "id": "sid-83A6AFCE-832B-4C41-B56D-484DDDB35501",
+      "sourceRef": "sid-240FAEE7-E6B7-48D8-BF58-0B0C158E1020",
+      "targetRef": "sid-4A066933-2508-4E12-9BE0-DD53A26C097C"
+    },
+    {
+      "id": "sid-0294B70D-5191-470E-82A2-5EB65ADB4A98",
+      "sourceRef": "sid-00677B62-FF73-44B4-B00D-EC66156A695B",
+      "targetRef": "sid-C436DD65-0B6C-4B27-BEB0-E89810DE6C96",
+      "condition": "non EU"
+    },
+    {
+      "id": "sid-175B4A32-746F-4191-8775-5307CAE47ADD",
+      "sourceRef": "sid-C436DD65-0B6C-4B27-BEB0-E89810DE6C96",
+      "targetRef": "sid-2235C860-662D-4A12-BDEF-89720DA155DE"
+    },
+    {
+      "id": "sid-0DAB15B1-D372-4F49-8252-409FA6BF436F",
+      "sourceRef": "sid-00677B62-FF73-44B4-B00D-EC66156A695B",
+      "targetRef": "sid-D1912FCC-8710-425D-A0F8-8A6FA6E66DB1",
+      "condition": "EU"
+    },
+    {
+      "id": "sid-5A0D7940-018E-484A-B6BD-8B49995CC97C",
+      "sourceRef": "sid-33B7D4C5-D0CF-462F-8672-3828F346B9CA",
+      "targetRef": "sid-85638F92-2B92-4E28-9B01-60F5A2205EB7"
+    },
+    {
+      "id": "sid-4A6B2A7B-0E00-4A1B-8E25-ED90E3C3EB72",
+      "sourceRef": "sid-85638F92-2B92-4E28-9B01-60F5A2205EB7",
+      "targetRef": "sid-84182BFC-18E5-4A33-B2F2-F6F8D4E3BCB3"
+    },
+    {
+      "id": "sid-279FE039-23E8-4B9F-980E-503B38712493",
+      "sourceRef": "sid-943CDC8D-BEA6-410A-8A71-6584A43D2B47",
+      "targetRef": null
+    },
+    {
+      "id": "sid-B0C109F5-4AD5-405A-974C-BCB32AFC666C",
+      "sourceRef": "sid-2235C860-662D-4A12-BDEF-89720DA155DE",
+      "targetRef": "sid-240FAEE7-E6B7-48D8-BF58-0B0C158E1020"
+    },
+    {
+      "id": "sid-C22A955F-18B9-4613-BD24-3E8380934608",
+      "sourceRef": "sid-D1912FCC-8710-425D-A0F8-8A6FA6E66DB1",
+      "targetRef": "sid-240FAEE7-E6B7-48D8-BF58-0B0C158E1020"
+    },
+    {
+      "id": "sid-87DE25AF-D06F-4629-B402-B5D42CF4EFDD",
+      "sourceRef": "sid-4A066933-2508-4E12-9BE0-DD53A26C097C",
+      "targetRef": "sid-943CDC8D-BEA6-410A-8A71-6584A43D2B47"
+    }
+  ],
+  "messageFlows": []
+}

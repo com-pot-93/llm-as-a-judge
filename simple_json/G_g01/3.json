@@ -1,0 +1,286 @@
+{
+  "tasks": [
+    {
+      "id": "sid-A9141A0A-7F11-47C9-8F64-6FC0068615F6",
+      "name": "Send invites to 10 people",
+      "type": "userTask",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-619E8B56-65ED-4144-B593-B9D752528365",
+      "name": "Ask which games do they want to play",
+      "type": "userTask",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-FA7EE14B-F6DB-40B0-9D83-8EC57DC88E4D",
+      "name": "Appoint a date",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-DB6884E9-0107-4761-BE3D-2D893F45708E",
+      "name": "Check if you have all the games",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-C8B4EF16-8867-4861-8318-0572FBD33CED",
+      "name": "Reserve that day",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-EF5D94E8-692C-4681-9425-0251AC0BA2AF",
+      "name": "Download the missing game",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-436E0C54-E9C1-42D1-8A54-83E759D9E12E",
+      "name": "Ask friends how much beer they would like",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-C14DD445-DCF4-4126-910C-2378C496E372",
+      "name": "Send a notification that the LAN party will be held on that date",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-DF8B9BD1-25FF-49A6-A961-A579CC08302D",
+      "name": "Order beer for that date",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-266FFC82-851C-4805-9A50-42BBE784FC52",
+      "name": "Find where can you download the game",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-AFBB64BA-E956-49FE-A1B7-EFED88035949",
+      "name": "Prepare the games for the LAN party",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-C5CD44C2-CC4F-43C0-823F-FB70A55B9F10",
+      "name": "Wish for a LAN gameparty",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-B6B3C432-D5AB-4392-AFAA-0C3F0635E2F6",
+      "name": "Few hours until the user has all the games that they want to play",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-2640276F-ED3C-4A89-87FB-DC052B2F4B7C",
+      "name": "Few hours until all people reply if they can play on that date",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-6FA5F27B-DEB0-477B-ADC5-3277D4C3F351",
+      "name": "Few hours until all people reply with t he amount of beer",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-A91CEE04-A1C0-419E-9EAB-2B78118E15B8",
+      "name": "LAN party done",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-52EB3900-66FD-4AA8-881B-5CDCB601C6AE",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-05C0F7F7-619E-495E-9521-B9A9D0262BB8",
+      "type": "exclusiveGateway",
+      "name": "How many people can play on that date"
+    },
+    {
+      "id": "sid-560AECA0-B000-4AD4-AD31-887FA9FEC891",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-71E66321-C57D-405B-A911-03DA3A822608",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-1BA04540-F5F8-47FB-970A-2138C1FAF870",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-9928734D-74D0-441D-851E-C2BD7669DFC6",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-8BA39695-97EA-47B2-A738-C35ABF31EB96",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-08519232-8146-4995-BD6A-8EAE7B8E1357",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-80342CF2-7C86-4AB9-90AD-A9E3DB053959",
+      "sourceRef": "sid-C5CD44C2-CC4F-43C0-823F-FB70A55B9F10",
+      "targetRef": "sid-A9141A0A-7F11-47C9-8F64-6FC0068615F6"
+    },
+    {
+      "id": "sid-F00B2BC5-7948-4AA5-A6FB-EC7A20FD8AFB",
+      "sourceRef": "sid-A9141A0A-7F11-47C9-8F64-6FC0068615F6",
+      "targetRef": "sid-619E8B56-65ED-4144-B593-B9D752528365"
+    },
+    {
+      "id": "sid-6474A6EC-8DEE-46B1-8164-C03BB47B2F5F",
+      "sourceRef": "sid-619E8B56-65ED-4144-B593-B9D752528365",
+      "targetRef": "sid-B6B3C432-D5AB-4392-AFAA-0C3F0635E2F6"
+    },
+    {
+      "id": "sid-75A0D949-774B-4E6E-A4D9-D1881972D2B4",
+      "sourceRef": "sid-B6B3C432-D5AB-4392-AFAA-0C3F0635E2F6",
+      "targetRef": "sid-52EB3900-66FD-4AA8-881B-5CDCB601C6AE"
+    },
+    {
+      "id": "sid-E151A13F-BA89-4823-BEC7-84D6C740AB98",
+      "sourceRef": "sid-52EB3900-66FD-4AA8-881B-5CDCB601C6AE",
+      "targetRef": "sid-FA7EE14B-F6DB-40B0-9D83-8EC57DC88E4D"
+    },
+    {
+      "id": "sid-D3CD54D9-438C-4E45-AFBA-E0A63A015372",
+      "sourceRef": "sid-52EB3900-66FD-4AA8-881B-5CDCB601C6AE",
+      "targetRef": "sid-DB6884E9-0107-4761-BE3D-2D893F45708E"
+    },
+    {
+      "id": "sid-D86D2FBA-31DB-4D5B-BADB-E9C5E2DA8D87",
+      "sourceRef": "sid-FA7EE14B-F6DB-40B0-9D83-8EC57DC88E4D",
+      "targetRef": "sid-2640276F-ED3C-4A89-87FB-DC052B2F4B7C"
+    },
+    {
+      "id": "sid-4A06A0B9-41F4-47CF-858D-C13991A881AE",
+      "sourceRef": "sid-2640276F-ED3C-4A89-87FB-DC052B2F4B7C",
+      "targetRef": "sid-05C0F7F7-619E-495E-9521-B9A9D0262BB8"
+    },
+    {
+      "id": "sid-157F6C57-0E47-493C-AA2C-172C206B3CFB",
+      "sourceRef": "sid-05C0F7F7-619E-495E-9521-B9A9D0262BB8",
+      "targetRef": "sid-FA7EE14B-F6DB-40B0-9D83-8EC57DC88E4D",
+      "condition": "Less then 8 people can play on that date"
+    },
+    {
+      "id": "sid-1FC655FE-4F7A-486B-9BDB-22CEBFE958C9",
+      "sourceRef": "sid-DB6884E9-0107-4761-BE3D-2D893F45708E",
+      "targetRef": "sid-560AECA0-B000-4AD4-AD31-887FA9FEC891"
+    },
+    {
+      "id": "sid-4C7CCCB0-4412-4437-91F1-34EEA3D22295",
+      "sourceRef": "sid-05C0F7F7-619E-495E-9521-B9A9D0262BB8",
+      "targetRef": "sid-C8B4EF16-8867-4861-8318-0572FBD33CED",
+      "condition": "8 or more people can play on that date"
+    },
+    {
+      "id": "sid-591C8DF2-ED8A-4979-BED0-34045E3F275F",
+      "sourceRef": "sid-1BA04540-F5F8-47FB-970A-2138C1FAF870",
+      "targetRef": "sid-436E0C54-E9C1-42D1-8A54-83E759D9E12E"
+    },
+    {
+      "id": "sid-77E81D00-DA02-4705-9ABD-861766C94E82",
+      "sourceRef": "sid-436E0C54-E9C1-42D1-8A54-83E759D9E12E",
+      "targetRef": "sid-6FA5F27B-DEB0-477B-ADC5-3277D4C3F351"
+    },
+    {
+      "id": "sid-89827811-6436-4D56-861B-9E8167D8A075",
+      "sourceRef": "sid-9928734D-74D0-441D-851E-C2BD7669DFC6",
+      "targetRef": "sid-DF8B9BD1-25FF-49A6-A961-A579CC08302D",
+      "condition": "No"
+    },
+    {
+      "id": "sid-2C4DD614-E1C5-4A51-9197-CA32F3FC6CDB",
+      "sourceRef": "sid-DF8B9BD1-25FF-49A6-A961-A579CC08302D",
+      "targetRef": "sid-8BA39695-97EA-47B2-A738-C35ABF31EB96"
+    },
+    {
+      "id": "sid-DA26F7BA-7DDC-4DF0-BA45-D3F4EB722EA2",
+      "sourceRef": "sid-560AECA0-B000-4AD4-AD31-887FA9FEC891",
+      "targetRef": "sid-266FFC82-851C-4805-9A50-42BBE784FC52",
+      "condition": "No"
+    },
+    {
+      "id": "sid-81186651-B166-470B-AA28-7C5A4E4FDCFC",
+      "sourceRef": "sid-266FFC82-851C-4805-9A50-42BBE784FC52",
+      "targetRef": "sid-EF5D94E8-692C-4681-9425-0251AC0BA2AF"
+    },
+    {
+      "id": "sid-FB091E69-B0A5-4519-9D37-8C9FB79B6830",
+      "sourceRef": "sid-C14DD445-DCF4-4126-910C-2378C496E372",
+      "targetRef": "sid-A91CEE04-A1C0-419E-9EAB-2B78118E15B8"
+    },
+    {
+      "id": "sid-679F9780-B68D-4AC9-88CA-0235B227D229",
+      "sourceRef": "sid-C8B4EF16-8867-4861-8318-0572FBD33CED",
+      "targetRef": "sid-1BA04540-F5F8-47FB-970A-2138C1FAF870"
+    },
+    {
+      "id": "sid-C01FBC2D-6F23-411D-818C-EEE2A52C423F",
+      "sourceRef": "sid-08519232-8146-4995-BD6A-8EAE7B8E1357",
+      "targetRef": "sid-AFBB64BA-E956-49FE-A1B7-EFED88035949",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-C0197881-502B-451C-A334-F72A42126DF5",
+      "sourceRef": "sid-08519232-8146-4995-BD6A-8EAE7B8E1357",
+      "targetRef": "sid-266FFC82-851C-4805-9A50-42BBE784FC52",
+      "condition": "No"
+    },
+    {
+      "id": "sid-F73F4D6A-F866-4326-ABDC-632C663CD563",
+      "sourceRef": "sid-8BA39695-97EA-47B2-A738-C35ABF31EB96",
+      "targetRef": "sid-C14DD445-DCF4-4126-910C-2378C496E372"
+    },
+    {
+      "id": "sid-CF0AA462-AC1B-4B4E-B152-9A5A532F9819",
+      "sourceRef": "sid-6FA5F27B-DEB0-477B-ADC5-3277D4C3F351",
+      "targetRef": "sid-9928734D-74D0-441D-851E-C2BD7669DFC6",
+      "condition": "Do you have enough beer"
+    },
+    {
+      "id": "sid-1CBA0D16-18B0-4CFD-8407-9747D02D29F4",
+      "sourceRef": "sid-9928734D-74D0-441D-851E-C2BD7669DFC6",
+      "targetRef": "sid-8BA39695-97EA-47B2-A738-C35ABF31EB96",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-F29B4F03-EE80-4CB9-AA41-443B8BBEBA2C",
+      "sourceRef": "sid-71E66321-C57D-405B-A911-03DA3A822608",
+      "targetRef": "sid-1BA04540-F5F8-47FB-970A-2138C1FAF870"
+    },
+    {
+      "id": "sid-1EBC6C66-0982-42C9-834B-CC33C508FBC1",
+      "sourceRef": "sid-AFBB64BA-E956-49FE-A1B7-EFED88035949",
+      "targetRef": "sid-71E66321-C57D-405B-A911-03DA3A822608"
+    },
+    {
+      "id": "sid-01B935A1-4D46-43C0-B376-0441517CEE37",
+      "sourceRef": "sid-560AECA0-B000-4AD4-AD31-887FA9FEC891",
+      "targetRef": "sid-71E66321-C57D-405B-A911-03DA3A822608",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-CE094182-FB39-419F-B6EB-5ABFD8EF2A31",
+      "sourceRef": "sid-EF5D94E8-692C-4681-9425-0251AC0BA2AF",
+      "targetRef": "sid-08519232-8146-4995-BD6A-8EAE7B8E1357",
+      "condition": "Download successful"
+    }
+  ],
+  "messageFlows": []
+}

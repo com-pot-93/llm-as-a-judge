@@ -1,0 +1,318 @@
+{
+  "tasks": [
+    {
+      "id": "sid-288B81F2-B7FB-4AE9-AD75-4D9A67DE3861",
+      "name": "Download is started automatically",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-413F062A-8126-4207-A62A-2E84A5112F2C",
+      "name": "Prepare Games",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-B7F29AE9-A43C-450C-AA4A-31B5EBD9DE03",
+      "name": "Prepare Games",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-65EDC4E1-BC90-4697-B941-98F2EBB11A5B",
+      "name": "Appointment is set automatically",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-90593975-7C81-4A33-970A-7E171F1AD8E8",
+      "name": "Start party",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-854C170D-B5E8-422D-A767-4489E10144E0",
+      "name": "Select beer",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-A20B4093-C6C6-4714-9DD5-95CF073283CE",
+      "name": "Start party",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-E362CF63-3AF4-44F0-B2AC-4C49D8F57DA9",
+      "name": "Choose amount",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-EAC9E172-3D08-43F7-877E-2632FB5C6923",
+      "name": "Choose amount",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-2DF140A8-0201-4AC9-AEAD-8A0AB7DFD6F6",
+      "name": "Price is calculated",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-732C7B38-095E-4993-91F5-78C0FA021ECD",
+      "name": "Select Games",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-02B28F0C-FDD1-419E-B12D-5609D5492AAD",
+      "name": "",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-181B43AC-30D8-4610-B81B-235D28043235",
+      "name": "",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-93D7F2DF-B37F-4C36-B441-A1A9EA9AAD27",
+      "name": "Send invitation",
+      "type": "startEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-4801DBAE-7BFF-449B-A330-B27AFF1B6984",
+      "name": "Suggest appointment",
+      "type": "intermediateThrowEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-42211DA0-13B5-4B91-9902-67B5B664C343",
+      "name": "receive answer",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-01E752CD-8D10-4973-99FA-57C77B27A630",
+      "name": "Request beer supply",
+      "type": "intermediateThrowEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-ED330D03-AD4C-4D82-BC5D-4CE83E0F2EE3",
+      "name": "Receive Answer",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-E3DE62AE-E8E9-4832-92CC-FBDEDB091036",
+      "name": "Receive list of games",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-19C63AFA-5C87-4AD4-AE97-D26E63107D91",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-2FAD8AF5-AD05-4E1D-9E7E-BC4C3C7DFF4F",
+      "type": "exclusiveGateway",
+      "name": "All games available"
+    },
+    {
+      "id": "sid-DC534080-6374-4B08-B325-063F878F4999",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-6AD0F4C9-037A-4F2D-B964-AEE438575D4C",
+      "type": "exclusiveGateway",
+      "name": "8 Friends available"
+    },
+    {
+      "id": "sid-5C13C882-54E2-48A8-8328-6A0CA120C4DB",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-6CE8CF1B-8B34-4511-8041-0FED905EE39A",
+      "type": "exclusiveGateway",
+      "name": "enough beer"
+    },
+    {
+      "id": "sid-F4AACDF1-1F5E-4683-8834-4C577CD87181",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-4098AFEC-1597-4E14-AD92-644D4C8A4F63",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-ECCBC752-434C-44D4-A941-F0DB4351E3D8",
+      "sourceRef": "sid-19C63AFA-5C87-4AD4-AE97-D26E63107D91",
+      "targetRef": "sid-4801DBAE-7BFF-449B-A330-B27AFF1B6984"
+    },
+    {
+      "id": "sid-F994F9E2-C608-446A-B2A0-9CD68A096A5D",
+      "sourceRef": "sid-288B81F2-B7FB-4AE9-AD75-4D9A67DE3861",
+      "targetRef": "sid-B7F29AE9-A43C-450C-AA4A-31B5EBD9DE03"
+    },
+    {
+      "id": "sid-867EE0E6-B009-449C-8E79-D711CEADF8C2",
+      "sourceRef": "sid-B7F29AE9-A43C-450C-AA4A-31B5EBD9DE03",
+      "targetRef": "sid-DC534080-6374-4B08-B325-063F878F4999"
+    },
+    {
+      "id": "sid-C8766469-76C4-4E1A-89B8-1DDC0D5BF261",
+      "sourceRef": "sid-6AD0F4C9-037A-4F2D-B964-AEE438575D4C",
+      "targetRef": "sid-4801DBAE-7BFF-449B-A330-B27AFF1B6984",
+      "condition": "no"
+    },
+    {
+      "id": "sid-371963E5-E2C4-4F01-8533-ACF6A17805AB",
+      "sourceRef": "sid-6AD0F4C9-037A-4F2D-B964-AEE438575D4C",
+      "targetRef": "sid-65EDC4E1-BC90-4697-B941-98F2EBB11A5B",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-81740620-1759-48F8-8F2C-C6D11AA1967E",
+      "sourceRef": "sid-65EDC4E1-BC90-4697-B941-98F2EBB11A5B",
+      "targetRef": "sid-5C13C882-54E2-48A8-8328-6A0CA120C4DB"
+    },
+    {
+      "id": "sid-E55F5536-837E-4CAB-8977-1D3368A8C214",
+      "sourceRef": "sid-DC534080-6374-4B08-B325-063F878F4999",
+      "targetRef": "sid-5C13C882-54E2-48A8-8328-6A0CA120C4DB"
+    },
+    {
+      "id": "sid-9A873F49-B046-44D0-A03B-E16B58467670",
+      "sourceRef": "sid-2FAD8AF5-AD05-4E1D-9E7E-BC4C3C7DFF4F",
+      "targetRef": "sid-413F062A-8126-4207-A62A-2E84A5112F2C",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-9ABCCEC0-6DAE-48C4-A760-27E3A6687A9B",
+      "sourceRef": "sid-6CE8CF1B-8B34-4511-8041-0FED905EE39A",
+      "targetRef": "sid-90593975-7C81-4A33-970A-7E171F1AD8E8",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-CB4ADF01-F60E-4A95-A056-D63EFF711DE8",
+      "sourceRef": "sid-6CE8CF1B-8B34-4511-8041-0FED905EE39A",
+      "targetRef": "sid-854C170D-B5E8-422D-A767-4489E10144E0",
+      "condition": "no"
+    },
+    {
+      "id": "sid-8DDDC8B0-2832-46AC-A314-E94D04FF4721",
+      "sourceRef": "sid-90593975-7C81-4A33-970A-7E171F1AD8E8",
+      "targetRef": "sid-02B28F0C-FDD1-419E-B12D-5609D5492AAD"
+    },
+    {
+      "id": "sid-1B751A0E-06CD-404B-870B-EC0C34618959",
+      "sourceRef": "sid-A20B4093-C6C6-4714-9DD5-95CF073283CE",
+      "targetRef": "sid-181B43AC-30D8-4610-B81B-235D28043235"
+    },
+    {
+      "id": "sid-B8A620C0-A0F3-496D-A4A8-FAB874F68C4B",
+      "sourceRef": "sid-854C170D-B5E8-422D-A767-4489E10144E0",
+      "targetRef": "sid-F4AACDF1-1F5E-4683-8834-4C577CD87181"
+    },
+    {
+      "id": "sid-5BDED0BC-9633-43D5-949B-25173C4E8732",
+      "sourceRef": "sid-EAC9E172-3D08-43F7-877E-2632FB5C6923",
+      "targetRef": "sid-4098AFEC-1597-4E14-AD92-644D4C8A4F63"
+    },
+    {
+      "id": "sid-EC3E155E-364E-427C-B6F4-308FFD6BB584",
+      "sourceRef": "sid-E362CF63-3AF4-44F0-B2AC-4C49D8F57DA9",
+      "targetRef": "sid-4098AFEC-1597-4E14-AD92-644D4C8A4F63"
+    },
+    {
+      "id": "sid-8495D851-DF11-49BA-ABEB-F17AFC4D73F6",
+      "sourceRef": "sid-4098AFEC-1597-4E14-AD92-644D4C8A4F63",
+      "targetRef": "sid-2DF140A8-0201-4AC9-AEAD-8A0AB7DFD6F6"
+    },
+    {
+      "id": "sid-2735D703-8BDE-4732-99CC-1A0E95E2D44C",
+      "sourceRef": "sid-4801DBAE-7BFF-449B-A330-B27AFF1B6984",
+      "targetRef": "sid-42211DA0-13B5-4B91-9902-67B5B664C343"
+    },
+    {
+      "id": "sid-B968EAAC-0F39-460E-AA37-4FB755F5E4F8",
+      "sourceRef": "sid-42211DA0-13B5-4B91-9902-67B5B664C343",
+      "targetRef": "sid-6AD0F4C9-037A-4F2D-B964-AEE438575D4C"
+    },
+    {
+      "id": "sid-6E5C1C0C-9692-4E6B-B7EB-E2E0E56161FD",
+      "sourceRef": "sid-ED330D03-AD4C-4D82-BC5D-4CE83E0F2EE3",
+      "targetRef": "sid-6CE8CF1B-8B34-4511-8041-0FED905EE39A"
+    },
+    {
+      "id": "sid-77A173D2-6191-44E0-A163-3478958306D1",
+      "sourceRef": "sid-5C13C882-54E2-48A8-8328-6A0CA120C4DB",
+      "targetRef": "sid-01E752CD-8D10-4973-99FA-57C77B27A630"
+    },
+    {
+      "id": "sid-29D562D5-8781-4EE5-8564-4BA53AE4345A",
+      "sourceRef": "sid-01E752CD-8D10-4973-99FA-57C77B27A630",
+      "targetRef": "sid-ED330D03-AD4C-4D82-BC5D-4CE83E0F2EE3"
+    },
+    {
+      "id": "sid-49523B9E-6D53-477E-824D-8B1233A30180",
+      "sourceRef": "sid-413F062A-8126-4207-A62A-2E84A5112F2C",
+      "targetRef": "sid-DC534080-6374-4B08-B325-063F878F4999"
+    },
+    {
+      "id": "sid-2DD5053A-C453-4470-AB0C-E877AAA47FC0",
+      "sourceRef": "sid-2FAD8AF5-AD05-4E1D-9E7E-BC4C3C7DFF4F",
+      "targetRef": "sid-732C7B38-095E-4993-91F5-78C0FA021ECD",
+      "condition": "no"
+    },
+    {
+      "id": "sid-4C3A683C-7FEB-4F2B-A12C-B4ADD1185DB6",
+      "sourceRef": "sid-732C7B38-095E-4993-91F5-78C0FA021ECD",
+      "targetRef": "sid-288B81F2-B7FB-4AE9-AD75-4D9A67DE3861"
+    },
+    {
+      "id": "sid-38EDB6E9-DAB7-4CEA-89B7-B3BBC247F384",
+      "sourceRef": "sid-F4AACDF1-1F5E-4683-8834-4C577CD87181",
+      "targetRef": "sid-EAC9E172-3D08-43F7-877E-2632FB5C6923",
+      "condition": "Ottakringer"
+    },
+    {
+      "id": "sid-F57B8F49-F9E3-4D30-9C27-B45A0523FB5A",
+      "sourceRef": "sid-F4AACDF1-1F5E-4683-8834-4C577CD87181",
+      "targetRef": "sid-E362CF63-3AF4-44F0-B2AC-4C49D8F57DA9",
+      "condition": "G\u00f6sser"
+    },
+    {
+      "id": "sid-E8D2AC1C-F965-4B03-B52F-AB39A215C8F7",
+      "sourceRef": "sid-93D7F2DF-B37F-4C36-B441-A1A9EA9AAD27",
+      "targetRef": "sid-19C63AFA-5C87-4AD4-AE97-D26E63107D91"
+    },
+    {
+      "id": "sid-4524CF48-FB6D-4DA8-AF81-C062DF0FCC14",
+      "sourceRef": "sid-19C63AFA-5C87-4AD4-AE97-D26E63107D91",
+      "targetRef": "sid-E3DE62AE-E8E9-4832-92CC-FBDEDB091036"
+    },
+    {
+      "id": "sid-78CF8911-4176-4521-8B92-ADD1A1D61BF7",
+      "sourceRef": "sid-E3DE62AE-E8E9-4832-92CC-FBDEDB091036",
+      "targetRef": "sid-2FAD8AF5-AD05-4E1D-9E7E-BC4C3C7DFF4F"
+    },
+    {
+      "id": "sid-172C6FD2-5E86-42E3-A409-798980411AB0",
+      "sourceRef": "sid-2DF140A8-0201-4AC9-AEAD-8A0AB7DFD6F6",
+      "targetRef": "sid-A20B4093-C6C6-4714-9DD5-95CF073283CE"
+    }
+  ],
+  "messageFlows": []
+}

@@ -1,0 +1,347 @@
+{
+  "tasks": [
+    {
+      "id": "sid-3732F6DB-D88B-4E6D-BF14-23F2466D90A6",
+      "name": "sending sketches",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-20B28A42-BD53-4306-A32F-42043F9D2315",
+      "name": "check proposal",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-443C61B5-9FAD-4003-8D11-764923F71804",
+      "name": "Send change proposal",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-D528EB49-E8DD-40B4-B17F-2F7A15CA391D",
+      "name": "choose plastic color",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-6FDFD0E9-76C3-417F-AA1A-5D910A6ABC50",
+      "name": "Artists new proposal arrived",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-413F79A0-D4CC-4024-86C4-BF0454C8417C",
+      "name": "check how much color left",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-4CD6E883-C736-4DA2-9C8B-EFA28F321F96",
+      "name": "order color",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-E75005E7-0B6B-4766-BEAA-B1F7A2EC98D3",
+      "name": "turn the printer on",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-4682F879-6AEA-4E8A-966A-5CF20B01A248",
+      "name": "heat up the bed and extruder",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-70E938E6-1E7C-4ABE-BAAF-402A8E31A727",
+      "name": "generate gcode file",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-974E8904-EAF4-4456-A334-5CBE35A70348",
+      "name": "print model",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-5C78F49A-A51A-4E71-8C27-A6E891D850CE",
+      "name": "put it on the shopping list",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-E261FC5D-1C5F-45AB-8BD6-88449BD99E59",
+      "name": "Send new change proposal",
+      "type": "sendTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-114A333A-ABBB-4330-A2D3-030026236163",
+      "name": "",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-9F181FDD-3075-4729-80F8-53D1CA4B949F",
+      "name": "",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-CBEAD5D1-D5F6-4AA1-AA92-FBC1BCCF5617",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-AC6AFF8C-BE26-4975-824F-0BF22D012228",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-972E4C65-39FF-41C3-965B-B773515C2766",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-55CAB17E-B059-437A-B157-198FD87D7DAA",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-691F94F0-64E9-4BAA-B96C-492C1B64C78C",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-E2B4F9C8-1715-467D-A3E5-E434EF0FDA16",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-02B9FBD0-B55D-4DB2-AFBF-B82F83331A38",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-E08D4770-0035-4A9E-853C-1263985F3FE3",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-488EB46E-F307-4FA2-A7E3-519FDCA25BC2",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-6DE40B06-D380-4ABC-B01C-894E007BAF25",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-A1C9D5DE-BFFF-4DDF-83F5-CFC8CE960370",
+      "sourceRef": null,
+      "targetRef": "sid-20B28A42-BD53-4306-A32F-42043F9D2315"
+    },
+    {
+      "id": "sid-EA87984D-D0E4-4CB8-896B-2D0D608FDCCD",
+      "sourceRef": "sid-CBEAD5D1-D5F6-4AA1-AA92-FBC1BCCF5617",
+      "targetRef": "sid-443C61B5-9FAD-4003-8D11-764923F71804"
+    },
+    {
+      "id": "sid-C8C49307-B44B-4C53-B6B5-49C369C6B080",
+      "sourceRef": null,
+      "targetRef": "sid-AC6AFF8C-BE26-4975-824F-0BF22D012228"
+    },
+    {
+      "id": "sid-AE79DBFF-730F-4382-BF91-28A7F3293EB3",
+      "sourceRef": "sid-E261FC5D-1C5F-45AB-8BD6-88449BD99E59",
+      "targetRef": null
+    },
+    {
+      "id": "sid-7BA2311F-EFAA-413A-80A7-F388B27DA80F",
+      "sourceRef": null,
+      "targetRef": "sid-E08D4770-0035-4A9E-853C-1263985F3FE3"
+    },
+    {
+      "id": "sid-BD81FDD4-BA78-4386-97EF-F3E16325C1D1",
+      "sourceRef": null,
+      "targetRef": "sid-413F79A0-D4CC-4024-86C4-BF0454C8417C"
+    },
+    {
+      "id": "sid-AD0B2FFD-D2F6-483C-821D-03C882DAF1A4",
+      "sourceRef": "sid-02B9FBD0-B55D-4DB2-AFBF-B82F83331A38",
+      "targetRef": null
+    },
+    {
+      "id": "sid-0397BEB4-86B3-4251-BE91-D035D3ECAA3F",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-28EB3C8A-D7C9-4BD3-B6B4-14EA04CD0C5A",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-55B32348-9F78-42F3-8A0C-45E45C11C0F6",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-612DABE8-41E6-4D7F-9D53-14AA8A779F34",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-27F4956B-B4A7-4C75-9274-FEC7769AAE99",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-A7D9EE5D-544E-4F91-AB63-2C208EBB3A8D",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-9B0F7F78-15F4-433B-BE8C-CAD1EAB7110A",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-72335D9E-46D2-45A2-BEF4-F49657FA3467",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-FA099100-86CF-4FDF-8F02-721B0947469D",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-40D59A54-D77B-4E59-AEAC-33A0EDCC2CEE",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-BFA96265-89FD-4324-9D0B-7F9C366B01CD",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-701948E0-338E-4988-8E27-4E4AEB738418",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-F78159E2-2FF3-4BA9-8F47-2A8A8FA61B4D",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-BB9EA7F7-8E65-4FE5-8B84-BBBF04B2E395",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-AC9D7D47-F8C7-4518-A85C-AA97477BB303",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-0608F613-EAAA-4819-A75F-43A13D2E94A0",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-E3875578-2C07-4120-BC9C-90B531C47DBE",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-C65F62AA-982D-4356-A05A-25D08D153FB8",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-EE6A2DBD-FF17-4EA6-BEAE-887AB61F2BBB",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-B682559E-B042-4E15-93FB-68A6115E4722",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-52B03BAC-3179-42EE-B03A-DD4949A11C81",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-B8E8002A-4841-4E78-8227-A2C96230656B",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-1BEE5A41-AE05-4E2C-B255-24B5A8EBBE40",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-CE00CAFF-CC55-45CA-B70B-B423D5FC2EAA",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-F441F37F-AC82-40C0-9A32-E26050C52690",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-D31D3340-B481-480F-8919-728F9DEBA5FC",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-8EE1AAEC-F214-4B31-B785-DF688FD7292B",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-FB249470-5F09-4D77-A542-99078AE1F617",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-074AC001-D4F7-4E23-83F7-F33A57F7C4E0",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-278F8C6D-7788-421E-B29A-A8BE273262B0",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-9666A39C-6375-4261-9423-9044A575B212",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-B612F3CF-00BE-4C74-A652-2606F0C416F2",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-C9A21B0F-18E6-42C7-A600-51091146F2EC",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-E954BBBE-E411-434E-BF9F-58661EDC961F",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-34F3017E-CAE4-4004-9D56-6DA464F5B171",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-3FAAA370-A60F-4B4A-8C33-F8FD9785DDBD",
+      "sourceRef": null,
+      "targetRef": null
+    },
+    {
+      "id": "sid-B10F14CD-DB27-4D47-A457-D8844A22BCE4",
+      "sourceRef": null,
+      "targetRef": null
+    }
+  ],
+  "messageFlows": []
+}

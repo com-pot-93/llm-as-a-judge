@@ -1,0 +1,312 @@
+{
+  "tasks": [
+    {
+      "id": "sid-CB85737E-B0CD-4C80-98DB-6D181DAA706B",
+      "name": "Select type of order",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-805D7AD1-FFFB-4E34-9A36-4C3879FB9586",
+      "name": "Select burger",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-0D204695-2F64-434B-A0C3-E16449FA53F1",
+      "name": "Select type of beverage",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-5939161B-E529-4351-92F4-01BFF5B42343",
+      "name": "Prepare beverage",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-A913409D-17BE-4497-BD83-C769C0411331",
+      "name": "Select side",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-5D458F0D-2670-4624-94A3-43CC369C64EA",
+      "name": "Prepare potato wedges",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-E0331420-4C27-449E-920E-842AE722E902",
+      "name": "Prepare French fries",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-B96B9CD4-431A-4052-9318-BBFAC71A199F",
+      "name": "Select menu",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-02AC08D8-F782-4595-93D7-39C16DF0FB74",
+      "name": "Prepare burger",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-745C75E5-0DBC-40AE-BA21-FDB59CEED03D",
+      "name": "Check status",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-48C285EA-FDF2-4D10-8209-EA3844F3793D",
+      "name": "Update status",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-2B7266EE-0099-4636-9EEF-F4CCA6C05261",
+      "name": "Deliver via conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-6B162260-66B4-41EF-ADD5-A676B1CE0554",
+      "name": "Notify customer",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1B7D300B-5A7D-42CA-AF57-A12482283B9E",
+      "name": "Make payment",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-7D8BE8F3-4F36-44BA-9971-CA63D10A701D",
+      "name": "Enter customer s name",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-DA41FBC2-A90E-48AC-8307-FB008CBF506E",
+      "name": "Food order decided",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-8285762D-3750-4634-AF22-B34EC090B7EB",
+      "name": "30 seconds",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-A83CDD9A-C3BE-409A-B644-9E37982EFF2A",
+      "name": "Food delivered",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-0C8F9A68-6DE8-4C47-9BA7-1599759ED246",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-0D401566-01D4-4164-8C73-D72EFC67CC8F",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-5C3EDEB6-378A-49DB-892A-CF657A69795D",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-962C852B-7ADA-4FD7-BD8C-6C48D23ECD08",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-BB802E63-B61C-4DA3-B909-64C623A97C53",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-DE357633-2C48-4F8D-84B2-BF2268619608",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-C81F4094-FD4B-45B2-A9C3-EA29EFB62E83",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-AFB4A12B-F254-411D-8F8D-BD54CD88BE6C",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-EC0F81FA-389C-4080-9DBB-FFDC6281596E",
+      "type": "exclusiveGateway",
+      "name": "Is burger prepared"
+    },
+    {
+      "id": "sid-C65E8E8E-9C8B-4127-BE17-ECC0197F8E57",
+      "type": "parallelGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-ADCA6A3E-D41B-4056-9E0C-DBE91AECC837",
+      "sourceRef": "sid-DA41FBC2-A90E-48AC-8307-FB008CBF506E",
+      "targetRef": "sid-CB85737E-B0CD-4C80-98DB-6D181DAA706B"
+    },
+    {
+      "id": "sid-D57739A0-8318-4AF5-9020-06651BA05164",
+      "sourceRef": "sid-CB85737E-B0CD-4C80-98DB-6D181DAA706B",
+      "targetRef": "sid-0C8F9A68-6DE8-4C47-9BA7-1599759ED246"
+    },
+    {
+      "id": "sid-13052455-3A89-4993-A48D-735D2C08DAAD",
+      "sourceRef": "sid-0D204695-2F64-434B-A0C3-E16449FA53F1",
+      "targetRef": "sid-0D401566-01D4-4164-8C73-D72EFC67CC8F"
+    },
+    {
+      "id": "sid-EFF2ECC8-492F-437F-A586-A4B5EAAAF36A",
+      "sourceRef": "sid-0D401566-01D4-4164-8C73-D72EFC67CC8F",
+      "targetRef": "sid-5939161B-E529-4351-92F4-01BFF5B42343"
+    },
+    {
+      "id": "sid-530DF41E-EE86-4CDC-ABC7-5D63EEA8F3E5",
+      "sourceRef": "sid-0D401566-01D4-4164-8C73-D72EFC67CC8F",
+      "targetRef": "sid-A913409D-17BE-4497-BD83-C769C0411331"
+    },
+    {
+      "id": "sid-249446C2-0F49-4616-BB1F-B238A5438EF9",
+      "sourceRef": "sid-5939161B-E529-4351-92F4-01BFF5B42343",
+      "targetRef": "sid-5C3EDEB6-378A-49DB-892A-CF657A69795D"
+    },
+    {
+      "id": "sid-9FB1534F-62DB-48DE-B934-EF0DD0F35FC5",
+      "sourceRef": "sid-A913409D-17BE-4497-BD83-C769C0411331",
+      "targetRef": "sid-5C3EDEB6-378A-49DB-892A-CF657A69795D"
+    },
+    {
+      "id": "sid-149C17D8-FED7-4EAD-B0E8-3F90D920F9D6",
+      "sourceRef": "sid-5D458F0D-2670-4624-94A3-43CC369C64EA",
+      "targetRef": "sid-BB802E63-B61C-4DA3-B909-64C623A97C53"
+    },
+    {
+      "id": "sid-8CA4F6B7-9F1E-41E7-BC75-CF186E52359A",
+      "sourceRef": "sid-E0331420-4C27-449E-920E-842AE722E902",
+      "targetRef": "sid-BB802E63-B61C-4DA3-B909-64C623A97C53"
+    },
+    {
+      "id": "sid-94C4EE62-3279-4C97-8A38-F6DF59418879",
+      "sourceRef": "sid-962C852B-7ADA-4FD7-BD8C-6C48D23ECD08",
+      "targetRef": "sid-5D458F0D-2670-4624-94A3-43CC369C64EA",
+      "condition": "Potato wedges"
+    },
+    {
+      "id": "sid-B9539A96-F7F2-4E97-91F3-D38CA2D78484",
+      "sourceRef": "sid-962C852B-7ADA-4FD7-BD8C-6C48D23ECD08",
+      "targetRef": "sid-E0331420-4C27-449E-920E-842AE722E902",
+      "condition": "French fries"
+    },
+    {
+      "id": "sid-D966104F-FCE4-49F4-A607-E84AD2EE9F26",
+      "sourceRef": "sid-5C3EDEB6-378A-49DB-892A-CF657A69795D",
+      "targetRef": "sid-962C852B-7ADA-4FD7-BD8C-6C48D23ECD08"
+    },
+    {
+      "id": "sid-8EBFA0D5-5620-42EF-8B70-E7A676EF9BA9",
+      "sourceRef": "sid-B96B9CD4-431A-4052-9318-BBFAC71A199F",
+      "targetRef": "sid-0D204695-2F64-434B-A0C3-E16449FA53F1"
+    },
+    {
+      "id": "sid-FECA3CA8-507E-49C1-82AB-1BD09B892F2E",
+      "sourceRef": "sid-805D7AD1-FFFB-4E34-9A36-4C3879FB9586",
+      "targetRef": "sid-DE357633-2C48-4F8D-84B2-BF2268619608"
+    },
+    {
+      "id": "sid-8E381B24-3663-4C79-9298-DCBD48544795",
+      "sourceRef": "sid-0C8F9A68-6DE8-4C47-9BA7-1599759ED246",
+      "targetRef": "sid-B96B9CD4-431A-4052-9318-BBFAC71A199F",
+      "condition": "With menu"
+    },
+    {
+      "id": "sid-033BF9FA-1853-4002-9D69-46005D333C65",
+      "sourceRef": "sid-BB802E63-B61C-4DA3-B909-64C623A97C53",
+      "targetRef": "sid-DE357633-2C48-4F8D-84B2-BF2268619608"
+    },
+    {
+      "id": "sid-1D77AF43-403F-4508-BCEB-F19B397941F0",
+      "sourceRef": "sid-C81F4094-FD4B-45B2-A9C3-EA29EFB62E83",
+      "targetRef": "sid-AFB4A12B-F254-411D-8F8D-BD54CD88BE6C"
+    },
+    {
+      "id": "sid-7ABAE7E9-580F-4B8E-99FE-701DB693BA16",
+      "sourceRef": "sid-8285762D-3750-4634-AF22-B34EC090B7EB",
+      "targetRef": "sid-745C75E5-0DBC-40AE-BA21-FDB59CEED03D"
+    },
+    {
+      "id": "sid-7CCC106C-0DA9-4F6D-BB95-3898F079A286",
+      "sourceRef": "sid-745C75E5-0DBC-40AE-BA21-FDB59CEED03D",
+      "targetRef": "sid-EC0F81FA-389C-4080-9DBB-FFDC6281596E"
+    },
+    {
+      "id": "sid-FA58EC50-9354-4544-B012-852A24168B80",
+      "sourceRef": "sid-02AC08D8-F782-4595-93D7-39C16DF0FB74",
+      "targetRef": "sid-C65E8E8E-9C8B-4127-BE17-ECC0197F8E57"
+    },
+    {
+      "id": "sid-681ED5EA-A0B2-43C0-AEA9-103604F3F4EA",
+      "sourceRef": "sid-2B7266EE-0099-4636-9EEF-F4CCA6C05261",
+      "targetRef": "sid-A83CDD9A-C3BE-409A-B644-9E37982EFF2A"
+    },
+    {
+      "id": "sid-1DA98E00-ED47-4BEA-AC74-CC23930DC5D3",
+      "sourceRef": "sid-AFB4A12B-F254-411D-8F8D-BD54CD88BE6C",
+      "targetRef": "sid-48C285EA-FDF2-4D10-8209-EA3844F3793D"
+    },
+    {
+      "id": "sid-192A00D1-FC4E-4865-9F18-E0CDDF228B84",
+      "sourceRef": "sid-48C285EA-FDF2-4D10-8209-EA3844F3793D",
+      "targetRef": "sid-8285762D-3750-4634-AF22-B34EC090B7EB"
+    },
+    {
+      "id": "sid-FE24912E-AD9B-4DE5-8527-F6198B9E5B87",
+      "sourceRef": "sid-C65E8E8E-9C8B-4127-BE17-ECC0197F8E57",
+      "targetRef": "sid-6B162260-66B4-41EF-ADD5-A676B1CE0554"
+    },
+    {
+      "id": "sid-E8773610-3231-4127-B3C0-61CCB289D283",
+      "sourceRef": "sid-6B162260-66B4-41EF-ADD5-A676B1CE0554",
+      "targetRef": "sid-2B7266EE-0099-4636-9EEF-F4CCA6C05261"
+    },
+    {
+      "id": "sid-D330CAFD-FF1D-459C-926D-134E78F7F344",
+      "sourceRef": "sid-0C8F9A68-6DE8-4C47-9BA7-1599759ED246",
+      "targetRef": "sid-805D7AD1-FFFB-4E34-9A36-4C3879FB9586",
+      "condition": "Burger only"
+    },
+    {
+      "id": "sid-DDEF2854-039D-452D-804D-D20FD158A312",
+      "sourceRef": "sid-EC0F81FA-389C-4080-9DBB-FFDC6281596E",
+      "targetRef": "sid-AFB4A12B-F254-411D-8F8D-BD54CD88BE6C",
+      "condition": "No"
+    },
+    {
+      "id": "sid-E9A31676-3897-4654-A8A9-C1AF06C6BD34",
+      "sourceRef": "sid-EC0F81FA-389C-4080-9DBB-FFDC6281596E",
+      "targetRef": "sid-C65E8E8E-9C8B-4127-BE17-ECC0197F8E57",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-5BA887A6-D4BE-4D41-99F4-3A8E819825E4",
+      "sourceRef": "sid-C81F4094-FD4B-45B2-A9C3-EA29EFB62E83",
+      "targetRef": "sid-02AC08D8-F782-4595-93D7-39C16DF0FB74"
+    },
+    {
+      "id": "sid-1B094D11-19E8-4F39-9B6F-12BD559F8915",
+      "sourceRef": "sid-1B7D300B-5A7D-42CA-AF57-A12482283B9E",
+      "targetRef": "sid-7D8BE8F3-4F36-44BA-9971-CA63D10A701D"
+    },
+    {
+      "id": "sid-2591D5E8-DD50-4A5A-BD46-AADD002B22A2",
+      "sourceRef": "sid-7D8BE8F3-4F36-44BA-9971-CA63D10A701D",
+      "targetRef": "sid-C81F4094-FD4B-45B2-A9C3-EA29EFB62E83"
+    },
+    {
+      "id": "sid-6F6B424F-BFBE-448A-A7F4-833E1E67FF67",
+      "sourceRef": "sid-DE357633-2C48-4F8D-84B2-BF2268619608",
+      "targetRef": "sid-1B7D300B-5A7D-42CA-AF57-A12482283B9E"
+    }
+  ],
+  "messageFlows": []
+}

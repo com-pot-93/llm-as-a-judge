@@ -1,0 +1,306 @@
+{
+  "tasks": [
+    {
+      "id": "sid-2244F332-420C-4474-A589-8D02950F1A1B",
+      "name": "The fridge produces strange noises",
+      "type": "task"
+    },
+    {
+      "id": "sid-652CF4AF-1F08-41B9-A340-DCD90FA00963",
+      "name": "The user hears the strange noises",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-085C297D-F956-49EA-9383-DEEA87753576",
+      "name": "The user describes the syptoms",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-647A2249-A578-44C0-8A9B-7569F836F601",
+      "name": "The user states the type of the fridge",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-97B8EA5C-E39A-4ABE-9026-3CDD654BDF45",
+      "name": "The user sends the information to the central fridge service",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-85362419-3BDB-4C72-BE4C-3C0516FB5158",
+      "name": "The central fridge service center receives the information",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-8E567356-D66B-4381-A8C3-C1EA0087C827",
+      "name": "The central fridge service selects a local service facility",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041",
+      "name": "The service facility makes an appointment through its own way of communication",
+      "type": "serviceTask",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-5A64D9B7-92CA-4793-B731-D9C5A4A38A5B",
+      "name": "The service facility arrive at a random time",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-9CA8DA6D-BA36-4E76-9BD7-F9972D50AD6C",
+      "name": "The service facility start the repairing",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-1483D787-EE37-470E-B420-937A6DA8F2AA",
+      "name": "The service facility fixes the fridge",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A4C85668-60D8-4CDD-94B5-90E06451B142",
+      "name": "The customer checks the fridge",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-0B8F090C-F531-46E7-A345-CA6261626ABA",
+      "name": "The customer confirms to the service facility that the repairing is okay",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-2EDC736C-CCDC-487B-8B94-B201D6C6A53D",
+      "name": "The customer states asks for a new appointment",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-9E47ADF9-5C82-4F01-A5C7-076DD5E5F75E",
+      "name": "The user can rate the service facility",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-950CEC1F-D82C-4F9A-B731-ED09766E2649",
+      "name": "The service facility can view the rating",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-6A35C978-C9E1-4C45-8A48-D4FF1EDB3BED",
+      "name": "The service facility did not fix the frigde",
+      "type": "task"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-2B124BAE-03D7-4669-AA02-F8E5F06D5401",
+      "name": "Start",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-C31CCB88-8F2F-4036-825D-BF62D3BCB20B",
+      "name": "End without rating",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-FB28432F-D406-4177-AF31-A0214A34348E",
+      "name": "End with rating",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-E166BF23-5F42-4B53-A4E0-C590918DDA3E",
+      "name": "The service facility waits for the parts in order to fix the fridge",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-CBBF088C-4700-4E23-818A-46942357F872",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-23DC2F96-17FA-4443-8510-9C4EA2A3844F",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-F53F9CA4-14E7-463E-834D-CFD13CBF1EAE",
+      "type": "exclusiveGateway",
+      "name": "Availability of customer"
+    },
+    {
+      "id": "sid-368D99AA-8AF1-40D2-BD9B-B4D040E2ED16",
+      "type": "exclusiveGateway",
+      "name": "Fixing of fridge with needed parts"
+    },
+    {
+      "id": "sid-F0CAAD2B-6E02-4C37-BB3A-6D905839E992",
+      "type": "exclusiveGateway",
+      "name": "Confirmation about the working of the fridge"
+    },
+    {
+      "id": "sid-DC9E7091-329B-4C61-BCA4-A636EF1AB460",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-892B3E57-6C08-4F46-9B18-B7B1179187B4",
+      "sourceRef": "sid-2B124BAE-03D7-4669-AA02-F8E5F06D5401",
+      "targetRef": "sid-2244F332-420C-4474-A589-8D02950F1A1B"
+    },
+    {
+      "id": "sid-4764E9F2-D568-4D76-85B5-1DD6B627040C",
+      "sourceRef": "sid-2244F332-420C-4474-A589-8D02950F1A1B",
+      "targetRef": "sid-652CF4AF-1F08-41B9-A340-DCD90FA00963"
+    },
+    {
+      "id": "sid-58170328-72EB-4D97-8BA9-3F8A7D68BACA",
+      "sourceRef": "sid-652CF4AF-1F08-41B9-A340-DCD90FA00963",
+      "targetRef": "sid-CBBF088C-4700-4E23-818A-46942357F872"
+    },
+    {
+      "id": "sid-5017A02E-B577-4414-AC86-F56E30ADAFBF",
+      "sourceRef": "sid-CBBF088C-4700-4E23-818A-46942357F872",
+      "targetRef": "sid-085C297D-F956-49EA-9383-DEEA87753576"
+    },
+    {
+      "id": "sid-48663157-1753-4A0F-8476-B92ACFE08F8C",
+      "sourceRef": "sid-CBBF088C-4700-4E23-818A-46942357F872",
+      "targetRef": "sid-647A2249-A578-44C0-8A9B-7569F836F601"
+    },
+    {
+      "id": "sid-6525CC2E-8435-434D-92B7-C8A8A745307D",
+      "sourceRef": "sid-085C297D-F956-49EA-9383-DEEA87753576",
+      "targetRef": "sid-23DC2F96-17FA-4443-8510-9C4EA2A3844F"
+    },
+    {
+      "id": "sid-DAF235D1-D31F-4228-BDC7-A665586DA59B",
+      "sourceRef": "sid-647A2249-A578-44C0-8A9B-7569F836F601",
+      "targetRef": "sid-23DC2F96-17FA-4443-8510-9C4EA2A3844F"
+    },
+    {
+      "id": "sid-C7B72EAF-90D8-4065-A0FD-77A693D97DB7",
+      "sourceRef": "sid-97B8EA5C-E39A-4ABE-9026-3CDD654BDF45",
+      "targetRef": "sid-85362419-3BDB-4C72-BE4C-3C0516FB5158"
+    },
+    {
+      "id": "sid-FEA4D9E7-C45D-40E3-9DF3-8E9697EAE5EC",
+      "sourceRef": "sid-85362419-3BDB-4C72-BE4C-3C0516FB5158",
+      "targetRef": "sid-8E567356-D66B-4381-A8C3-C1EA0087C827"
+    },
+    {
+      "id": "sid-F55A11CD-AD4E-4DEC-880E-FF357F4F354C",
+      "sourceRef": "sid-8E567356-D66B-4381-A8C3-C1EA0087C827",
+      "targetRef": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041"
+    },
+    {
+      "id": "sid-BE06F296-0F34-40C9-A506-5E32E938B823",
+      "sourceRef": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041",
+      "targetRef": "sid-5A64D9B7-92CA-4793-B731-D9C5A4A38A5B"
+    },
+    {
+      "id": "sid-151DCD12-C885-4DE4-91A6-851E00FFA193",
+      "sourceRef": "sid-5A64D9B7-92CA-4793-B731-D9C5A4A38A5B",
+      "targetRef": "sid-F53F9CA4-14E7-463E-834D-CFD13CBF1EAE"
+    },
+    {
+      "id": "sid-4A0346A4-6643-4C00-A345-FF2E6CD9E7E1",
+      "sourceRef": "sid-F53F9CA4-14E7-463E-834D-CFD13CBF1EAE",
+      "targetRef": "sid-9CA8DA6D-BA36-4E76-9BD7-F9972D50AD6C",
+      "condition": "Customer home"
+    },
+    {
+      "id": "sid-7B37818F-364D-4339-897F-109CBD81EA28",
+      "sourceRef": "sid-F53F9CA4-14E7-463E-834D-CFD13CBF1EAE",
+      "targetRef": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041",
+      "condition": "Customer not at home"
+    },
+    {
+      "id": "sid-388839C7-F098-4C70-B185-35A0E7011492",
+      "sourceRef": "sid-9CA8DA6D-BA36-4E76-9BD7-F9972D50AD6C",
+      "targetRef": "sid-368D99AA-8AF1-40D2-BD9B-B4D040E2ED16"
+    },
+    {
+      "id": "sid-69DC9632-7D6A-4A88-8451-F4AFDDD88538",
+      "sourceRef": "sid-23DC2F96-17FA-4443-8510-9C4EA2A3844F",
+      "targetRef": "sid-97B8EA5C-E39A-4ABE-9026-3CDD654BDF45"
+    },
+    {
+      "id": "sid-73C1402D-A47D-47CC-BB5E-2B6B609D29C6",
+      "sourceRef": "sid-368D99AA-8AF1-40D2-BD9B-B4D040E2ED16",
+      "targetRef": "sid-1483D787-EE37-470E-B420-937A6DA8F2AA",
+      "condition": "Parts are available"
+    },
+    {
+      "id": "sid-86D33A6D-C598-4707-B550-4D4AF506487B",
+      "sourceRef": "sid-1483D787-EE37-470E-B420-937A6DA8F2AA",
+      "targetRef": "sid-A4C85668-60D8-4CDD-94B5-90E06451B142"
+    },
+    {
+      "id": "sid-3E055271-1D8A-43E2-A403-48A83847B8E7",
+      "sourceRef": "sid-A4C85668-60D8-4CDD-94B5-90E06451B142",
+      "targetRef": "sid-F0CAAD2B-6E02-4C37-BB3A-6D905839E992"
+    },
+    {
+      "id": "sid-91263C06-E594-49DC-8B81-FEA67D3E97A3",
+      "sourceRef": "sid-F0CAAD2B-6E02-4C37-BB3A-6D905839E992",
+      "targetRef": "sid-0B8F090C-F531-46E7-A345-CA6261626ABA",
+      "condition": "The fridge is repaired"
+    },
+    {
+      "id": "sid-F3B4C684-4A7E-4C2C-8941-D19B8290E507",
+      "sourceRef": "sid-2EDC736C-CCDC-487B-8B94-B201D6C6A53D",
+      "targetRef": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041"
+    },
+    {
+      "id": "sid-66C65FC3-61F5-4A8A-A191-082231093F26",
+      "sourceRef": "sid-F0CAAD2B-6E02-4C37-BB3A-6D905839E992",
+      "targetRef": "sid-2EDC736C-CCDC-487B-8B94-B201D6C6A53D",
+      "condition": "The fridge is not repaired"
+    },
+    {
+      "id": "sid-A7CFA008-6824-4432-9068-797DAA739142",
+      "sourceRef": "sid-0B8F090C-F531-46E7-A345-CA6261626ABA",
+      "targetRef": "sid-9E47ADF9-5C82-4F01-A5C7-076DD5E5F75E"
+    },
+    {
+      "id": "sid-B056DA65-A7FE-453D-BAE6-7329ED9DBAD0",
+      "sourceRef": "sid-9E47ADF9-5C82-4F01-A5C7-076DD5E5F75E",
+      "targetRef": "sid-DC9E7091-329B-4C61-BCA4-A636EF1AB460"
+    },
+    {
+      "id": "sid-6D0ABF04-CC2E-4AF9-8AE0-C2724F0EF8E7",
+      "sourceRef": "sid-DC9E7091-329B-4C61-BCA4-A636EF1AB460",
+      "targetRef": "sid-950CEC1F-D82C-4F9A-B731-ED09766E2649",
+      "condition": "Leaving a rating"
+    },
+    {
+      "id": "sid-B828A1A6-C3E3-48C4-B589-351F622C8C9A",
+      "sourceRef": "sid-368D99AA-8AF1-40D2-BD9B-B4D040E2ED16",
+      "targetRef": "sid-6A35C978-C9E1-4C45-8A48-D4FF1EDB3BED",
+      "condition": "Need additional parts"
+    },
+    {
+      "id": "sid-335B2E95-0B33-41EC-B7BD-376F29AA4955",
+      "sourceRef": "sid-DC9E7091-329B-4C61-BCA4-A636EF1AB460",
+      "targetRef": "sid-C31CCB88-8F2F-4036-825D-BF62D3BCB20B",
+      "condition": "Not leaving a rating"
+    },
+    {
+      "id": "sid-0BED27B1-2296-4493-B3DA-C9A0E627F22D",
+      "sourceRef": "sid-950CEC1F-D82C-4F9A-B731-ED09766E2649",
+      "targetRef": "sid-FB28432F-D406-4177-AF31-A0214A34348E"
+    },
+    {
+      "id": "sid-E0052C6D-1AD0-4E87-98BF-3A905B06DF39",
+      "sourceRef": "sid-6A35C978-C9E1-4C45-8A48-D4FF1EDB3BED",
+      "targetRef": "sid-E166BF23-5F42-4B53-A4E0-C590918DDA3E"
+    },
+    {
+      "id": "sid-144FDA19-CFD1-4C00-9C32-DAAC9AA1440E",
+      "sourceRef": "sid-E166BF23-5F42-4B53-A4E0-C590918DDA3E",
+      "targetRef": "sid-7A8E9CFB-C871-49D1-9786-6DEACD0C1041"
+    }
+  ],
+  "messageFlows": []
+}

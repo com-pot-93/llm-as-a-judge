@@ -1,0 +1,185 @@
+{
+  "tasks": [
+    {
+      "id": "sid-5991E434-B7BE-472A-92B0-E5F86D92793D",
+      "name": "Order certain Lego brick sets",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-3F5FD5D1-446C-4A8B-903E-81015A565A8B",
+      "name": "Give the sets to a group of children",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-264B3FD5-9DA7-4AA7-90F0-FDF0ECE9DBD8",
+      "name": "Children sort sets in the containers",
+      "type": "userTask",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-83FF1A96-52E9-4380-BA17-1E4049ABFB54",
+      "name": "Building components from the sorted containers",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-C8DB76D0-9D01-4D06-AA7F-54B9139CF970",
+      "name": "Reorder individual parts",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A98BFB4A-8B9B-4D07-8E53-F9717D275630",
+      "name": "Each test is successful",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-7D6E3AB6-6671-4E93-8FCB-E88B8B02BED7",
+      "name": "Not each test is successful",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-F3059E24-DCBF-49B3-8503-B79D3A59FC39",
+      "name": "Redesign sub components",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-D68A32E2-3F4D-48A9-911A-A96A1EAA67B8",
+      "name": "Rebuild sub components",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-D94CD599-A8D4-4C0F-A730-7C290001B505",
+      "name": "The sub components are builded",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-C8E5A29A-0857-425A-91E6-897BA3950D0C",
+      "name": "Develop the basic design",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-E87A8D13-6237-47BF-83A1-58A6051F6A8B",
+      "name": "Subcomponents are assembled",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-9AE5DC53-535B-4B5B-BB6F-7B89EED2FC93",
+      "type": "exclusiveGateway",
+      "name": "Are there more parts in the container"
+    },
+    {
+      "id": "sid-856E8593-5A7C-4C47-B1F9-C859238689F4",
+      "type": "exclusiveGateway",
+      "name": "Is each subcomponent test successful"
+    },
+    {
+      "id": "sid-DD14269A-935D-4187-AE16-5E0FDDA47A68",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-07925261-614C-4E72-9BAF-A330424CF4DF",
+      "type": "parallelGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-4B2DC82D-7100-4222-857F-ECE626EDE6B0",
+      "sourceRef": "sid-5991E434-B7BE-472A-92B0-E5F86D92793D",
+      "targetRef": "sid-3F5FD5D1-446C-4A8B-903E-81015A565A8B"
+    },
+    {
+      "id": "sid-D3B8751E-F75D-4B46-B3BC-FABCEDB82C21",
+      "sourceRef": "sid-3F5FD5D1-446C-4A8B-903E-81015A565A8B",
+      "targetRef": "sid-264B3FD5-9DA7-4AA7-90F0-FDF0ECE9DBD8"
+    },
+    {
+      "id": "sid-C4B1EAFE-853E-4496-BC70-BC2DDC3B2B22",
+      "sourceRef": "sid-264B3FD5-9DA7-4AA7-90F0-FDF0ECE9DBD8",
+      "targetRef": "sid-83FF1A96-52E9-4380-BA17-1E4049ABFB54"
+    },
+    {
+      "id": "sid-EF5F6504-1943-4AB5-940A-9311B0C74062",
+      "sourceRef": "sid-83FF1A96-52E9-4380-BA17-1E4049ABFB54",
+      "targetRef": "sid-9AE5DC53-535B-4B5B-BB6F-7B89EED2FC93"
+    },
+    {
+      "id": "sid-4FB8A0CB-A39B-46A0-A57B-39126570BCD5",
+      "sourceRef": "sid-A98BFB4A-8B9B-4D07-8E53-F9717D275630",
+      "targetRef": "sid-E87A8D13-6237-47BF-83A1-58A6051F6A8B"
+    },
+    {
+      "id": "sid-284ECE4A-F702-4E24-9132-3F8AFF725521",
+      "sourceRef": "sid-7D6E3AB6-6671-4E93-8FCB-E88B8B02BED7",
+      "targetRef": "sid-DD14269A-935D-4187-AE16-5E0FDDA47A68"
+    },
+    {
+      "id": "sid-DCB4AEDC-EE15-4E59-9241-406B99F2633A",
+      "sourceRef": "sid-DD14269A-935D-4187-AE16-5E0FDDA47A68",
+      "targetRef": "sid-F3059E24-DCBF-49B3-8503-B79D3A59FC39"
+    },
+    {
+      "id": "sid-C8D4CC61-5F9E-4B2D-8421-5DD0A25FD17D",
+      "sourceRef": "sid-F3059E24-DCBF-49B3-8503-B79D3A59FC39",
+      "targetRef": "sid-07925261-614C-4E72-9BAF-A330424CF4DF"
+    },
+    {
+      "id": "sid-3DD265B5-522D-4E08-9526-F4021EF68D57",
+      "sourceRef": "sid-D68A32E2-3F4D-48A9-911A-A96A1EAA67B8",
+      "targetRef": "sid-07925261-614C-4E72-9BAF-A330424CF4DF"
+    },
+    {
+      "id": "sid-FF243331-6171-4CC2-BB4E-4FE3C850E7B7",
+      "sourceRef": "sid-C8E5A29A-0857-425A-91E6-897BA3950D0C",
+      "targetRef": "sid-5991E434-B7BE-472A-92B0-E5F86D92793D"
+    },
+    {
+      "id": "sid-0709C003-A292-40C6-AE06-875C34E37F1F",
+      "sourceRef": "sid-9AE5DC53-535B-4B5B-BB6F-7B89EED2FC93",
+      "targetRef": "sid-C8DB76D0-9D01-4D06-AA7F-54B9139CF970",
+      "condition": "No"
+    },
+    {
+      "id": "sid-46156341-BA42-4987-8EF4-04238F1C515D",
+      "sourceRef": "sid-856E8593-5A7C-4C47-B1F9-C859238689F4",
+      "targetRef": "sid-A98BFB4A-8B9B-4D07-8E53-F9717D275630",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-FD1AF1A1-47A6-40E8-A299-EB295D99A18F",
+      "sourceRef": "sid-856E8593-5A7C-4C47-B1F9-C859238689F4",
+      "targetRef": "sid-7D6E3AB6-6671-4E93-8FCB-E88B8B02BED7",
+      "condition": "No"
+    },
+    {
+      "id": "sid-C3987D76-19D4-42D8-A72B-88410F16190F",
+      "sourceRef": "sid-D94CD599-A8D4-4C0F-A730-7C290001B505",
+      "targetRef": "sid-856E8593-5A7C-4C47-B1F9-C859238689F4"
+    },
+    {
+      "id": "sid-8899464E-672C-4227-9812-781685AA28F5",
+      "sourceRef": "sid-DD14269A-935D-4187-AE16-5E0FDDA47A68",
+      "targetRef": "sid-D68A32E2-3F4D-48A9-911A-A96A1EAA67B8"
+    },
+    {
+      "id": "sid-90F5DD4F-BC86-449B-A124-AF818A3A0571",
+      "sourceRef": "sid-9AE5DC53-535B-4B5B-BB6F-7B89EED2FC93",
+      "targetRef": "sid-D94CD599-A8D4-4C0F-A730-7C290001B505",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-0A8443CF-FB47-4B18-BAA8-F5702FD77E6C",
+      "sourceRef": "sid-C8DB76D0-9D01-4D06-AA7F-54B9139CF970",
+      "targetRef": "sid-D94CD599-A8D4-4C0F-A730-7C290001B505"
+    },
+    {
+      "id": "sid-EEEEBB30-7DCD-416A-8F85-07C66EEA48B6",
+      "sourceRef": "sid-07925261-614C-4E72-9BAF-A330424CF4DF",
+      "targetRef": "sid-856E8593-5A7C-4C47-B1F9-C859238689F4"
+    }
+  ],
+  "messageFlows": []
+}
