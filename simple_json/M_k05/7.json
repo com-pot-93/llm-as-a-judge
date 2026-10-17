@@ -1,0 +1,226 @@
+{
+  "tasks": [
+    {
+      "id": "sid-8A45EFE7-C070-43FC-9072-8E4F5793C9AD",
+      "name": "Collect requirements",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-931F8769-05AC-4462-B5BB-A7BE4E865509",
+      "name": "Send the requirements to a tree house architect",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-B72268AB-36E0-4F08-9BE6-961126B747D3",
+      "name": "Get back a draft",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-C83BCAE9-E978-4F4C-BA29-6F0E38201ABA",
+      "name": "Refine requirements",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-4F25FDC7-5816-43BE-AC9D-CA32FA23F402",
+      "name": "Create list of materials",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-C9892B35-AC39-4CD2-9450-B6D90F475A14",
+      "name": "Categorize materials",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-03E6B478-6867-4DAF-A0A5-858785C9EB17",
+      "name": "Send order to different stores depending on the category",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-E388D431-0A42-4171-80CA-D49878F9AA58",
+      "name": "Order is processing",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-AD184D4C-2A18-4747-A73B-0B0BDC5852D4",
+      "name": "Send messages to several friends to build a house",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-6F8DE5B5-E224-401D-8C8C-F4C730A97B09",
+      "name": "Build the house",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-6CCAD9B1-25A1-4775-91E0-30F0EF6A0888",
+      "name": "Send invitation for tree house party to friends",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-ECD4FD74-327B-4420-8E95-66A0B9363087",
+      "name": "Create list of people who are coming",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-ADBC6964-871F-4674-B8D5-DD5DC986EB2E",
+      "name": "Buy snacks",
+      "type": "manualTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-0AD97941-BF7F-44E2-82B9-97068932F809",
+      "name": "Want to build a treehouse",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-137C8FC6-343E-4776-AF32-B9DC8B8E1609",
+      "name": "Treehouse creation complete",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-2A7B94CF-372E-4216-BA3A-BEB40F4142F8",
+      "name": "Materials arrived",
+      "type": "intermediateThrowEvent"
+    },
+    {
+      "id": "sid-D1EF1153-DEFB-455D-BB11-BD5F4A0DD60D",
+      "name": "House is built",
+      "type": "intermediateThrowEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-1E21CE44-5D9F-459C-80B6-17F6FE1902B2",
+      "type": "exclusiveGateway",
+      "name": "Good enough"
+    },
+    {
+      "id": "sid-C4F40522-4580-4373-8EDE-083F5C51EEE8",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-52C1F680-F9AC-425C-BFB7-A66376014847",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-B7107DC1-4FA9-45A9-90C6-5361B1549048",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-F6F1D7CA-DDEB-4783-BD20-34F0F800708C",
+      "sourceRef": "sid-0AD97941-BF7F-44E2-82B9-97068932F809",
+      "targetRef": "sid-8A45EFE7-C070-43FC-9072-8E4F5793C9AD"
+    },
+    {
+      "id": "sid-1E84310E-5C87-4130-BCA1-F134270106C4",
+      "sourceRef": "sid-B72268AB-36E0-4F08-9BE6-961126B747D3",
+      "targetRef": "sid-1E21CE44-5D9F-459C-80B6-17F6FE1902B2"
+    },
+    {
+      "id": "sid-83E51A7E-D156-4A73-AC43-64DB665B5F65",
+      "sourceRef": "sid-1E21CE44-5D9F-459C-80B6-17F6FE1902B2",
+      "targetRef": "sid-4F25FDC7-5816-43BE-AC9D-CA32FA23F402",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-7874E29A-505B-4172-8D40-362DC930B0DF",
+      "sourceRef": "sid-4F25FDC7-5816-43BE-AC9D-CA32FA23F402",
+      "targetRef": "sid-C9892B35-AC39-4CD2-9450-B6D90F475A14"
+    },
+    {
+      "id": "sid-E2E4463C-563A-4F17-AA12-595B90C3CE03",
+      "sourceRef": "sid-C9892B35-AC39-4CD2-9450-B6D90F475A14",
+      "targetRef": "sid-03E6B478-6867-4DAF-A0A5-858785C9EB17"
+    },
+    {
+      "id": "sid-072C7725-B28E-49FE-AD8C-DAE8101026A3",
+      "sourceRef": "sid-03E6B478-6867-4DAF-A0A5-858785C9EB17",
+      "targetRef": "sid-C4F40522-4580-4373-8EDE-083F5C51EEE8"
+    },
+    {
+      "id": "sid-BA7A0C9B-F9E1-4715-A26E-15ECC5A9D71A",
+      "sourceRef": "sid-6CCAD9B1-25A1-4775-91E0-30F0EF6A0888",
+      "targetRef": "sid-ECD4FD74-327B-4420-8E95-66A0B9363087"
+    },
+    {
+      "id": "sid-C047A087-65A8-498C-9030-3797154D9288",
+      "sourceRef": "sid-ECD4FD74-327B-4420-8E95-66A0B9363087",
+      "targetRef": "sid-ADBC6964-871F-4674-B8D5-DD5DC986EB2E"
+    },
+    {
+      "id": "sid-51C8D074-FD56-486C-B818-6BE9C0CD3579",
+      "sourceRef": "sid-ADBC6964-871F-4674-B8D5-DD5DC986EB2E",
+      "targetRef": "sid-137C8FC6-343E-4776-AF32-B9DC8B8E1609"
+    },
+    {
+      "id": "sid-3B39B243-FF2C-4720-8505-4F44D1721216",
+      "sourceRef": "sid-E388D431-0A42-4171-80CA-D49878F9AA58",
+      "targetRef": "sid-52C1F680-F9AC-425C-BFB7-A66376014847"
+    },
+    {
+      "id": "sid-91C4CCD1-D753-412B-BDAD-34B92C52B8AC",
+      "sourceRef": "sid-AD184D4C-2A18-4747-A73B-0B0BDC5852D4",
+      "targetRef": "sid-52C1F680-F9AC-425C-BFB7-A66376014847"
+    },
+    {
+      "id": "sid-8326CC36-3C3C-4D7D-91CF-A7192A97D4B7",
+      "sourceRef": "sid-2A7B94CF-372E-4216-BA3A-BEB40F4142F8",
+      "targetRef": "sid-6F8DE5B5-E224-401D-8C8C-F4C730A97B09"
+    },
+    {
+      "id": "sid-18CA7906-E97C-4392-93C3-3A4495FD597F",
+      "sourceRef": "sid-6F8DE5B5-E224-401D-8C8C-F4C730A97B09",
+      "targetRef": "sid-D1EF1153-DEFB-455D-BB11-BD5F4A0DD60D"
+    },
+    {
+      "id": "sid-90F91503-5150-4CE7-B19A-9E3E67F0AC4F",
+      "sourceRef": "sid-D1EF1153-DEFB-455D-BB11-BD5F4A0DD60D",
+      "targetRef": "sid-6CCAD9B1-25A1-4775-91E0-30F0EF6A0888"
+    },
+    {
+      "id": "sid-3BF5E7E1-D485-4A44-B657-BA665A79DAC5",
+      "sourceRef": "sid-52C1F680-F9AC-425C-BFB7-A66376014847",
+      "targetRef": "sid-2A7B94CF-372E-4216-BA3A-BEB40F4142F8"
+    },
+    {
+      "id": "sid-2B37D941-EEC7-4474-B6AC-E307E66E4840",
+      "sourceRef": "sid-8A45EFE7-C070-43FC-9072-8E4F5793C9AD",
+      "targetRef": "sid-B7107DC1-4FA9-45A9-90C6-5361B1549048"
+    },
+    {
+      "id": "sid-32121385-5EE8-4227-AEBA-FE6A7B927D50",
+      "sourceRef": "sid-B7107DC1-4FA9-45A9-90C6-5361B1549048",
+      "targetRef": "sid-931F8769-05AC-4462-B5BB-A7BE4E865509"
+    },
+    {
+      "id": "sid-1EE0E308-4F53-4009-B85C-76B40BE43834",
+      "sourceRef": "sid-931F8769-05AC-4462-B5BB-A7BE4E865509",
+      "targetRef": "sid-B72268AB-36E0-4F08-9BE6-961126B747D3"
+    },
+    {
+      "id": "sid-B470E361-8AF1-4092-B487-67F73DBF71F8",
+      "sourceRef": "sid-C83BCAE9-E978-4F4C-BA29-6F0E38201ABA",
+      "targetRef": "sid-B7107DC1-4FA9-45A9-90C6-5361B1549048"
+    },
+    {
+      "id": "sid-ABF66DD4-5E75-45EF-96F2-5F66CD36D402",
+      "sourceRef": "sid-1E21CE44-5D9F-459C-80B6-17F6FE1902B2",
+      "targetRef": "sid-C83BCAE9-E978-4F4C-BA29-6F0E38201ABA",
+      "condition": "No"
+    },
+    {
+      "id": "sid-6E7AAB4D-0507-44F2-993E-E05A12E76067",
+      "sourceRef": "sid-C4F40522-4580-4373-8EDE-083F5C51EEE8",
+      "targetRef": "sid-E388D431-0A42-4171-80CA-D49878F9AA58"
+    },
+    {
+      "id": "sid-093E3110-7A46-47C1-89CD-0B38CB714DEB",
+      "sourceRef": "sid-C4F40522-4580-4373-8EDE-083F5C51EEE8",
+      "targetRef": "sid-AD184D4C-2A18-4747-A73B-0B0BDC5852D4"
+    }
+  ],
+  "messageFlows": []
+}

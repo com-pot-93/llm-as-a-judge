@@ -1,0 +1,373 @@
+{
+  "tasks": [
+    {
+      "id": "sid-6B7EF46C-3458-40E9-9F8F-3818CEBEBBD6",
+      "name": "Receive order",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-3B92A5A9-DBB7-433F-A602-668C237F877E",
+      "name": "Ask if burger only or menu",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-E4B74FD1-4769-41F8-BCE1-C330550BFBB9",
+      "name": "Recieve answer",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-197D60F3-0346-4BEF-8834-D7EE7DFC2804",
+      "name": "Choose the ordered drink",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-8F0CC949-F6D6-433D-9921-5EEDD26B757E",
+      "name": "Pour medium drink",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-AFABB9C2-1856-49FC-95CB-66C950E5AE94",
+      "name": "Pour large drink",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-0742812C-1906-4E81-B056-298535D7B6D3",
+      "name": "Ask if fries or wedges and which size",
+      "type": "sendTask"
+    },
+    {
+      "id": "sid-059C2BC7-2BA3-4E09-AC5E-90ED54D07C47",
+      "name": "Receive decision",
+      "type": "receiveTask"
+    },
+    {
+      "id": "sid-721C6861-04CF-4D4A-B21C-FD58B94AAB3C",
+      "name": "Place drink on conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-DD105BBF-6FC7-4842-A354-A9B9228DA3F1",
+      "name": "Make medium fries",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-A119A906-FDA2-44E4-AC9D-F44FD8374F2D",
+      "name": "Prepare burger",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-33A94C87-B786-47BF-9EE7-6D98701F4086",
+      "name": "Make large fries",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-D089654A-D413-4D3C-89FE-25F48AB98B6E",
+      "name": "Make medium wedges",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-AFDA0BE2-539B-4254-B51D-8172DCCF75BB",
+      "name": "Make large wedges",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-C1A056AA-83C7-47B9-815A-4BC1DC1A232D",
+      "name": "Give enthusiastic status updates",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-5DB926E1-F3B0-405C-A52E-BD5079DCF7BF",
+      "name": "Put burger down on the conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-37F3E48C-BCF6-4215-B56F-DE5C5DAB8F3C",
+      "name": "Place side dish on conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-F76D55A1-6925-4C38-8710-8362A3FD7CF0",
+      "name": "Roll the conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-EDA2473B-4B07-4A1F-A749-3D0980572E92",
+      "name": "Customer takes the order",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-FD45B596-3EA9-4126-B86D-7EDDCE42363E",
+      "name": "Give thanks to costumer",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1F3FED19-4612-4DE2-BFA2-37E4AB19584F",
+      "name": "Customer makes decision",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-486E8D36-A0E5-4D43-8DA2-3DE78E218FAA",
+      "name": "Customer makes order",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-5FF1F6D0-2149-4D08-8E38-C97943797085",
+      "name": "",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-6543CBD0-6D55-4451-A974-6983CF128E1A",
+      "name": "30 sec",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-27294924-3D99-468E-9CAD-63CF27A6BD14",
+      "name": "",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-32ABF27A-F29C-4BD9-8C07-895F11618636",
+      "type": "exclusiveGateway",
+      "name": "Burger only or menu"
+    },
+    {
+      "id": "sid-BF8E2415-921C-49A0-BA3E-25607B7D3093",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-38BF843E-F9A6-44AC-9888-1BCD0991B9A4",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-B2F78AB8-D5C4-480A-B5DC-1FF29C85FF22",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-3539B7AA-CCFD-44F6-A42A-109A634E65B6",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-36608A71-E43B-41D6-92B4-497C4492B1A4",
+      "type": "exclusiveGateway",
+      "name": "Is the burger finished"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-249AFEFD-BBDA-4326-A987-9B2FEA1FD0FA",
+      "sourceRef": "sid-32ABF27A-F29C-4BD9-8C07-895F11618636",
+      "targetRef": "sid-197D60F3-0346-4BEF-8834-D7EE7DFC2804",
+      "condition": "menu"
+    },
+    {
+      "id": "sid-FADDDA1A-AA6C-46C4-8ABC-420E247B44E7",
+      "sourceRef": "sid-BF8E2415-921C-49A0-BA3E-25607B7D3093",
+      "targetRef": "sid-AFABB9C2-1856-49FC-95CB-66C950E5AE94"
+    },
+    {
+      "id": "sid-AB713832-4DF9-484F-BC58-458B97121ED8",
+      "sourceRef": "sid-AFABB9C2-1856-49FC-95CB-66C950E5AE94",
+      "targetRef": "sid-38BF843E-F9A6-44AC-9888-1BCD0991B9A4"
+    },
+    {
+      "id": "sid-E62553A8-2946-4923-B41E-F18653FC5393",
+      "sourceRef": "sid-8F0CC949-F6D6-433D-9921-5EEDD26B757E",
+      "targetRef": "sid-38BF843E-F9A6-44AC-9888-1BCD0991B9A4"
+    },
+    {
+      "id": "sid-9FA5A6A5-98AB-4CF2-BBBA-4999A5E23A64",
+      "sourceRef": "sid-197D60F3-0346-4BEF-8834-D7EE7DFC2804",
+      "targetRef": "sid-B2F78AB8-D5C4-480A-B5DC-1FF29C85FF22"
+    },
+    {
+      "id": "sid-D220E725-C469-40B6-B604-08BABDD9AA99",
+      "sourceRef": "sid-B2F78AB8-D5C4-480A-B5DC-1FF29C85FF22",
+      "targetRef": "sid-BF8E2415-921C-49A0-BA3E-25607B7D3093"
+    },
+    {
+      "id": "sid-EB123763-F8CF-43C9-B420-BF78A400904E",
+      "sourceRef": "sid-B2F78AB8-D5C4-480A-B5DC-1FF29C85FF22",
+      "targetRef": "sid-0742812C-1906-4E81-B056-298535D7B6D3"
+    },
+    {
+      "id": "sid-C3AFE2CE-48EF-4644-AC4D-FC495B0729BA",
+      "sourceRef": "sid-6B7EF46C-3458-40E9-9F8F-3818CEBEBBD6",
+      "targetRef": "sid-3B92A5A9-DBB7-433F-A602-668C237F877E"
+    },
+    {
+      "id": "sid-F35F6D34-8D0C-4860-9029-E6E753C04FCD",
+      "sourceRef": "sid-3B92A5A9-DBB7-433F-A602-668C237F877E",
+      "targetRef": "sid-E4B74FD1-4769-41F8-BCE1-C330550BFBB9"
+    },
+    {
+      "id": "sid-A2461D91-5CC3-4D71-B4A8-5AF853573C07",
+      "sourceRef": "sid-E4B74FD1-4769-41F8-BCE1-C330550BFBB9",
+      "targetRef": "sid-32ABF27A-F29C-4BD9-8C07-895F11618636"
+    },
+    {
+      "id": "sid-114C66C1-70E5-4701-BADD-6456174ED439",
+      "sourceRef": "sid-38BF843E-F9A6-44AC-9888-1BCD0991B9A4",
+      "targetRef": "sid-721C6861-04CF-4D4A-B21C-FD58B94AAB3C"
+    },
+    {
+      "id": "sid-74CCE883-B1CD-468A-B073-F3A7E6DCC629",
+      "sourceRef": "sid-721C6861-04CF-4D4A-B21C-FD58B94AAB3C",
+      "targetRef": "sid-3539B7AA-CCFD-44F6-A42A-109A634E65B6"
+    },
+    {
+      "id": "sid-5EB7A7C6-2A2C-4F34-8708-029445E3C74A",
+      "sourceRef": "sid-059C2BC7-2BA3-4E09-AC5E-90ED54D07C47",
+      "targetRef": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B"
+    },
+    {
+      "id": "sid-E71378CA-FC82-42F2-80A4-CEDAA5A390FC",
+      "sourceRef": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B",
+      "targetRef": "sid-DD105BBF-6FC7-4842-A354-A9B9228DA3F1"
+    },
+    {
+      "id": "sid-9023441F-6F09-4BD7-AD2C-E0889A46C012",
+      "sourceRef": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B",
+      "targetRef": "sid-33A94C87-B786-47BF-9EE7-6D98701F4086"
+    },
+    {
+      "id": "sid-5E558CB3-FA09-4133-BCA3-7129333A678F",
+      "sourceRef": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B",
+      "targetRef": "sid-D089654A-D413-4D3C-89FE-25F48AB98B6E"
+    },
+    {
+      "id": "sid-9068FCA3-BC46-464B-90D2-3A7EEF0AC8B5",
+      "sourceRef": "sid-133E5C99-2A3B-4BA7-8F33-5CFF48C11B5B",
+      "targetRef": "sid-AFDA0BE2-539B-4254-B51D-8172DCCF75BB"
+    },
+    {
+      "id": "sid-EF635038-7E6D-4BE6-A3D2-C97D350B7F8D",
+      "sourceRef": "sid-DD105BBF-6FC7-4842-A354-A9B9228DA3F1",
+      "targetRef": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D"
+    },
+    {
+      "id": "sid-F65021EE-9652-4538-9ABA-944691E49739",
+      "sourceRef": "sid-33A94C87-B786-47BF-9EE7-6D98701F4086",
+      "targetRef": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D"
+    },
+    {
+      "id": "sid-FB5B66F1-A5AA-4ED1-B1FD-493040EB5DDA",
+      "sourceRef": "sid-D089654A-D413-4D3C-89FE-25F48AB98B6E",
+      "targetRef": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D"
+    },
+    {
+      "id": "sid-4C5D9CDD-DCE8-4234-8CC5-7BF57CB6A9CA",
+      "sourceRef": "sid-AFDA0BE2-539B-4254-B51D-8172DCCF75BB",
+      "targetRef": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D"
+    },
+    {
+      "id": "sid-73B3F9E3-C4F4-4B32-ABEE-90041AD75F6E",
+      "sourceRef": "sid-3539B7AA-CCFD-44F6-A42A-109A634E65B6",
+      "targetRef": "sid-A119A906-FDA2-44E4-AC9D-F44FD8374F2D"
+    },
+    {
+      "id": "sid-CA382A4A-2386-498D-97BE-26E884928D0B",
+      "sourceRef": "sid-32ABF27A-F29C-4BD9-8C07-895F11618636",
+      "targetRef": "sid-A119A906-FDA2-44E4-AC9D-F44FD8374F2D",
+      "condition": "burger only"
+    },
+    {
+      "id": "sid-CA483267-4545-4405-8C00-951B005D5184",
+      "sourceRef": "sid-36608A71-E43B-41D6-92B4-497C4492B1A4",
+      "targetRef": "sid-6543CBD0-6D55-4451-A974-6983CF128E1A",
+      "condition": "no"
+    },
+    {
+      "id": "sid-E23E4941-F446-486D-8068-6CEB96E908DC",
+      "sourceRef": "sid-76D5477B-EF6E-4273-AA17-4B3E892AD49D",
+      "targetRef": "sid-37F3E48C-BCF6-4215-B56F-DE5C5DAB8F3C"
+    },
+    {
+      "id": "sid-D3FB9F84-F7FF-424E-9B02-00E0378F18C3",
+      "sourceRef": "sid-37F3E48C-BCF6-4215-B56F-DE5C5DAB8F3C",
+      "targetRef": "sid-3539B7AA-CCFD-44F6-A42A-109A634E65B6"
+    },
+    {
+      "id": "sid-9BE6CC10-D642-4F5B-AD74-2B0C71C46153",
+      "sourceRef": "sid-36608A71-E43B-41D6-92B4-497C4492B1A4",
+      "targetRef": "sid-5DB926E1-F3B0-405C-A52E-BD5079DCF7BF",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-6DA949C9-1857-4E1A-B175-0B62B0B58750",
+      "sourceRef": "sid-A119A906-FDA2-44E4-AC9D-F44FD8374F2D",
+      "targetRef": "sid-36608A71-E43B-41D6-92B4-497C4492B1A4"
+    },
+    {
+      "id": "sid-1A3A9AC7-2A66-4B1D-93A1-BCCB28B54A62",
+      "sourceRef": "sid-6543CBD0-6D55-4451-A974-6983CF128E1A",
+      "targetRef": "sid-C1A056AA-83C7-47B9-815A-4BC1DC1A232D"
+    },
+    {
+      "id": "sid-CCE3DB77-D194-46F1-848D-A5A0AA3048CA",
+      "sourceRef": "sid-C1A056AA-83C7-47B9-815A-4BC1DC1A232D",
+      "targetRef": "sid-36608A71-E43B-41D6-92B4-497C4492B1A4"
+    },
+    {
+      "id": "sid-E50D3912-A086-4F6A-B75E-AD696F3EB28F",
+      "sourceRef": "sid-5DB926E1-F3B0-405C-A52E-BD5079DCF7BF",
+      "targetRef": "sid-F76D55A1-6925-4C38-8710-8362A3FD7CF0"
+    },
+    {
+      "id": "sid-1C4FE94D-9202-4FE6-B345-4A113A06F756",
+      "sourceRef": "sid-F76D55A1-6925-4C38-8710-8362A3FD7CF0",
+      "targetRef": "sid-EDA2473B-4B07-4A1F-A749-3D0980572E92"
+    },
+    {
+      "id": "sid-511F6ABA-5E5D-4106-AEBB-0816660D55E6",
+      "sourceRef": "sid-EDA2473B-4B07-4A1F-A749-3D0980572E92",
+      "targetRef": "sid-FD45B596-3EA9-4126-B86D-7EDDCE42363E"
+    },
+    {
+      "id": "sid-5DA87C6A-B05F-443E-8EF4-125D38C70966",
+      "sourceRef": "sid-FD45B596-3EA9-4126-B86D-7EDDCE42363E",
+      "targetRef": "sid-27294924-3D99-468E-9CAD-63CF27A6BD14"
+    },
+    {
+      "id": "sid-4693CF16-57D9-4AD6-B97D-BEC7EB5E5FEF",
+      "sourceRef": "sid-BF8E2415-921C-49A0-BA3E-25607B7D3093",
+      "targetRef": "sid-8F0CC949-F6D6-433D-9921-5EEDD26B757E"
+    },
+    {
+      "id": "sid-9D297813-9AF7-4CB2-9319-49AAB827241E",
+      "sourceRef": "sid-0742812C-1906-4E81-B056-298535D7B6D3",
+      "targetRef": "sid-1F3FED19-4612-4DE2-BFA2-37E4AB19584F"
+    },
+    {
+      "id": "sid-2F8136EB-3A36-4DD7-A594-111A288905AA",
+      "sourceRef": "sid-1F3FED19-4612-4DE2-BFA2-37E4AB19584F",
+      "targetRef": "sid-059C2BC7-2BA3-4E09-AC5E-90ED54D07C47"
+    },
+    {
+      "id": "sid-1D36A792-E25E-40EE-AF38-1421A3D40807",
+      "sourceRef": "sid-5FF1F6D0-2149-4D08-8E38-C97943797085",
+      "targetRef": "sid-486E8D36-A0E5-4D43-8DA2-3DE78E218FAA"
+    },
+    {
+      "id": "sid-28609289-4AF0-4EC2-8228-516253FDA1C4",
+      "sourceRef": "sid-486E8D36-A0E5-4D43-8DA2-3DE78E218FAA",
+      "targetRef": "sid-6B7EF46C-3458-40E9-9F8F-3818CEBEBBD6"
+    }
+  ],
+  "messageFlows": []
+}

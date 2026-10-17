@@ -1,0 +1,23 @@
+You are an expert in BPMN and business process similarity assessment. Evaluate the similarity between the following two process models using the principles of the Element-Based Similarity Metric (EBSM).
+
+**Model A:**
+{model_A}
+
+**Model B:**
+{model_B}
+
+Element-based Process Model Similarity:
+Follow these steps:
+1. **Categorize elements:** Group the elements of both models by type (e.g., tasks, events, and gateways).
+2. **Identify semantic matches:** For each element type, identify semantically similar elements across the two models, allowing for different labels with equivalent meanings. Each element can be matched at most once.
+3. **Calculate element-type similarity:** Estimate the Dice similarity for each element type as `D = 2M / (N_A + N_B)`, where `M` is the number of matched elements and `N_A` and `N_B` are the respective element counts.
+4. **Aggregate the scores:** Combine the element-type similarity scores, accounting for the harmonic mean of the model lengths as a weighting factor, following the EBSM principle.
+
+The score must be a number between 0 and 1. Do not include any additional text.
+
+Return only a valid JSON object with exactly this key:
+{
+  "element_based_similarity": <score>
+}
+
+Do not include any additional text.

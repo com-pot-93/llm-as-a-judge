@@ -1,0 +1,363 @@
+{
+  "tasks": [
+    {
+      "id": "sid-083B7B2F-B887-4E67-AEB1-A1B76F8C0A06",
+      "name": "compute parts list",
+      "type": "task"
+    },
+    {
+      "id": "sid-55F2FF34-679B-4885-B9A1-0D1308E8DEA0",
+      "name": "compute necessary Tools",
+      "type": "task"
+    },
+    {
+      "id": "sid-E2585526-5B21-49AC-8308-E761B5A2029E",
+      "name": "Generating instructions to fix",
+      "type": "task"
+    },
+    {
+      "id": "sid-BEACE581-4AA3-45DA-9036-0991A2DE1A5B",
+      "name": "Saving video to DB",
+      "type": "task"
+    },
+    {
+      "id": "sid-C6D81327-ED1F-4E79-A443-B33DDB8D6B9A",
+      "name": "enter manufacturer",
+      "type": "task"
+    },
+    {
+      "id": "sid-93F0F83B-AE76-4980-8308-52CAC4ACBEF2",
+      "name": "enter model",
+      "type": "task"
+    },
+    {
+      "id": "sid-60326312-7321-48FE-B816-0E93D57A67EF",
+      "name": "enter broken part",
+      "type": "task"
+    },
+    {
+      "id": "sid-FAA98EEC-8816-48F8-B43F-ED9CD14BDEC3",
+      "name": "check list with own inventory tool screw",
+      "type": "task"
+    },
+    {
+      "id": "sid-97A20464-9DC9-49F9-969F-5AB7EB3B44D8",
+      "name": "contact friend",
+      "type": "task"
+    },
+    {
+      "id": "sid-B6D1B5BE-2111-425F-84E3-E1D3E6469336",
+      "name": "getting everything else needed",
+      "type": "task"
+    },
+    {
+      "id": "sid-82DEB406-8AD2-4116-AA1E-8054CDAEE972",
+      "name": "follow instructions",
+      "type": "task"
+    },
+    {
+      "id": "sid-0D3DE9F4-C18E-4AED-A52A-D2ED2ED8B7FB",
+      "name": "send phone to expert",
+      "type": "task"
+    },
+    {
+      "id": "sid-19C62338-20A3-4DBF-B780-DBB41F4E13E9",
+      "name": "Upload video",
+      "type": "task"
+    },
+    {
+      "id": "sid-7EC75C61-C802-425D-AA2F-3604FDB1F450",
+      "name": "Leave Review",
+      "type": "task"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-5EA1A930-062F-46BF-B62C-20108CAEE758",
+      "name": "Phone is broken",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-23074708-7BE6-474B-90E2-A3AC4ADE0B62",
+      "name": "phone is repaired",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-FC7AEA3B-9AAE-41E0-8525-10C37E379E2C",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-D81A1EC9-A0B0-4F8E-8A02-B6643B17CB58",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-96D546F7-1FA8-4E8C-8398-D77D126AFAB4",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-BE09507B-07B1-423A-BECD-478835DD9E34",
+      "type": "exclusiveGateway",
+      "name": "contact friend"
+    },
+    {
+      "id": "sid-3E8112AB-3466-42AE-B618-155A8573E5A6",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-A2D79B7F-3DFA-42C1-8356-AC884511DF67",
+      "type": "exclusiveGateway",
+      "name": "instruction has another step"
+    },
+    {
+      "id": "sid-9BEF61F5-E066-462E-9D81-9EF60512CFDA",
+      "type": "exclusiveGateway",
+      "name": "upload video"
+    },
+    {
+      "id": "sid-29399B3E-3F53-43BA-9BA4-F93C5C3E4720",
+      "type": "exclusiveGateway",
+      "name": "phone is working now"
+    },
+    {
+      "id": "sid-9F743926-AE8E-4C3A-85D9-AB81C3C0A347",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-8EAE99B8-1E42-45DB-9EE1-AC4F1BCF2B3F",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-4B38CAC4-2575-420E-A4A4-04663AA1882B",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [
+    {
+      "id": "sid-BF52D4DB-FBD5-489A-AAE7-180AE06218E6",
+      "name": "DIY Repair of a Broken Smartphone Screen",
+      "lanes": [
+        {
+          "id": "sid-FB919D29-0809-4AF0-859C-71D3A92A7853",
+          "name": "Online Tool",
+          "elemRefs": [
+            "sid-083B7B2F-B887-4E67-AEB1-A1B76F8C0A06",
+            "sid-55F2FF34-679B-4885-B9A1-0D1308E8DEA0",
+            "sid-E2585526-5B21-49AC-8308-E761B5A2029E",
+            "sid-BEACE581-4AA3-45DA-9036-0991A2DE1A5B",
+            "sid-FC7AEA3B-9AAE-41E0-8525-10C37E379E2C",
+            "sid-D81A1EC9-A0B0-4F8E-8A02-B6643B17CB58"
+          ]
+        },
+        {
+          "id": "sid-365574B9-01E5-4ABD-9516-4F9221D14AFA",
+          "name": "User",
+          "elemRefs": [
+            "sid-5EA1A930-062F-46BF-B62C-20108CAEE758",
+            "sid-C6D81327-ED1F-4E79-A443-B33DDB8D6B9A",
+            "sid-93F0F83B-AE76-4980-8308-52CAC4ACBEF2",
+            "sid-60326312-7321-48FE-B816-0E93D57A67EF",
+            "sid-FAA98EEC-8816-48F8-B43F-ED9CD14BDEC3",
+            "sid-96D546F7-1FA8-4E8C-8398-D77D126AFAB4",
+            "sid-BE09507B-07B1-423A-BECD-478835DD9E34",
+            "sid-97A20464-9DC9-49F9-969F-5AB7EB3B44D8",
+            "sid-B6D1B5BE-2111-425F-84E3-E1D3E6469336",
+            "sid-82DEB406-8AD2-4116-AA1E-8054CDAEE972",
+            "sid-3E8112AB-3466-42AE-B618-155A8573E5A6",
+            "sid-A2D79B7F-3DFA-42C1-8356-AC884511DF67",
+            "sid-9BEF61F5-E066-462E-9D81-9EF60512CFDA",
+            "sid-0D3DE9F4-C18E-4AED-A52A-D2ED2ED8B7FB",
+            "sid-29399B3E-3F53-43BA-9BA4-F93C5C3E4720",
+            "sid-19C62338-20A3-4DBF-B780-DBB41F4E13E9",
+            "sid-7EC75C61-C802-425D-AA2F-3604FDB1F450",
+            "sid-23074708-7BE6-474B-90E2-A3AC4ADE0B62",
+            "sid-9F743926-AE8E-4C3A-85D9-AB81C3C0A347",
+            "sid-8EAE99B8-1E42-45DB-9EE1-AC4F1BCF2B3F",
+            "sid-4B38CAC4-2575-420E-A4A4-04663AA1882B"
+          ]
+        }
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "sid-82006AC8-C29D-42C3-9DC9-EC48CE092A07",
+      "sourceRef": "sid-5EA1A930-062F-46BF-B62C-20108CAEE758",
+      "targetRef": "sid-C6D81327-ED1F-4E79-A443-B33DDB8D6B9A"
+    },
+    {
+      "id": "sid-73E05DDB-14FC-47B6-9226-5907D3676609",
+      "sourceRef": "sid-C6D81327-ED1F-4E79-A443-B33DDB8D6B9A",
+      "targetRef": "sid-93F0F83B-AE76-4980-8308-52CAC4ACBEF2"
+    },
+    {
+      "id": "sid-12D993BF-1677-4953-8790-6D0E6C390E1E",
+      "sourceRef": "sid-93F0F83B-AE76-4980-8308-52CAC4ACBEF2",
+      "targetRef": "sid-60326312-7321-48FE-B816-0E93D57A67EF"
+    },
+    {
+      "id": "sid-492A35AB-0B1A-4BCA-A4C1-E70056BA1D29",
+      "sourceRef": "sid-60326312-7321-48FE-B816-0E93D57A67EF",
+      "targetRef": "sid-4B38CAC4-2575-420E-A4A4-04663AA1882B"
+    },
+    {
+      "id": "sid-81255424-20C9-4948-B54F-9A058E670EB0",
+      "sourceRef": "sid-4B38CAC4-2575-420E-A4A4-04663AA1882B",
+      "targetRef": "sid-60326312-7321-48FE-B816-0E93D57A67EF",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-2B611EC6-4EA0-4763-A42A-A7D25569C2CE",
+      "sourceRef": "sid-FAA98EEC-8816-48F8-B43F-ED9CD14BDEC3",
+      "targetRef": "sid-96D546F7-1FA8-4E8C-8398-D77D126AFAB4"
+    },
+    {
+      "id": "sid-F63665D1-26D7-4B56-B5AD-23ED05097C9F",
+      "sourceRef": "sid-96D546F7-1FA8-4E8C-8398-D77D126AFAB4",
+      "targetRef": "sid-E2585526-5B21-49AC-8308-E761B5A2029E",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-68F9AAE1-8374-43E7-BAA9-BB53AFA2B8B0",
+      "sourceRef": "sid-96D546F7-1FA8-4E8C-8398-D77D126AFAB4",
+      "targetRef": "sid-BE09507B-07B1-423A-BECD-478835DD9E34",
+      "condition": "no"
+    },
+    {
+      "id": "sid-98C309DA-AE4A-4E2B-B482-DBD2D911DEAA",
+      "sourceRef": "sid-3E8112AB-3466-42AE-B618-155A8573E5A6",
+      "targetRef": "sid-B6D1B5BE-2111-425F-84E3-E1D3E6469336"
+    },
+    {
+      "id": "sid-72CEB0E2-8543-43DE-90B4-6742D79D0B58",
+      "sourceRef": "sid-B6D1B5BE-2111-425F-84E3-E1D3E6469336",
+      "targetRef": "sid-E2585526-5B21-49AC-8308-E761B5A2029E"
+    },
+    {
+      "id": "sid-72CB9E11-2EBF-4893-98D7-DA35209051C2",
+      "sourceRef": "sid-BE09507B-07B1-423A-BECD-478835DD9E34",
+      "targetRef": "sid-3E8112AB-3466-42AE-B618-155A8573E5A6",
+      "condition": "no"
+    },
+    {
+      "id": "sid-ABD63D3B-2DD2-4AAE-889B-36F0000104A2",
+      "sourceRef": "sid-BE09507B-07B1-423A-BECD-478835DD9E34",
+      "targetRef": "sid-97A20464-9DC9-49F9-969F-5AB7EB3B44D8",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-CB7CCC59-517E-4479-A2E6-DA38CCD0D510",
+      "sourceRef": "sid-E2585526-5B21-49AC-8308-E761B5A2029E",
+      "targetRef": "sid-82DEB406-8AD2-4116-AA1E-8054CDAEE972"
+    },
+    {
+      "id": "sid-4E2DDA33-216D-48FE-AA31-848F4B138DA9",
+      "sourceRef": "sid-82DEB406-8AD2-4116-AA1E-8054CDAEE972",
+      "targetRef": "sid-A2D79B7F-3DFA-42C1-8356-AC884511DF67"
+    },
+    {
+      "id": "sid-9D9BF688-4490-4BB8-865A-B92960AF96CF",
+      "sourceRef": "sid-29399B3E-3F53-43BA-9BA4-F93C5C3E4720",
+      "targetRef": "sid-0D3DE9F4-C18E-4AED-A52A-D2ED2ED8B7FB",
+      "condition": "no"
+    },
+    {
+      "id": "sid-2871FF33-2C5A-49D7-ABFC-BB853D89EF21",
+      "sourceRef": "sid-29399B3E-3F53-43BA-9BA4-F93C5C3E4720",
+      "targetRef": "sid-7EC75C61-C802-425D-AA2F-3604FDB1F450",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-6ABD8C71-8D07-4286-8F28-445C2E521142",
+      "sourceRef": "sid-7EC75C61-C802-425D-AA2F-3604FDB1F450",
+      "targetRef": "sid-9BEF61F5-E066-462E-9D81-9EF60512CFDA"
+    },
+    {
+      "id": "sid-A10D750C-D725-4E80-B614-522FEC8C2F20",
+      "sourceRef": "sid-19C62338-20A3-4DBF-B780-DBB41F4E13E9",
+      "targetRef": "sid-BEACE581-4AA3-45DA-9036-0991A2DE1A5B"
+    },
+    {
+      "id": "sid-E5A48A5E-64E7-4DE8-A7DD-E66862627EBA",
+      "sourceRef": "sid-9BEF61F5-E066-462E-9D81-9EF60512CFDA",
+      "targetRef": "sid-19C62338-20A3-4DBF-B780-DBB41F4E13E9",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-E39ED3E9-F946-47EC-8D0E-6FBC2F1941B9",
+      "sourceRef": "sid-9BEF61F5-E066-462E-9D81-9EF60512CFDA",
+      "targetRef": "sid-8EAE99B8-1E42-45DB-9EE1-AC4F1BCF2B3F",
+      "condition": "no"
+    },
+    {
+      "id": "sid-2822F4F1-367F-4907-AC8E-CE93FB989B2D",
+      "sourceRef": "sid-8EAE99B8-1E42-45DB-9EE1-AC4F1BCF2B3F",
+      "targetRef": "sid-9F743926-AE8E-4C3A-85D9-AB81C3C0A347"
+    },
+    {
+      "id": "sid-79CA8D5D-3015-4FE2-AFA0-713E883DB78E",
+      "sourceRef": "sid-9F743926-AE8E-4C3A-85D9-AB81C3C0A347",
+      "targetRef": "sid-23074708-7BE6-474B-90E2-A3AC4ADE0B62"
+    },
+    {
+      "id": "sid-B1148642-5F4C-411C-93D8-4F84566396E5",
+      "sourceRef": "sid-BEACE581-4AA3-45DA-9036-0991A2DE1A5B",
+      "targetRef": "sid-8EAE99B8-1E42-45DB-9EE1-AC4F1BCF2B3F"
+    },
+    {
+      "id": "sid-8A7953A4-C38A-4F72-BCCD-8FF3C3E3FFE2",
+      "sourceRef": "sid-0D3DE9F4-C18E-4AED-A52A-D2ED2ED8B7FB",
+      "targetRef": "sid-9F743926-AE8E-4C3A-85D9-AB81C3C0A347"
+    },
+    {
+      "id": "sid-C875D9E7-3CC0-4511-8F8D-D6EE8186D646",
+      "sourceRef": "sid-A2D79B7F-3DFA-42C1-8356-AC884511DF67",
+      "targetRef": "sid-82DEB406-8AD2-4116-AA1E-8054CDAEE972",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-167B2FD9-086A-41F8-9B8B-4C259C4D6592",
+      "sourceRef": "sid-A2D79B7F-3DFA-42C1-8356-AC884511DF67",
+      "targetRef": "sid-29399B3E-3F53-43BA-9BA4-F93C5C3E4720",
+      "condition": "no"
+    },
+    {
+      "id": "sid-DF3785DB-1C15-4377-A441-2D0C9AFBA86B",
+      "sourceRef": "sid-97A20464-9DC9-49F9-969F-5AB7EB3B44D8",
+      "targetRef": "sid-3E8112AB-3466-42AE-B618-155A8573E5A6"
+    },
+    {
+      "id": "sid-88283F1F-B649-4495-B5A9-280D7F15E05D",
+      "sourceRef": "sid-FC7AEA3B-9AAE-41E0-8525-10C37E379E2C",
+      "targetRef": "sid-083B7B2F-B887-4E67-AEB1-A1B76F8C0A06"
+    },
+    {
+      "id": "sid-0E81140F-DDBE-45FC-B96A-28E08AF5D254",
+      "sourceRef": "sid-FC7AEA3B-9AAE-41E0-8525-10C37E379E2C",
+      "targetRef": "sid-55F2FF34-679B-4885-B9A1-0D1308E8DEA0"
+    },
+    {
+      "id": "sid-61C4A0CF-0F7A-4BD0-BEB3-345B54E0F56D",
+      "sourceRef": "sid-4B38CAC4-2575-420E-A4A4-04663AA1882B",
+      "targetRef": "sid-FC7AEA3B-9AAE-41E0-8525-10C37E379E2C",
+      "condition": "no"
+    },
+    {
+      "id": "sid-2D39D274-EF6A-43E0-83F0-ABFE67A80D32",
+      "sourceRef": "sid-083B7B2F-B887-4E67-AEB1-A1B76F8C0A06",
+      "targetRef": "sid-D81A1EC9-A0B0-4F8E-8A02-B6643B17CB58"
+    },
+    {
+      "id": "sid-D710291D-6089-40E8-92E7-72E676FDE0F1",
+      "sourceRef": "sid-55F2FF34-679B-4885-B9A1-0D1308E8DEA0",
+      "targetRef": "sid-D81A1EC9-A0B0-4F8E-8A02-B6643B17CB58"
+    },
+    {
+      "id": "sid-2586B394-0672-432F-9971-75FCD34E6D78",
+      "sourceRef": "sid-D81A1EC9-A0B0-4F8E-8A02-B6643B17CB58",
+      "targetRef": "sid-FAA98EEC-8816-48F8-B43F-ED9CD14BDEC3"
+    }
+  ],
+  "messageFlows": []
+}

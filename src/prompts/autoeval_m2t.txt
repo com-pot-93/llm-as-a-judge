@@ -1,0 +1,38 @@
+You are an expert in business process modeling. Evaluate the relevance and truthfulness of the generated process model with respect to the original process description.
+
+### Input:
+**Process Description:** {process_description}
+
+**Generated Process Model:** {generated_model}
+
+Calculate two scores:
+- **Relevance:** Assess what proportion of the process description is represented in the generated process model.
+- **Truthfulness:** Assess what proportion of the content in the generated process model is reflected in the original process description.
+
+Both scores must be numbers between 0 and 1,  where 0 means not relevant/truthful and 1 means completely relevant/truthful.
+
+### Sources of Difference
+
+Identify the main sources of difference between the process description and the generated process model using the following categories:
+
+- `MISSING_INFORMATION`: Activities, events, or requirements from the description that are not represented in the generated model.
+- `ADDED_INFORMATION`: Activities, events, or details in the generated model that are not supported by the description.
+- `STRUCTURE_DIFFERENCES`: Incorrect activity ordering, dependencies, or process flow.
+- `GATEWAY_DIFFERENCES`: Missing or incorrectly represented decisions, conditions, branching, or parallel execution.
+- `LABEL_DIFFERENCES`: Labels that inaccurately represent the meaning of the process description.
+
+Select all categories that apply, based only on evidence from the inputs. Do not include categories without evidence. If no differences are identified, return an empty array.
+
+### Output Requirements
+
+Return only a valid JSON object with exactly these three key-value pairs:
+
+{
+  "relevance": 0.0,
+  "truthfulness": 0.0,
+  "source_of_difference": []
+}
+
+The `relevance` and `truthfulness` scores must be numbers between 0 and 1. The `source_of_difference` field must contain only the predefined category names.
+
+Do not include any additional text.

@@ -1,0 +1,243 @@
+{
+  "tasks": [
+    {
+      "id": "sid-BF7C8F19-47A3-4FF2-A8ED-746930B0302F",
+      "name": "Retrieve relevant information",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1DA8DB63-8189-4E01-9A24-049AF63EFD8D",
+      "name": "Calculate OEE",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-181C761F-BC65-48C0-9C9C-47BAD574CE45",
+      "name": "Calculate Availability",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-78CE059E-A3EB-4528-A654-C73F9DCD33EF",
+      "name": "Calculate Performance",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-DD49C7B8-9DC0-45FF-8FAA-52BB897A41C0",
+      "name": "Stop machine",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-F5B8F8DD-9BCA-4640-A1D8-D026F9EE8168",
+      "name": "Receive OEE result",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-FC39A79B-1C1F-4A75-B120-E27FE5A246B9",
+      "name": "Send email to engineer",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-F35562CC-814E-41A3-B99D-153673570950",
+      "name": "Calculate Quality",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-0AA2AC4C-48A7-445E-82BE-AE55B6E9CCB9",
+      "name": "Restart machine",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-4F165361-8C43-4EBF-B779-AE8DEB5617CE",
+      "name": "Disconnect machine",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-FFBEA862-B81F-4C60-B65A-CFDF585C9FD1",
+      "name": "Start computer",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-3179211F-36AF-4F90-8104-1574EBC18FB0",
+      "name": "Request for OEE received",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-29F19D6F-AD8A-426A-B005-63196CE4F800",
+      "name": "Reply from engineer received",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-A637F992-3523-413D-ABBB-3C56ADF33CD3",
+      "name": "End OEE calculation",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-41A2B90F-B9C0-4330-81B2-177F36600A59",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-F3256591-069D-4A08-B1A2-758C7D7BA518",
+      "type": "exclusiveGateway",
+      "name": "OEE value"
+    },
+    {
+      "id": "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-3D24CFD9-F569-4C2F-A904-55D7FCF19D1A",
+      "type": "exclusiveGateway",
+      "name": "Continue measuring"
+    }
+  ],
+  "pools": [
+    {
+      "id": "sid-3D8743D0-882A-4CC3-997D-8273FD410F90",
+      "name": "OEE Calculation",
+      "lanes": [
+        {
+          "id": "sid-F5A1AA46-155D-456E-9A4B-49FDC74EB52E",
+          "name": "",
+          "elemRefs": [
+            "sid-BF7C8F19-47A3-4FF2-A8ED-746930B0302F",
+            "sid-1DA8DB63-8189-4E01-9A24-049AF63EFD8D",
+            "sid-3179211F-36AF-4F90-8104-1574EBC18FB0",
+            "sid-41A2B90F-B9C0-4330-81B2-177F36600A59",
+            "sid-181C761F-BC65-48C0-9C9C-47BAD574CE45",
+            "sid-78CE059E-A3EB-4528-A654-C73F9DCD33EF",
+            "sid-F3256591-069D-4A08-B1A2-758C7D7BA518",
+            "sid-DD49C7B8-9DC0-45FF-8FAA-52BB897A41C0",
+            "sid-F5B8F8DD-9BCA-4640-A1D8-D026F9EE8168",
+            "sid-FC39A79B-1C1F-4A75-B120-E27FE5A246B9",
+            "sid-F35562CC-814E-41A3-B99D-153673570950",
+            "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA",
+            "sid-29F19D6F-AD8A-426A-B005-63196CE4F800",
+            "sid-3D24CFD9-F569-4C2F-A904-55D7FCF19D1A",
+            "sid-0AA2AC4C-48A7-445E-82BE-AE55B6E9CCB9",
+            "sid-4F165361-8C43-4EBF-B779-AE8DEB5617CE",
+            "sid-A637F992-3523-413D-ABBB-3C56ADF33CD3",
+            "sid-FFBEA862-B81F-4C60-B65A-CFDF585C9FD1"
+          ]
+        }
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "sid-F62F7909-4F2B-41EB-BFE0-9BF7C8EFB47A",
+      "sourceRef": "sid-3179211F-36AF-4F90-8104-1574EBC18FB0",
+      "targetRef": "sid-FFBEA862-B81F-4C60-B65A-CFDF585C9FD1"
+    },
+    {
+      "id": "sid-BCE20519-5F52-4584-B448-71B7BE53CE22",
+      "sourceRef": "sid-BF7C8F19-47A3-4FF2-A8ED-746930B0302F",
+      "targetRef": "sid-1DA8DB63-8189-4E01-9A24-049AF63EFD8D"
+    },
+    {
+      "id": "sid-B246A94C-8F0B-4AA6-9A6F-379F5936DDE2",
+      "sourceRef": "sid-29F19D6F-AD8A-426A-B005-63196CE4F800",
+      "targetRef": "sid-3D24CFD9-F569-4C2F-A904-55D7FCF19D1A"
+    },
+    {
+      "id": "sid-305E208F-9DBA-431E-8801-15B16977A130",
+      "sourceRef": "sid-4F165361-8C43-4EBF-B779-AE8DEB5617CE",
+      "targetRef": "sid-A637F992-3523-413D-ABBB-3C56ADF33CD3"
+    },
+    {
+      "id": "sid-42D0AF76-B571-4273-A9F6-61208F212150",
+      "sourceRef": "sid-F3256591-069D-4A08-B1A2-758C7D7BA518",
+      "targetRef": "sid-DD49C7B8-9DC0-45FF-8FAA-52BB897A41C0",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-7D8AA44B-C01D-4D92-A889-2191F075CD3C",
+      "sourceRef": "sid-F3256591-069D-4A08-B1A2-758C7D7BA518",
+      "targetRef": "sid-F5B8F8DD-9BCA-4640-A1D8-D026F9EE8168",
+      "condition": "No"
+    },
+    {
+      "id": "sid-84BD64E1-9CA6-4D92-B64E-19AD2FE3A21B",
+      "sourceRef": "sid-F5B8F8DD-9BCA-4640-A1D8-D026F9EE8168",
+      "targetRef": "sid-A637F992-3523-413D-ABBB-3C56ADF33CD3"
+    },
+    {
+      "id": "sid-569ED581-EFDF-4B37-9FC8-04C148BB2C52",
+      "sourceRef": "sid-DD49C7B8-9DC0-45FF-8FAA-52BB897A41C0",
+      "targetRef": "sid-FC39A79B-1C1F-4A75-B120-E27FE5A246B9"
+    },
+    {
+      "id": "sid-4722759E-6E8C-4741-A1DE-C0AACB9BF6CE",
+      "sourceRef": "sid-3D24CFD9-F569-4C2F-A904-55D7FCF19D1A",
+      "targetRef": "sid-4F165361-8C43-4EBF-B779-AE8DEB5617CE",
+      "condition": "No"
+    },
+    {
+      "id": "sid-3C1932B2-C0B9-4EF6-9AF1-CDF0E3C771D0",
+      "sourceRef": "sid-3D24CFD9-F569-4C2F-A904-55D7FCF19D1A",
+      "targetRef": "sid-0AA2AC4C-48A7-445E-82BE-AE55B6E9CCB9",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-A26863F9-2334-454E-9261-E091503619A0",
+      "sourceRef": "sid-1DA8DB63-8189-4E01-9A24-049AF63EFD8D",
+      "targetRef": "sid-41A2B90F-B9C0-4330-81B2-177F36600A59"
+    },
+    {
+      "id": "sid-98F72729-40D7-4E59-8668-90DA7C9F5755",
+      "sourceRef": "sid-41A2B90F-B9C0-4330-81B2-177F36600A59",
+      "targetRef": "sid-F35562CC-814E-41A3-B99D-153673570950"
+    },
+    {
+      "id": "sid-55F21E92-184A-4359-93F3-B73D4F29E084",
+      "sourceRef": "sid-41A2B90F-B9C0-4330-81B2-177F36600A59",
+      "targetRef": "sid-181C761F-BC65-48C0-9C9C-47BAD574CE45"
+    },
+    {
+      "id": "sid-2C8CF5F7-4EBD-42D6-A554-6FF569538000",
+      "sourceRef": "sid-41A2B90F-B9C0-4330-81B2-177F36600A59",
+      "targetRef": "sid-78CE059E-A3EB-4528-A654-C73F9DCD33EF"
+    },
+    {
+      "id": "sid-1456B014-51F2-4FA6-AFFE-AEF58274568A",
+      "sourceRef": "sid-181C761F-BC65-48C0-9C9C-47BAD574CE45",
+      "targetRef": "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA"
+    },
+    {
+      "id": "sid-8206D0CD-005C-4D8D-AE96-EAB261519818",
+      "sourceRef": "sid-78CE059E-A3EB-4528-A654-C73F9DCD33EF",
+      "targetRef": "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA"
+    },
+    {
+      "id": "sid-70A01B6B-D916-4E92-A998-29A174DFB67C",
+      "sourceRef": "sid-F35562CC-814E-41A3-B99D-153673570950",
+      "targetRef": "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA"
+    },
+    {
+      "id": "sid-91CFD4A7-7FE1-46AA-831B-4035AC860F90",
+      "sourceRef": "sid-30B06630-30C1-4F42-9E03-FE16E65F8ABA",
+      "targetRef": "sid-F3256591-069D-4A08-B1A2-758C7D7BA518"
+    },
+    {
+      "id": "sid-3CBF6333-4CF6-4D1E-BB89-6F9014A52257",
+      "sourceRef": "sid-FC39A79B-1C1F-4A75-B120-E27FE5A246B9",
+      "targetRef": "sid-29F19D6F-AD8A-426A-B005-63196CE4F800"
+    },
+    {
+      "id": "sid-964A93B7-F6BD-4D1F-88F4-1CB184155CE2",
+      "sourceRef": "sid-0AA2AC4C-48A7-445E-82BE-AE55B6E9CCB9",
+      "targetRef": "sid-1DA8DB63-8189-4E01-9A24-049AF63EFD8D"
+    },
+    {
+      "id": "sid-B9A7A096-C7CC-4FF4-AB23-23908AF7F028",
+      "sourceRef": "sid-FFBEA862-B81F-4C60-B65A-CFDF585C9FD1",
+      "targetRef": "sid-BF7C8F19-47A3-4FF2-A8ED-746930B0302F"
+    }
+  ],
+  "messageFlows": []
+}

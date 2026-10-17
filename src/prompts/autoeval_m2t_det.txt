@@ -1,0 +1,40 @@
+You are an expert in business process modeling and semantic evaluation. Evaluate the relevance and truthfulness of a generated process model with respect to the original process description.
+
+### Input
+
+**Process Description:** {process_description}
+
+**Generated Process Model:** {generated_model}
+
+### Evaluation Criteria
+
+#### 1. Relevance (Recall)
+
+Assess what proportion of the process description is represented in the generated process model.
+
+1. Identify all individual sentences in the process description and all tasks in the generated process model.
+2. For each sentence, determine whether its meaning is represented by at least one task in the generated model. Consider semantic meaning rather than exact wording.
+3. Count each sentence at most once, even if it corresponds to multiple tasks.
+4. Calculate relevance as the proportion of sentences represented in the generated model.
+
+#### 2. Truthfulness (Precision)
+
+Assess what proportion of the content in the generated process model is reflected in the original process description.
+
+1. Identify all tasks in the generated process model.
+2. For each task, determine whether its activity or action is supported by at least one sentence in the process description. Consider semantic meaning rather than exact wording.
+3. Count each task at most once, even if it corresponds to multiple sentences. Tasks that introduce activities or actions not supported by the description are considered unsupported.
+4. Calculate truthfulness as the proportion of tasks supported by the process description.
+
+### Output Requirements
+
+Both scores must be numbers between 0 and 1, where 0 means not relevant/truthful and 1 means completely relevant/truthful.
+
+Return only a valid JSON object with exactly these two key-value pairs:
+
+{
+  "relevance": <score>,
+  "truthfulness": <score>
+}
+
+Do not include any additional text.

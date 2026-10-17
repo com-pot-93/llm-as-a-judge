@@ -1,0 +1,392 @@
+{
+  "tasks": [
+    {
+      "id": "sid-E5E241D3-A7C0-44D2-9128-A207BB84DBD9",
+      "name": "Startingblock",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-912F0F75-F192-4559-9FDD-77595B6A4C39",
+      "name": "Connect Fitbit to phone",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-727B8EA1-CDD3-4FFC-82E3-C2EEEA78F430",
+      "name": "5km Run",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-136C8020-B03B-4721-8DE6-6B7A1C30646F",
+      "name": "Enable GPS on Phone",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-DEBD2C03-EBF0-4BC8-80B6-89F52E8FBE01",
+      "name": "Start number and time is assigned",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-7C03A252-2D89-44FE-9458-2C3F7A27F2D6",
+      "name": "Train until time 25min",
+      "type": "userTask",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-276D532F-659F-45FE-BD7C-E847CBA6AF4C",
+      "name": "Check when work day is ending",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-77F42979-D551-4A70-B30F-FF337965A399",
+      "name": "Go directly to race",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-1A84D572-47FC-4032-AD70-51B5A5944061",
+      "name": "Go home and then to race",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-D65611DE-75C0-4C14-A781-A440A4CBB4EF",
+      "name": "Collect running time",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-04CE5BA0-C951-426F-B30B-DC9564B1750A",
+      "name": "5km Run",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A35650D6-6F17-42BD-B466-7223D4CB86EB",
+      "name": "Name",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-671C34FE-9088-4540-80CE-2B2D1712A820",
+      "name": "Adress",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-FF57A809-A7AB-49B6-B011-CCA49379F3B3",
+      "name": "TIme 25min",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-4C56FAE2-B515-44E5-9FDF-DB21031A52BC",
+      "name": "Time 25min",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-2B3F8A0F-44D9-48A8-A024-C21A088D703F",
+      "name": "Time to race 1hour to race start",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-93784B3A-4685-428B-9B6B-C89903B6C1D6",
+      "name": "Time to race 1hour to race start",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-940ECEA0-1A15-4A68-82C7-84ADD6064ABA",
+      "name": "",
+      "type": "endEvent"
+    },
+    {
+      "id": "sid-40A7737D-01E7-4173-B9A6-A56910622AB8",
+      "name": "Marathon run",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-9D62A695-AB90-4247-B10A-96F7F3EAE196",
+      "name": "Race",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-5BE7E1E7-40E8-47C0-B2BC-4F39C26377AC",
+      "type": "exclusiveGateway",
+      "name": "Connected"
+    },
+    {
+      "id": "sid-A83EA894-47F7-4294-AD51-4E8E8EB4B8D2",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-F8FB6314-12CC-4451-9061-5F78876CF2AA",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-3B80C142-81B6-45E9-A67B-F2DB3BCB5C61",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-D802BD08-9904-4FF9-95F8-AE1E21550FC3",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093",
+      "type": "parallelGateway"
+    }
+  ],
+  "pools": [
+    {
+      "id": "sid-826517BC-0FFF-4919-950A-C4F73960AE17",
+      "name": "Vienna Marathon",
+      "lanes": [
+        {
+          "id": "sid-2298B0DF-12C6-42A1-956F-6A42D3A492E2",
+          "name": "",
+          "elemRefs": [
+            "sid-E5E241D3-A7C0-44D2-9128-A207BB84DBD9",
+            "sid-912F0F75-F192-4559-9FDD-77595B6A4C39",
+            "sid-5BE7E1E7-40E8-47C0-B2BC-4F39C26377AC",
+            "sid-727B8EA1-CDD3-4FFC-82E3-C2EEEA78F430",
+            "sid-136C8020-B03B-4721-8DE6-6B7A1C30646F",
+            "sid-A83EA894-47F7-4294-AD51-4E8E8EB4B8D2",
+            "sid-FF57A809-A7AB-49B6-B011-CCA49379F3B3",
+            "sid-4C56FAE2-B515-44E5-9FDF-DB21031A52BC",
+            "sid-DEBD2C03-EBF0-4BC8-80B6-89F52E8FBE01",
+            "sid-7C03A252-2D89-44FE-9458-2C3F7A27F2D6",
+            "sid-276D532F-659F-45FE-BD7C-E847CBA6AF4C",
+            "sid-F8FB6314-12CC-4451-9061-5F78876CF2AA",
+            "sid-2B3F8A0F-44D9-48A8-A024-C21A088D703F",
+            "sid-93784B3A-4685-428B-9B6B-C89903B6C1D6",
+            "sid-77F42979-D551-4A70-B30F-FF337965A399",
+            "sid-1A84D572-47FC-4032-AD70-51B5A5944061",
+            "sid-3B80C142-81B6-45E9-A67B-F2DB3BCB5C61",
+            "sid-D65611DE-75C0-4C14-A781-A440A4CBB4EF",
+            "sid-940ECEA0-1A15-4A68-82C7-84ADD6064ABA",
+            "sid-D802BD08-9904-4FF9-95F8-AE1E21550FC3",
+            "sid-04CE5BA0-C951-426F-B30B-DC9564B1750A",
+            "sid-A35650D6-6F17-42BD-B466-7223D4CB86EB",
+            "sid-671C34FE-9088-4540-80CE-2B2D1712A820",
+            "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE",
+            "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093",
+            "sid-40A7737D-01E7-4173-B9A6-A56910622AB8",
+            "sid-9D62A695-AB90-4247-B10A-96F7F3EAE196"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sid-C62E5347-AC0E-4631-8826-3E5B7BE1127D",
+      "name": "Fitbit",
+      "lanes": [
+        {
+          "id": "sid-8CADEE8C-8B9C-4B41-AEC8-808B0751C8EF",
+          "name": "",
+          "elemRefs": []
+        }
+      ]
+    },
+    {
+      "id": "sid-E8BEA245-0D91-44CD-80D4-E15425206B51",
+      "name": "Vienna Marathon App",
+      "lanes": [
+        {
+          "id": "sid-C1067A29-43AE-4350-A63F-DDD3271B4D9C",
+          "name": "",
+          "elemRefs": []
+        }
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "sid-49D63225-6A5A-4E79-B716-3F8647577A3B",
+      "sourceRef": "sid-912F0F75-F192-4559-9FDD-77595B6A4C39",
+      "targetRef": "sid-5BE7E1E7-40E8-47C0-B2BC-4F39C26377AC"
+    },
+    {
+      "id": "sid-1903FD04-A529-4D6D-8E79-D09EAA3E8C01",
+      "sourceRef": "sid-5BE7E1E7-40E8-47C0-B2BC-4F39C26377AC",
+      "targetRef": "sid-727B8EA1-CDD3-4FFC-82E3-C2EEEA78F430",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-EF4B4168-6436-45DC-B555-7B565228F8AF",
+      "sourceRef": "sid-5BE7E1E7-40E8-47C0-B2BC-4F39C26377AC",
+      "targetRef": "sid-136C8020-B03B-4721-8DE6-6B7A1C30646F",
+      "condition": "No"
+    },
+    {
+      "id": "sid-7E927CC9-89FF-4B8C-ACD0-CA9651342D16",
+      "sourceRef": "sid-A83EA894-47F7-4294-AD51-4E8E8EB4B8D2",
+      "targetRef": "sid-FF57A809-A7AB-49B6-B011-CCA49379F3B3"
+    },
+    {
+      "id": "sid-C493084B-5B1E-430E-9850-A5CF55DB6E8D",
+      "sourceRef": "sid-A83EA894-47F7-4294-AD51-4E8E8EB4B8D2",
+      "targetRef": "sid-4C56FAE2-B515-44E5-9FDF-DB21031A52BC"
+    },
+    {
+      "id": "sid-3C9104CA-E8E4-4A47-935D-70483AAA14FC",
+      "sourceRef": "sid-FF57A809-A7AB-49B6-B011-CCA49379F3B3",
+      "targetRef": "sid-DEBD2C03-EBF0-4BC8-80B6-89F52E8FBE01"
+    },
+    {
+      "id": "sid-67294DB7-8C94-44BC-B21D-47CC67E2AAAC",
+      "sourceRef": "sid-4C56FAE2-B515-44E5-9FDF-DB21031A52BC",
+      "targetRef": "sid-7C03A252-2D89-44FE-9458-2C3F7A27F2D6"
+    },
+    {
+      "id": "sid-CFA8AA60-2FBB-4A40-B1B5-65FB96FACA4E",
+      "sourceRef": "sid-DEBD2C03-EBF0-4BC8-80B6-89F52E8FBE01",
+      "targetRef": "sid-276D532F-659F-45FE-BD7C-E847CBA6AF4C"
+    },
+    {
+      "id": "sid-9638291D-AEBC-4760-A6D8-63F0689B81BB",
+      "sourceRef": "sid-276D532F-659F-45FE-BD7C-E847CBA6AF4C",
+      "targetRef": "sid-F8FB6314-12CC-4451-9061-5F78876CF2AA"
+    },
+    {
+      "id": "sid-35056F7B-DB64-410C-A468-749BBC6E0BC0",
+      "sourceRef": "sid-F8FB6314-12CC-4451-9061-5F78876CF2AA",
+      "targetRef": "sid-2B3F8A0F-44D9-48A8-A024-C21A088D703F"
+    },
+    {
+      "id": "sid-B88EBFC6-02E6-4DA6-A29C-4B8CF3ACD276",
+      "sourceRef": "sid-F8FB6314-12CC-4451-9061-5F78876CF2AA",
+      "targetRef": "sid-93784B3A-4685-428B-9B6B-C89903B6C1D6"
+    },
+    {
+      "id": "sid-2E6BC307-5DE7-42AB-9CD3-9DB6C88D8D39",
+      "sourceRef": "sid-2B3F8A0F-44D9-48A8-A024-C21A088D703F",
+      "targetRef": "sid-77F42979-D551-4A70-B30F-FF337965A399"
+    },
+    {
+      "id": "sid-3D25817D-1F96-4A15-9350-F4135B12A56C",
+      "sourceRef": "sid-93784B3A-4685-428B-9B6B-C89903B6C1D6",
+      "targetRef": "sid-1A84D572-47FC-4032-AD70-51B5A5944061"
+    },
+    {
+      "id": "sid-41E7FF7D-CD88-4FF3-86DA-73599C041B34",
+      "sourceRef": "sid-1A84D572-47FC-4032-AD70-51B5A5944061",
+      "targetRef": "sid-3B80C142-81B6-45E9-A67B-F2DB3BCB5C61"
+    },
+    {
+      "id": "sid-6C7582DF-2AB6-41BD-B55A-F4EB0E8BABA2",
+      "sourceRef": "sid-77F42979-D551-4A70-B30F-FF337965A399",
+      "targetRef": "sid-3B80C142-81B6-45E9-A67B-F2DB3BCB5C61"
+    },
+    {
+      "id": "sid-52253A27-C7F3-417B-B11D-D4602D580089",
+      "sourceRef": "sid-727B8EA1-CDD3-4FFC-82E3-C2EEEA78F430",
+      "targetRef": "sid-D802BD08-9904-4FF9-95F8-AE1E21550FC3"
+    },
+    {
+      "id": "sid-2C4B3910-3A9A-46B6-B6AC-737C7D08FDDB",
+      "sourceRef": "sid-D802BD08-9904-4FF9-95F8-AE1E21550FC3",
+      "targetRef": "sid-A83EA894-47F7-4294-AD51-4E8E8EB4B8D2"
+    },
+    {
+      "id": "sid-5FCC2925-B628-490C-B1B4-2495DD21A818",
+      "sourceRef": "sid-D65611DE-75C0-4C14-A781-A440A4CBB4EF",
+      "targetRef": "sid-940ECEA0-1A15-4A68-82C7-84ADD6064ABA"
+    },
+    {
+      "id": "sid-4EAE4DD2-D735-46E0-B805-B12F9C3331E8",
+      "sourceRef": "sid-136C8020-B03B-4721-8DE6-6B7A1C30646F",
+      "targetRef": "sid-04CE5BA0-C951-426F-B30B-DC9564B1750A"
+    },
+    {
+      "id": "sid-DB10644A-9D8F-4D14-80B2-F08FD2C9A3EB",
+      "sourceRef": "sid-04CE5BA0-C951-426F-B30B-DC9564B1750A",
+      "targetRef": "sid-D802BD08-9904-4FF9-95F8-AE1E21550FC3"
+    },
+    {
+      "id": "sid-92B4C9FD-A4F1-4D14-948F-4E3CD7B36F2F",
+      "sourceRef": "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE",
+      "targetRef": "sid-671C34FE-9088-4540-80CE-2B2D1712A820"
+    },
+    {
+      "id": "sid-33C59108-1350-48BA-9C40-D60835EDAC1A",
+      "sourceRef": "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE",
+      "targetRef": "sid-A35650D6-6F17-42BD-B466-7223D4CB86EB"
+    },
+    {
+      "id": "sid-2443C8A6-D2FA-484A-B4CF-15AF31A27B4C",
+      "sourceRef": "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE",
+      "targetRef": "sid-E5E241D3-A7C0-44D2-9128-A207BB84DBD9"
+    },
+    {
+      "id": "sid-5E101F6A-2359-4F84-8D33-736906C9990E",
+      "sourceRef": "sid-E5E241D3-A7C0-44D2-9128-A207BB84DBD9",
+      "targetRef": "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093"
+    },
+    {
+      "id": "sid-155B2B6A-33C8-4320-A2B2-F55E7C81B957",
+      "sourceRef": "sid-A35650D6-6F17-42BD-B466-7223D4CB86EB",
+      "targetRef": "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093"
+    },
+    {
+      "id": "sid-A9A37CFD-126F-4834-9303-9E9815B003D7",
+      "sourceRef": "sid-671C34FE-9088-4540-80CE-2B2D1712A820",
+      "targetRef": "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093"
+    },
+    {
+      "id": "sid-5E8A5363-B4CB-4A86-9FBD-822666CF7788",
+      "sourceRef": "sid-D7742C89-E534-4D71-8F83-AB6BD8AD0093",
+      "targetRef": "sid-912F0F75-F192-4559-9FDD-77595B6A4C39"
+    },
+    {
+      "id": "sid-9E4C477E-86E1-4D3E-9703-1520CC9F22FC",
+      "sourceRef": "sid-40A7737D-01E7-4173-B9A6-A56910622AB8",
+      "targetRef": "sid-F01A9FDE-3EE5-433E-A821-4567F05606DE"
+    },
+    {
+      "id": "sid-31BCD42C-4137-4D67-B4E6-371EBFE034A5",
+      "sourceRef": "sid-3B80C142-81B6-45E9-A67B-F2DB3BCB5C61",
+      "targetRef": "sid-9D62A695-AB90-4247-B10A-96F7F3EAE196"
+    },
+    {
+      "id": "sid-12A9A4A8-C878-4040-90C7-7019907261D0",
+      "sourceRef": "sid-9D62A695-AB90-4247-B10A-96F7F3EAE196",
+      "targetRef": "sid-D65611DE-75C0-4C14-A781-A440A4CBB4EF"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "sid-78F9A5BF-D936-4B1F-A9B1-2A18B8F0CD46",
+      "sourceRef": "sid-E5E241D3-A7C0-44D2-9128-A207BB84DBD9",
+      "targetRef": "sid-E8BEA245-0D91-44CD-80D4-E15425206B51"
+    },
+    {
+      "id": "sid-2A439764-D6F1-4FC2-9F31-B2E6F90426F5",
+      "sourceRef": "sid-DEBD2C03-EBF0-4BC8-80B6-89F52E8FBE01",
+      "targetRef": "sid-E8BEA245-0D91-44CD-80D4-E15425206B51"
+    },
+    {
+      "id": "sid-0F6610A1-2F27-426C-8F7D-EC96171EA2B1",
+      "sourceRef": "sid-D65611DE-75C0-4C14-A781-A440A4CBB4EF",
+      "targetRef": "sid-E8BEA245-0D91-44CD-80D4-E15425206B51"
+    },
+    {
+      "id": "sid-EC33E46B-C41B-44D7-BC65-355389F8FE03",
+      "sourceRef": "sid-912F0F75-F192-4559-9FDD-77595B6A4C39",
+      "targetRef": "sid-C62E5347-AC0E-4631-8826-3E5B7BE1127D"
+    }
+  ]
+}

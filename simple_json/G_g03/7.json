@@ -1,0 +1,372 @@
+{
+  "tasks": [
+    {
+      "id": "sid-613D8F64-C330-4E3B-871A-5F6581C43154",
+      "name": "Check if battle net account account existing",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1F9D45B6-817E-457F-9999-5C418E18AC5D",
+      "name": "Enter account information",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-0C5D9BAD-3560-433C-95A2-B4E9A2D0BF8A",
+      "name": "Generate and send email",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-E3A9BD1C-0279-4095-89D2-ABCFAF492FA1",
+      "name": "Open email and click battle net registration link",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A61235C1-277D-485F-BEF5-8950CEF7D809",
+      "name": "Check if active WoW subscription existing",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-77645C81-B87A-4C85-B7D0-E2EFBA9DC055",
+      "name": "System checks if WoW account active and working",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-196C6997-F09C-4087-A6B5-F1F5FDE4A9A0",
+      "name": "Select Pament Method",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-04D20516-F568-4DA0-8BDA-A53FAD8D2D42",
+      "name": "Enter credit card inforamtion",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-69296A73-6E74-4C21-AF74-CA3FDD2BDA3F",
+      "name": "Enter IBAN and BIC numbers",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-BB8BB786-4415-4665-BFE0-B8D2FEC8361C",
+      "name": "Log into the game",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-F107E499-AC3F-436C-82ED-0F43DC93572C",
+      "name": "Select realm of character",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-FAC17CEB-875B-4F8E-985A-DA2AE0A4D396",
+      "name": "Select race of character",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-E3680A9E-6846-423A-8B3C-46DE80A003AB",
+      "name": "Select class of character",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-35C5C9D8-6FD5-4EC1-B2C5-8C356AECFEE7",
+      "name": "Enter name",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-A76AC75C-808E-49FE-BC7E-1ED4BFDAAB5D",
+      "name": "Receive confirmation and selfies of your character",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-0516B411-0A2A-4700-9C5A-410A91A63FE3",
+      "name": "Receive message that expansion is released",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-63F17A5E-9E57-438B-9A1C-A82DFD7B419C",
+      "name": "Payment is suffiecient and confirmed",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-4B34F70D-B12D-4020-9464-6E7263062F23",
+      "name": "system checks if battle net account active and working",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-876B190A-ADA4-45FD-975D-0FF480FCAFEE",
+      "name": "Name getting logged in to the system and database",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-E487EA96-8C28-4839-9C50-A7125B985C96",
+      "name": "Rearrange name",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-D93B9A0A-8E52-4483-9BF9-FE1FC74D7FE5",
+      "name": "Use Online Character Generator",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-DEB58D09-CEBF-43EC-85D1-13DC63F84D58",
+      "name": "expansion released",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-8B9A3E50-F051-46A5-AF82-2F37E27CD2A2",
+      "name": "Expansion active",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-A079CEE1-EC0C-4B85-A0B7-6526A72D20DD",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-30849601-84A6-4F44-B2AB-2A1D02829FE3",
+      "type": "exclusiveGateway",
+      "name": "Is WoW account enabled"
+    },
+    {
+      "id": "sid-0495E3AD-A52A-4744-A43E-9649A695AB5D",
+      "type": "exclusiveGateway",
+      "name": "Choose credit card or bank account"
+    },
+    {
+      "id": "sid-A92F9F0D-1273-41AF-AE25-A3D63741F401",
+      "type": "exclusiveGateway",
+      "name": "Payment okay"
+    },
+    {
+      "id": "sid-63EDE4F9-BAAF-4149-A409-1A226C6DC37A",
+      "type": "parallelGateway",
+      "name": "Customize character"
+    },
+    {
+      "id": "sid-DC34A882-8556-4D18-8AB6-1F7A6BC15670",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-C2C6FABB-2289-42E6-BC5B-B6E7849B7661",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-A2EEE8DC-A645-493D-BE51-B4DE472336DE",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-8BAD54AD-0E7C-4E11-A699-78BFD8094EE5",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-9401DFBA-8EFC-45DD-A879-F923F7D5BE55",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-38C185E8-91D2-47B6-9986-17072032FCD8",
+      "sourceRef": "sid-1F9D45B6-817E-457F-9999-5C418E18AC5D",
+      "targetRef": "sid-0C5D9BAD-3560-433C-95A2-B4E9A2D0BF8A"
+    },
+    {
+      "id": "sid-744E389D-0FCD-4515-BECF-9792FBC1FED3",
+      "sourceRef": "sid-0C5D9BAD-3560-433C-95A2-B4E9A2D0BF8A",
+      "targetRef": "sid-E3A9BD1C-0279-4095-89D2-ABCFAF492FA1"
+    },
+    {
+      "id": "sid-A6F01E04-4E7D-4AA6-9E18-D1A59B7E39EA",
+      "sourceRef": "sid-30849601-84A6-4F44-B2AB-2A1D02829FE3",
+      "targetRef": "sid-196C6997-F09C-4087-A6B5-F1F5FDE4A9A0",
+      "condition": "no"
+    },
+    {
+      "id": "sid-EAB9DFBC-FA6E-4893-BFDB-29C6CFC70BDB",
+      "sourceRef": "sid-196C6997-F09C-4087-A6B5-F1F5FDE4A9A0",
+      "targetRef": "sid-0495E3AD-A52A-4744-A43E-9649A695AB5D"
+    },
+    {
+      "id": "sid-6D46728E-21D3-4DE2-AC24-6AFD63948B52",
+      "sourceRef": "sid-69296A73-6E74-4C21-AF74-CA3FDD2BDA3F",
+      "targetRef": "sid-A92F9F0D-1273-41AF-AE25-A3D63741F401"
+    },
+    {
+      "id": "sid-B6CF5374-E1AC-49E7-995F-C9C7AD270F3F",
+      "sourceRef": "sid-04D20516-F568-4DA0-8BDA-A53FAD8D2D42",
+      "targetRef": "sid-A92F9F0D-1273-41AF-AE25-A3D63741F401"
+    },
+    {
+      "id": "sid-938CA990-048B-4AF5-AE43-848D81F34293",
+      "sourceRef": "sid-BB8BB786-4415-4665-BFE0-B8D2FEC8361C",
+      "targetRef": "sid-63EDE4F9-BAAF-4149-A409-1A226C6DC37A"
+    },
+    {
+      "id": "sid-6A0F3775-F35D-4A14-8A05-A3042002DFF8",
+      "sourceRef": "sid-E3A9BD1C-0279-4095-89D2-ABCFAF492FA1",
+      "targetRef": "sid-DC34A882-8556-4D18-8AB6-1F7A6BC15670"
+    },
+    {
+      "id": "sid-D3477258-C5D4-4B0F-97A5-F227E6E1983E",
+      "sourceRef": "sid-C2C6FABB-2289-42E6-BC5B-B6E7849B7661",
+      "targetRef": "sid-35C5C9D8-6FD5-4EC1-B2C5-8C356AECFEE7"
+    },
+    {
+      "id": "sid-2E9DDEB4-AFF3-4DD1-81E2-1E0454B5D917",
+      "sourceRef": "sid-A76AC75C-808E-49FE-BC7E-1ED4BFDAAB5D",
+      "targetRef": "sid-DEB58D09-CEBF-43EC-85D1-13DC63F84D58"
+    },
+    {
+      "id": "sid-216224CD-DCC8-480C-9874-E3D0F716906C",
+      "sourceRef": "sid-DEB58D09-CEBF-43EC-85D1-13DC63F84D58",
+      "targetRef": "sid-0516B411-0A2A-4700-9C5A-410A91A63FE3"
+    },
+    {
+      "id": "sid-E555D603-4FE4-4F93-B701-1F78790176B5",
+      "sourceRef": "sid-0516B411-0A2A-4700-9C5A-410A91A63FE3",
+      "targetRef": "sid-8B9A3E50-F051-46A5-AF82-2F37E27CD2A2"
+    },
+    {
+      "id": "sid-78FCF3B6-6F42-4C47-B850-8B991A3ACDF6",
+      "sourceRef": "sid-F107E499-AC3F-436C-82ED-0F43DC93572C",
+      "targetRef": "sid-C2C6FABB-2289-42E6-BC5B-B6E7849B7661"
+    },
+    {
+      "id": "sid-0766967B-1C63-4F66-915C-118CF39EDE57",
+      "sourceRef": "sid-613D8F64-C330-4E3B-871A-5F6581C43154",
+      "targetRef": "sid-A079CEE1-EC0C-4B85-A0B7-6526A72D20DD"
+    },
+    {
+      "id": "sid-C3D749FE-272A-4B3F-89B4-99E531E0C648",
+      "sourceRef": "sid-D93B9A0A-8E52-4483-9BF9-FE1FC74D7FE5",
+      "targetRef": "sid-613D8F64-C330-4E3B-871A-5F6581C43154"
+    },
+    {
+      "id": "sid-579D8A77-1927-4E0C-B49D-67273A93657A",
+      "sourceRef": "sid-DC34A882-8556-4D18-8AB6-1F7A6BC15670",
+      "targetRef": "sid-A61235C1-277D-485F-BEF5-8950CEF7D809"
+    },
+    {
+      "id": "sid-B4B136F7-EC26-4E42-873A-F74FD3247832",
+      "sourceRef": "sid-A92F9F0D-1273-41AF-AE25-A3D63741F401",
+      "targetRef": "sid-63F17A5E-9E57-438B-9A1C-A82DFD7B419C"
+    },
+    {
+      "id": "sid-3A3C8E48-6F35-45F6-A7F1-1E64BD5B3203",
+      "sourceRef": "sid-63F17A5E-9E57-438B-9A1C-A82DFD7B419C",
+      "targetRef": "sid-A2EEE8DC-A645-493D-BE51-B4DE472336DE"
+    },
+    {
+      "id": "sid-28F455D7-6CA3-4120-9CB1-EF04D54EFA7F",
+      "sourceRef": "sid-63EDE4F9-BAAF-4149-A409-1A226C6DC37A",
+      "targetRef": "sid-FAC17CEB-875B-4F8E-985A-DA2AE0A4D396"
+    },
+    {
+      "id": "sid-6B86CA9C-554C-4ABF-A0FB-F52ED7457211",
+      "sourceRef": "sid-FAC17CEB-875B-4F8E-985A-DA2AE0A4D396",
+      "targetRef": "sid-C2C6FABB-2289-42E6-BC5B-B6E7849B7661"
+    },
+    {
+      "id": "sid-AFA6A2FF-8815-463B-8046-A4DF5218C5EC",
+      "sourceRef": "sid-E3680A9E-6846-423A-8B3C-46DE80A003AB",
+      "targetRef": "sid-C2C6FABB-2289-42E6-BC5B-B6E7849B7661"
+    },
+    {
+      "id": "sid-7042C18C-0BBC-4E8A-8CAA-FA07716A5347",
+      "sourceRef": "sid-A079CEE1-EC0C-4B85-A0B7-6526A72D20DD",
+      "targetRef": "sid-4B34F70D-B12D-4020-9464-6E7263062F23",
+      "condition": "yes account existing"
+    },
+    {
+      "id": "sid-EEBFE7B3-C7F3-44E3-A214-72204796DD1A",
+      "sourceRef": "sid-4B34F70D-B12D-4020-9464-6E7263062F23",
+      "targetRef": "sid-DC34A882-8556-4D18-8AB6-1F7A6BC15670"
+    },
+    {
+      "id": "sid-D46AEB57-3A6F-4372-84A3-B5805BE56A1D",
+      "sourceRef": "sid-30849601-84A6-4F44-B2AB-2A1D02829FE3",
+      "targetRef": "sid-77645C81-B87A-4C85-B7D0-E2EFBA9DC055",
+      "condition": "yes"
+    },
+    {
+      "id": "sid-C4A9EE87-484E-430C-BA98-D69F5A1EC3AE",
+      "sourceRef": "sid-63EDE4F9-BAAF-4149-A409-1A226C6DC37A",
+      "targetRef": "sid-F107E499-AC3F-436C-82ED-0F43DC93572C",
+      "condition": "realm"
+    },
+    {
+      "id": "sid-1027E946-8161-45D3-9FA6-A20D7934D52E",
+      "sourceRef": "sid-63EDE4F9-BAAF-4149-A409-1A226C6DC37A",
+      "targetRef": "sid-E3680A9E-6846-423A-8B3C-46DE80A003AB",
+      "condition": "class"
+    },
+    {
+      "id": "sid-463497EB-4BB3-4E34-A615-DD90102A2850",
+      "sourceRef": "sid-0495E3AD-A52A-4744-A43E-9649A695AB5D",
+      "targetRef": "sid-69296A73-6E74-4C21-AF74-CA3FDD2BDA3F"
+    },
+    {
+      "id": "sid-3E34DB4B-A7DA-4526-BA0C-0FFC4D59CC51",
+      "sourceRef": "sid-0495E3AD-A52A-4744-A43E-9649A695AB5D",
+      "targetRef": "sid-04D20516-F568-4DA0-8BDA-A53FAD8D2D42"
+    },
+    {
+      "id": "sid-6C9FF3E3-BB62-4595-B27A-D9DFE1CCF29E",
+      "sourceRef": "sid-A079CEE1-EC0C-4B85-A0B7-6526A72D20DD",
+      "targetRef": "sid-1F9D45B6-817E-457F-9999-5C418E18AC5D",
+      "condition": "no"
+    },
+    {
+      "id": "sid-3186C68E-15F3-45D7-8493-82AC49CE22AF",
+      "sourceRef": "sid-A61235C1-277D-485F-BEF5-8950CEF7D809",
+      "targetRef": "sid-30849601-84A6-4F44-B2AB-2A1D02829FE3"
+    },
+    {
+      "id": "sid-822557AC-1475-4870-9DD0-F154E2F86B9C",
+      "sourceRef": "sid-77645C81-B87A-4C85-B7D0-E2EFBA9DC055",
+      "targetRef": "sid-A2EEE8DC-A645-493D-BE51-B4DE472336DE"
+    },
+    {
+      "id": "sid-3EB5BDA7-42BB-478F-9027-4685CB11AD4D",
+      "sourceRef": "sid-A2EEE8DC-A645-493D-BE51-B4DE472336DE",
+      "targetRef": "sid-BB8BB786-4415-4665-BFE0-B8D2FEC8361C"
+    },
+    {
+      "id": "sid-32ECE270-1104-47D8-B147-860271063D3A",
+      "sourceRef": "sid-35C5C9D8-6FD5-4EC1-B2C5-8C356AECFEE7",
+      "targetRef": "sid-8BAD54AD-0E7C-4E11-A699-78BFD8094EE5"
+    },
+    {
+      "id": "sid-74B2B996-141C-448D-8727-02BC28B35917",
+      "sourceRef": "sid-9401DFBA-8EFC-45DD-A879-F923F7D5BE55",
+      "targetRef": "sid-35C5C9D8-6FD5-4EC1-B2C5-8C356AECFEE7"
+    },
+    {
+      "id": "sid-BE9E0102-E777-4241-8E79-D3CBB5DA0733",
+      "sourceRef": "sid-E487EA96-8C28-4839-9C50-A7125B985C96",
+      "targetRef": "sid-9401DFBA-8EFC-45DD-A879-F923F7D5BE55"
+    },
+    {
+      "id": "sid-D7B31227-D01D-494F-8552-F0F92502BA6A",
+      "sourceRef": "sid-8BAD54AD-0E7C-4E11-A699-78BFD8094EE5",
+      "targetRef": "sid-E487EA96-8C28-4839-9C50-A7125B985C96",
+      "condition": "name already in use"
+    },
+    {
+      "id": "sid-CB38A130-7AA6-4D07-BD3A-E335E8027A86",
+      "sourceRef": "sid-8BAD54AD-0E7C-4E11-A699-78BFD8094EE5",
+      "targetRef": "sid-876B190A-ADA4-45FD-975D-0FF480FCAFEE",
+      "condition": "Name okay"
+    },
+    {
+      "id": "sid-859EF546-2D06-44F1-88EB-DA2A632C43BF",
+      "sourceRef": "sid-876B190A-ADA4-45FD-975D-0FF480FCAFEE",
+      "targetRef": "sid-A76AC75C-808E-49FE-BC7E-1ED4BFDAAB5D"
+    }
+  ],
+  "messageFlows": []
+}

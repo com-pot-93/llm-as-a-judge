@@ -1,0 +1,381 @@
+{
+  "tasks": [
+    {
+      "id": "sid-B4479C1A-ADC6-4B26-B3DA-C584BB823A4B",
+      "name": "Customer creates an order",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-ADC355EE-85FA-4A69-B495-19F5586A8CBC",
+      "name": "The robot receives an order",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-CDC1C0E1-6F9F-4D55-B481-38CDF6E2E99A",
+      "name": "The robot will start with the preparing ofthe burger",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-5CF54827-3E09-4AEE-A5A3-CED92EDC78B8",
+      "name": "The robot asks the customer the size of the drink",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1D81080A-BB98-4E32-B6BE-900BA8F108E1",
+      "name": "The robot will start preparing the whole menu",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-6F637121-0CB8-40E0-A2A0-D48026992816",
+      "name": "The robot asks the customer about side dish",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-C433D81B-C7CC-422E-9454-B8810474457C",
+      "name": "The robot asks about the size ofthe fries",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-E9574FD1-E853-41ED-9786-975BAAE079F9",
+      "name": "The robot asks about the size of the wedges",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-B94B4470-1EFE-40D5-BA5C-471B4567747E",
+      "name": "The customer chooses the sizes of the drink",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-D1B4EE33-F18A-45BC-B477-7EC60BBB6E0A",
+      "name": "The customer chooses the size of the wedges",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-E0387C0C-0077-472F-A67F-37D6C256871E",
+      "name": "The customer chooses the size of the fries",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-E11B9E66-5EB4-46AC-976B-EB63A4B88ACF",
+      "name": "The robot prepared the fries",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-9507DFBB-2D06-4FFB-AB60-9C716334C8A6",
+      "name": "The robot prepared the wedges",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-E2E24469-42FE-4515-B831-8AB569375CE5",
+      "name": "The robot prepared the drink",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-FD1DEA90-4CC6-4E6C-9524-68439284E229",
+      "name": "The robot asks the customer about the list of ingredients the burger",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-84519869-C310-4CBB-A65C-FBC6FD450055",
+      "name": "The robot sends enthusiastic status updates",
+      "type": "task",
+      "loopCharacteristics": "standardLoopCharacteristics"
+    },
+    {
+      "id": "sid-97AA00B2-834A-42AE-99A5-477C76B9F1D0",
+      "name": "The customer chooses the ingredients list",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-5DCFCB10-22CF-4A82-8C40-25ED4BCD444D",
+      "name": "The robot made the burger",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-33F098F5-EE8B-465C-881D-277A8C387B27",
+      "name": "The order is added on the conveyor belt",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-DF57AC59-3168-49BF-A4FA-5DAE1FE6F21A",
+      "name": "The customer picks up the order",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-57A6FCFE-1D75-482E-9143-295F9A75D8D7",
+      "name": "The robot asks the customer to choose food",
+      "type": "task"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-A9025750-ECB1-4578-A980-2518C061BD18",
+      "name": "Initial order",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-22348450-01BB-4F10-985B-227F00657F3F",
+      "name": "Depending on the size the time for the making of the drink varies",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-9AC2494A-06DC-4C16-A33E-D45A5D9C17A4",
+      "name": "Depending on the size the time for the making of the wedges varies",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-8C2A18B4-D31C-4841-BE98-D6E8FAE8C626",
+      "name": "Depending on the size the time for the making of the fries varies",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-A374EA69-0A6B-45C9-9413-8240A8C42574",
+      "name": "Depending on the ingredients the time for making the burger varies",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "timerEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-CB79E038-397D-41CF-A58B-4B239F1C55A9",
+      "name": "Customer leaves",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-D03B1D49-6D0E-47E1-82F4-106A4F528CE9",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-D5E8C549-1AC1-4095-836C-A1123C0130AE",
+      "type": "exclusiveGateway",
+      "name": "Question about potato side dish"
+    },
+    {
+      "id": "sid-848981BD-7831-4FFD-A25A-A3823171907B",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-ED12481F-2A98-42E1-9E1F-DF4D6F8BBDA6",
+      "type": "exclusiveGateway",
+      "name": "The side dish is ready"
+    },
+    {
+      "id": "sid-04B851BC-0FA1-4E33-9ADF-8C8A9CFAED2F",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-DAF4C27B-BCD5-47E5-81A2-BAEA1ADDB043",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-C6CA3A68-1AFD-405E-8B4B-39EFB5ACFF9A",
+      "type": "exclusiveGateway",
+      "name": "Choosing of food menu"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-D9E913A3-3D1D-4864-B18D-D4FFF52ED6A4",
+      "sourceRef": "sid-A9025750-ECB1-4578-A980-2518C061BD18",
+      "targetRef": "sid-B4479C1A-ADC6-4B26-B3DA-C584BB823A4B"
+    },
+    {
+      "id": "sid-E4810034-01DA-4C28-835B-5FE1D9AD7D70",
+      "sourceRef": "sid-B4479C1A-ADC6-4B26-B3DA-C584BB823A4B",
+      "targetRef": "sid-ADC355EE-85FA-4A69-B495-19F5586A8CBC"
+    },
+    {
+      "id": "sid-238439CD-125F-4603-B8E3-28D604296E88",
+      "sourceRef": "sid-1D81080A-BB98-4E32-B6BE-900BA8F108E1",
+      "targetRef": "sid-D03B1D49-6D0E-47E1-82F4-106A4F528CE9"
+    },
+    {
+      "id": "sid-28009DCF-DE7B-4EF5-A163-26688B6B4E7F",
+      "sourceRef": "sid-D03B1D49-6D0E-47E1-82F4-106A4F528CE9",
+      "targetRef": "sid-5CF54827-3E09-4AEE-A5A3-CED92EDC78B8"
+    },
+    {
+      "id": "sid-B0B0BC2C-FD14-4194-AA11-B40FAB979E10",
+      "sourceRef": "sid-D03B1D49-6D0E-47E1-82F4-106A4F528CE9",
+      "targetRef": "sid-6F637121-0CB8-40E0-A2A0-D48026992816"
+    },
+    {
+      "id": "sid-C94CA5A7-2A70-4208-B5D6-E592C97BFD56",
+      "sourceRef": "sid-6F637121-0CB8-40E0-A2A0-D48026992816",
+      "targetRef": "sid-D5E8C549-1AC1-4095-836C-A1123C0130AE"
+    },
+    {
+      "id": "sid-EFDC38CC-BF5C-47E6-AA90-3DB0037F6DDF",
+      "sourceRef": "sid-D5E8C549-1AC1-4095-836C-A1123C0130AE",
+      "targetRef": "sid-E9574FD1-E853-41ED-9786-975BAAE079F9",
+      "condition": "Wedges"
+    },
+    {
+      "id": "sid-959BDE1F-A8D5-4810-B1AE-A08D0D528FB9",
+      "sourceRef": "sid-D5E8C549-1AC1-4095-836C-A1123C0130AE",
+      "targetRef": "sid-C433D81B-C7CC-422E-9454-B8810474457C",
+      "condition": "Fries"
+    },
+    {
+      "id": "sid-F664AB5B-6972-4D82-B36D-65D44ADC4AA8",
+      "sourceRef": "sid-5CF54827-3E09-4AEE-A5A3-CED92EDC78B8",
+      "targetRef": "sid-B94B4470-1EFE-40D5-BA5C-471B4567747E"
+    },
+    {
+      "id": "sid-63678714-BF64-4F89-B8DF-F23CF11ECD38",
+      "sourceRef": "sid-B94B4470-1EFE-40D5-BA5C-471B4567747E",
+      "targetRef": "sid-22348450-01BB-4F10-985B-227F00657F3F"
+    },
+    {
+      "id": "sid-7CA9E2F8-D487-49EB-8203-22A6350C443C",
+      "sourceRef": "sid-C433D81B-C7CC-422E-9454-B8810474457C",
+      "targetRef": "sid-E0387C0C-0077-472F-A67F-37D6C256871E"
+    },
+    {
+      "id": "sid-BD9225B4-F3BA-43FD-88C8-3A1B58B033DC",
+      "sourceRef": "sid-E9574FD1-E853-41ED-9786-975BAAE079F9",
+      "targetRef": "sid-D1B4EE33-F18A-45BC-B477-7EC60BBB6E0A"
+    },
+    {
+      "id": "sid-841AC95C-5A5E-4B77-A805-255A799FFCE9",
+      "sourceRef": "sid-D1B4EE33-F18A-45BC-B477-7EC60BBB6E0A",
+      "targetRef": "sid-9AC2494A-06DC-4C16-A33E-D45A5D9C17A4"
+    },
+    {
+      "id": "sid-B2B28AD8-6A01-4AA6-8152-59A98403B615",
+      "sourceRef": "sid-E0387C0C-0077-472F-A67F-37D6C256871E",
+      "targetRef": "sid-8C2A18B4-D31C-4841-BE98-D6E8FAE8C626"
+    },
+    {
+      "id": "sid-B00E49AB-06FA-492F-B968-0BBE632A5691",
+      "sourceRef": "sid-9AC2494A-06DC-4C16-A33E-D45A5D9C17A4",
+      "targetRef": "sid-E11B9E66-5EB4-46AC-976B-EB63A4B88ACF"
+    },
+    {
+      "id": "sid-86C424FD-1FBF-40E2-ADD1-CBA01F8AB373",
+      "sourceRef": "sid-8C2A18B4-D31C-4841-BE98-D6E8FAE8C626",
+      "targetRef": "sid-9507DFBB-2D06-4FFB-AB60-9C716334C8A6"
+    },
+    {
+      "id": "sid-00175FEC-5CD7-480A-9DFB-339C25E12017",
+      "sourceRef": "sid-22348450-01BB-4F10-985B-227F00657F3F",
+      "targetRef": "sid-E2E24469-42FE-4515-B831-8AB569375CE5"
+    },
+    {
+      "id": "sid-AB0324A8-7C36-4850-B378-18330163E1C1",
+      "sourceRef": "sid-E2E24469-42FE-4515-B831-8AB569375CE5",
+      "targetRef": "sid-848981BD-7831-4FFD-A25A-A3823171907B"
+    },
+    {
+      "id": "sid-6ED4609B-8659-4CEE-A58C-CF838E54FDEA",
+      "sourceRef": "sid-E11B9E66-5EB4-46AC-976B-EB63A4B88ACF",
+      "targetRef": "sid-ED12481F-2A98-42E1-9E1F-DF4D6F8BBDA6"
+    },
+    {
+      "id": "sid-C7730816-2150-4532-8A53-5D111763D4BC",
+      "sourceRef": "sid-9507DFBB-2D06-4FFB-AB60-9C716334C8A6",
+      "targetRef": "sid-ED12481F-2A98-42E1-9E1F-DF4D6F8BBDA6"
+    },
+    {
+      "id": "sid-E66ADB50-0E5E-4A4C-9DF8-E9D1D7405096",
+      "sourceRef": "sid-ED12481F-2A98-42E1-9E1F-DF4D6F8BBDA6",
+      "targetRef": "sid-848981BD-7831-4FFD-A25A-A3823171907B"
+    },
+    {
+      "id": "sid-330993EB-6793-4239-9417-2A235F8E993C",
+      "sourceRef": "sid-CDC1C0E1-6F9F-4D55-B481-38CDF6E2E99A",
+      "targetRef": "sid-04B851BC-0FA1-4E33-9ADF-8C8A9CFAED2F"
+    },
+    {
+      "id": "sid-A7F220E5-2118-429E-B274-975CBAC8DBB5",
+      "sourceRef": "sid-04B851BC-0FA1-4E33-9ADF-8C8A9CFAED2F",
+      "targetRef": "sid-FD1DEA90-4CC6-4E6C-9524-68439284E229"
+    },
+    {
+      "id": "sid-0F0D25CE-05C9-4562-8806-3F1093BEBAAC",
+      "sourceRef": "sid-04B851BC-0FA1-4E33-9ADF-8C8A9CFAED2F",
+      "targetRef": "sid-84519869-C310-4CBB-A65C-FBC6FD450055"
+    },
+    {
+      "id": "sid-5082F3FA-6231-4F91-964B-63514F29D8A8",
+      "sourceRef": "sid-FD1DEA90-4CC6-4E6C-9524-68439284E229",
+      "targetRef": "sid-97AA00B2-834A-42AE-99A5-477C76B9F1D0"
+    },
+    {
+      "id": "sid-A590AA2B-14AE-4B22-AA95-EDEA46CEFE5D",
+      "sourceRef": "sid-97AA00B2-834A-42AE-99A5-477C76B9F1D0",
+      "targetRef": "sid-A374EA69-0A6B-45C9-9413-8240A8C42574"
+    },
+    {
+      "id": "sid-12DDD609-44D0-46DF-9D9D-A195D68593F7",
+      "sourceRef": "sid-5DCFCB10-22CF-4A82-8C40-25ED4BCD444D",
+      "targetRef": "sid-33F098F5-EE8B-465C-881D-277A8C387B27"
+    },
+    {
+      "id": "sid-8736996F-B171-4157-8486-14ACF0176600",
+      "sourceRef": "sid-A374EA69-0A6B-45C9-9413-8240A8C42574",
+      "targetRef": "sid-5DCFCB10-22CF-4A82-8C40-25ED4BCD444D"
+    },
+    {
+      "id": "sid-DD3006EC-A73B-4A71-A404-4FAF003C9144",
+      "sourceRef": "sid-84519869-C310-4CBB-A65C-FBC6FD450055",
+      "targetRef": "sid-DAF4C27B-BCD5-47E5-81A2-BAEA1ADDB043"
+    },
+    {
+      "id": "sid-4013567B-8573-4C94-BA45-666F12428DF0",
+      "sourceRef": "sid-DAF4C27B-BCD5-47E5-81A2-BAEA1ADDB043",
+      "targetRef": "sid-84519869-C310-4CBB-A65C-FBC6FD450055",
+      "condition": "Not ready"
+    },
+    {
+      "id": "sid-B096FA12-F9D6-48EA-881C-BBAA107855E1",
+      "sourceRef": "sid-33F098F5-EE8B-465C-881D-277A8C387B27",
+      "targetRef": "sid-DF57AC59-3168-49BF-A4FA-5DAE1FE6F21A"
+    },
+    {
+      "id": "sid-5A939298-B050-4C24-87E0-B0E1EA87A606",
+      "sourceRef": "sid-DF57AC59-3168-49BF-A4FA-5DAE1FE6F21A",
+      "targetRef": "sid-CB79E038-397D-41CF-A58B-4B239F1C55A9"
+    },
+    {
+      "id": "sid-77918F9D-6924-48FF-AFC5-52281C130BB8",
+      "sourceRef": "sid-848981BD-7831-4FFD-A25A-A3823171907B",
+      "targetRef": "sid-CDC1C0E1-6F9F-4D55-B481-38CDF6E2E99A"
+    },
+    {
+      "id": "sid-D7C83D99-DE9B-412A-8F64-B7714B8B9659",
+      "sourceRef": "sid-ADC355EE-85FA-4A69-B495-19F5586A8CBC",
+      "targetRef": "sid-57A6FCFE-1D75-482E-9143-295F9A75D8D7"
+    },
+    {
+      "id": "sid-D07FB760-88A6-4EF8-B1D2-FD5B967230E4",
+      "sourceRef": "sid-57A6FCFE-1D75-482E-9143-295F9A75D8D7",
+      "targetRef": "sid-C6CA3A68-1AFD-405E-8B4B-39EFB5ACFF9A"
+    },
+    {
+      "id": "sid-56DBD5AE-1C10-4ED8-B4AE-AAC6B2B3B794",
+      "sourceRef": "sid-C6CA3A68-1AFD-405E-8B4B-39EFB5ACFF9A",
+      "targetRef": "sid-1D81080A-BB98-4E32-B6BE-900BA8F108E1",
+      "condition": "Whole menu"
+    },
+    {
+      "id": "sid-4C4DF1D8-6D19-4400-8081-37AE3B0A3141",
+      "sourceRef": "sid-C6CA3A68-1AFD-405E-8B4B-39EFB5ACFF9A",
+      "targetRef": "sid-CDC1C0E1-6F9F-4D55-B481-38CDF6E2E99A",
+      "condition": "Burger"
+    }
+  ],
+  "messageFlows": []
+}

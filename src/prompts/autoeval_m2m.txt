@@ -1,0 +1,37 @@
+You are an expert in Business Process Model and Notation (BPMN) and business process analysis.
+
+Compare the following two BPMN process models and evaluate their overall similarity.
+
+**Model A:**
+{model_A}
+
+**Model B:**
+{model_B}
+
+Assign a similarity score between 0 and 1, where:
+- 0 means the two models are completely different.
+- 1 means the two models are identical or semantically equivalent.
+- Values between 0 and 1 represent intermediate degrees of similarity.
+
+Consider the models as a whole when making your assessment.
+
+The score must be a number between 0 and 1. Do not include any additional text.
+
+Identify the main sources of difference using the following categories:
+- `ACTIVITY_DIFFERENCES`: Missing, additional, or different tasks and subprocesses.
+- `GATEWAY_DIFFERENCES`: Missing or additional gateways, different gateway types, or different branching logic.
+- `CONNECTION_DIFFERENCES`: Different connections between activities, different task order, or missing or additional sequence flows.
+- `LABEL_DIFFERENCES`: Different names or descriptions of process elements.
+- `EVENT_DIFFERENCES`: Missing or different start, intermediate, or end events.
+- `OTHER_DIFFERENCES`: Any other relevant differences not covered by the categories above.
+
+Select all categories that apply, based only on evidence from the models. Do not include categories without evidence. If no differences are identified, return an empty array.
+
+Return only a valid JSON object with exactly these two keys:
+
+{
+  "element_based_similarity": <score>,
+  "source_of_difference": []
+}
+
+The similarity score must be a number between 0 and 1. The `source_of_difference` field must contain only the predefined category names. Do not include any additional text.

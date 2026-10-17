@@ -1,0 +1,259 @@
+{
+  "tasks": [
+    {
+      "id": "sid-2D2C8D5E-5B3B-47A7-92B8-72CA31285A9F",
+      "name": "Visum beantragen",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-F086BEAF-C916-4826-B216-0CD3839C686F",
+      "name": "Hotel buchen",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-24E1009A-CA51-4FDC-831D-2D105945F9F0",
+      "name": "Einreise organisieren",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-1F3A4539-993F-40AB-8018-E0DA4F792E39",
+      "name": "Dokumente Pruefung",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-8E405C6A-CB95-4B4C-B380-6FAFB94C46D1",
+      "name": "Erstellung der Best\u00e4tigung",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-B11043C2-997D-4AB0-91A7-1F1619C4382E",
+      "name": "melden beim Amt",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-57D1FB57-C33D-4B44-B325-0BB7A47B95B0",
+      "name": "Kinder einschulen",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-9B9362D8-4D01-4716-9C22-A029698A3EDC",
+      "name": "Erstellung der Ablehnung",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-FC963F02-20FF-4B3D-8BFA-B52F9B4AD3CD",
+      "name": "RWR Karte beantragen",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-CE647C22-9A45-4FC7-B48A-472A21B181ED",
+      "name": "\u00d6sterreich genie\u00dfen",
+      "type": "manualTask"
+    },
+    {
+      "id": "sid-A8BEE2D8-5FF5-4C1D-82C4-28959C24C871",
+      "name": "Wohnung suchen",
+      "type": "manualTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-16CE865E-5289-4309-81CC-1A4A4502442C",
+      "name": "",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-E566C599-7876-4556-8F85-176505F2979D",
+      "name": "",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-F4FFD829-7742-4D5F-B826-FE3661204951",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-2CE58B4E-DCB5-46B7-90F4-D8B42A81830D",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-0BBE9BCE-5FEE-450A-8047-14D676ABB73A",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-49A92497-02EA-4241-A046-CDD9C6E867AF",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-08DBF53F-A5A7-4BB9-887D-7644D2A3B15F",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-A3AA5D2B-2912-4098-8B65-F12509C0320C",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-1803CEC5-533E-4A79-A557-9F7AFF3B2038",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-5F0C33BE-9C9C-4DA9-BFCE-9EA59D20FED0",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-17F40C9F-8953-4F80-9347-C8D8EB048BE5",
+      "type": "exclusiveGateway"
+    },
+    {
+      "id": "sid-F09A451B-90CA-4E40-B305-3B6571A83E37",
+      "type": "exclusiveGateway"
+    }
+  ],
+  "pools": [],
+  "sequenceFlows": [
+    {
+      "id": "sid-4F32F0B5-90B1-4D09-83DB-0EFBB53639A1",
+      "sourceRef": "sid-0BBE9BCE-5FEE-450A-8047-14D676ABB73A",
+      "targetRef": "sid-F086BEAF-C916-4826-B216-0CD3839C686F"
+    },
+    {
+      "id": "sid-EBB628AA-D6BA-47E7-A192-1502F16BA90E",
+      "sourceRef": "sid-24E1009A-CA51-4FDC-831D-2D105945F9F0",
+      "targetRef": "sid-49A92497-02EA-4241-A046-CDD9C6E867AF"
+    },
+    {
+      "id": "sid-EA12CD2E-10D9-4405-8758-305BCBEB3A79",
+      "sourceRef": "sid-8E405C6A-CB95-4B4C-B380-6FAFB94C46D1",
+      "targetRef": "sid-08DBF53F-A5A7-4BB9-887D-7644D2A3B15F"
+    },
+    {
+      "id": "sid-2E499154-4617-44CD-BDF7-DB37F2B3AF06",
+      "sourceRef": "sid-B11043C2-997D-4AB0-91A7-1F1619C4382E",
+      "targetRef": "sid-A3AA5D2B-2912-4098-8B65-F12509C0320C"
+    },
+    {
+      "id": "sid-1276DFAB-9911-4E06-8376-3EBC05D5B9D2",
+      "sourceRef": "sid-1F3A4539-993F-40AB-8018-E0DA4F792E39",
+      "targetRef": "sid-F4FFD829-7742-4D5F-B826-FE3661204951"
+    },
+    {
+      "id": "sid-0ABCD6DE-4203-4C6D-ACED-AE00E4DEFA58",
+      "sourceRef": "sid-16CE865E-5289-4309-81CC-1A4A4502442C",
+      "targetRef": "sid-2CE58B4E-DCB5-46B7-90F4-D8B42A81830D"
+    },
+    {
+      "id": "sid-6E96293E-EE51-49E7-8174-AF3B8BF9E721",
+      "sourceRef": "sid-2CE58B4E-DCB5-46B7-90F4-D8B42A81830D",
+      "targetRef": "sid-17F40C9F-8953-4F80-9347-C8D8EB048BE5"
+    },
+    {
+      "id": "sid-C3F4B80F-1D85-46F1-AFC3-2DEF5E95D906",
+      "sourceRef": "sid-9B9362D8-4D01-4716-9C22-A029698A3EDC",
+      "targetRef": "sid-2CE58B4E-DCB5-46B7-90F4-D8B42A81830D"
+    },
+    {
+      "id": "sid-191FB3B0-290D-4F02-A732-91E4FF7035C5",
+      "sourceRef": "sid-2D2C8D5E-5B3B-47A7-92B8-72CA31285A9F",
+      "targetRef": "sid-F09A451B-90CA-4E40-B305-3B6571A83E37"
+    },
+    {
+      "id": "sid-A942FC52-9F98-444F-886C-5C3456C41D72",
+      "sourceRef": "sid-F086BEAF-C916-4826-B216-0CD3839C686F",
+      "targetRef": "sid-49A92497-02EA-4241-A046-CDD9C6E867AF"
+    },
+    {
+      "id": "sid-19C86EDB-0D82-4683-9C5E-4C38CDD6E7EE",
+      "sourceRef": "sid-49A92497-02EA-4241-A046-CDD9C6E867AF",
+      "targetRef": "sid-1F3A4539-993F-40AB-8018-E0DA4F792E39"
+    },
+    {
+      "id": "sid-E0B5BC9C-1DD8-4893-B1BC-597E15C73D12",
+      "sourceRef": "sid-0BBE9BCE-5FEE-450A-8047-14D676ABB73A",
+      "targetRef": "sid-24E1009A-CA51-4FDC-831D-2D105945F9F0"
+    },
+    {
+      "id": "sid-1DC07F8C-270B-4293-9F47-7F4901ABD6CB",
+      "sourceRef": "sid-A3AA5D2B-2912-4098-8B65-F12509C0320C",
+      "targetRef": "sid-1803CEC5-533E-4A79-A557-9F7AFF3B2038"
+    },
+    {
+      "id": "sid-1A9F7313-3036-4676-8C6F-A1CB590DE03B",
+      "sourceRef": "sid-57D1FB57-C33D-4B44-B325-0BB7A47B95B0",
+      "targetRef": "sid-5F0C33BE-9C9C-4DA9-BFCE-9EA59D20FED0"
+    },
+    {
+      "id": "sid-EA36AA57-2333-4D2C-9BB2-A751951EE822",
+      "sourceRef": "sid-5F0C33BE-9C9C-4DA9-BFCE-9EA59D20FED0",
+      "targetRef": "sid-CE647C22-9A45-4FC7-B48A-472A21B181ED"
+    },
+    {
+      "id": "sid-91E24BBC-5E09-4BCC-BE27-B16DF50F6893",
+      "sourceRef": "sid-F09A451B-90CA-4E40-B305-3B6571A83E37",
+      "targetRef": "sid-0BBE9BCE-5FEE-450A-8047-14D676ABB73A"
+    },
+    {
+      "id": "sid-7F29C81E-7780-4AD4-838B-968358E8C20E",
+      "sourceRef": "sid-FC963F02-20FF-4B3D-8BFA-B52F9B4AD3CD",
+      "targetRef": "sid-F09A451B-90CA-4E40-B305-3B6571A83E37"
+    },
+    {
+      "id": "sid-04D81099-FE2D-48D9-AC79-907905552958",
+      "sourceRef": "sid-CE647C22-9A45-4FC7-B48A-472A21B181ED",
+      "targetRef": "sid-E566C599-7876-4556-8F85-176505F2979D"
+    },
+    {
+      "id": "sid-1AD8FCA6-9415-45BF-B442-E31C1D8B7068",
+      "sourceRef": "sid-F4FFD829-7742-4D5F-B826-FE3661204951",
+      "targetRef": "sid-9B9362D8-4D01-4716-9C22-A029698A3EDC",
+      "condition": "nicht bewilligt"
+    },
+    {
+      "id": "sid-D35B26A8-49AB-433E-846D-2F8562B98D74",
+      "sourceRef": "sid-F4FFD829-7742-4D5F-B826-FE3661204951",
+      "targetRef": "sid-8E405C6A-CB95-4B4C-B380-6FAFB94C46D1",
+      "condition": "bewilligt"
+    },
+    {
+      "id": "sid-A8F362A7-A4EC-49A6-A18D-973475923E57",
+      "sourceRef": "sid-08DBF53F-A5A7-4BB9-887D-7644D2A3B15F",
+      "targetRef": "sid-B11043C2-997D-4AB0-91A7-1F1619C4382E",
+      "condition": "Wohnung vorhanden"
+    },
+    {
+      "id": "sid-21AECA23-3CC9-437D-BD9D-1EF00B40F468",
+      "sourceRef": "sid-A8BEE2D8-5FF5-4C1D-82C4-28959C24C871",
+      "targetRef": "sid-A3AA5D2B-2912-4098-8B65-F12509C0320C"
+    },
+    {
+      "id": "sid-A4DE0892-9C2F-447F-A451-81C33145C9CF",
+      "sourceRef": "sid-08DBF53F-A5A7-4BB9-887D-7644D2A3B15F",
+      "targetRef": "sid-A8BEE2D8-5FF5-4C1D-82C4-28959C24C871",
+      "condition": "Wohnung nicht vorhanden"
+    },
+    {
+      "id": "sid-F8EF0991-6321-44AF-BFBA-4F69FB3F400F",
+      "sourceRef": "sid-1803CEC5-533E-4A79-A557-9F7AFF3B2038",
+      "targetRef": "sid-57D1FB57-C33D-4B44-B325-0BB7A47B95B0",
+      "condition": "Familie vorhanden"
+    },
+    {
+      "id": "sid-BE603CD5-3402-493E-8F56-2C635C5A816D",
+      "sourceRef": "sid-1803CEC5-533E-4A79-A557-9F7AFF3B2038",
+      "targetRef": "sid-5F0C33BE-9C9C-4DA9-BFCE-9EA59D20FED0"
+    },
+    {
+      "id": "sid-CB85A952-87A2-4749-B8B5-353EB2E69246",
+      "sourceRef": "sid-17F40C9F-8953-4F80-9347-C8D8EB048BE5",
+      "targetRef": "sid-2D2C8D5E-5B3B-47A7-92B8-72CA31285A9F",
+      "condition": "ohne Arbeitserlaubnis"
+    },
+    {
+      "id": "sid-AD77C649-E824-4793-B4C1-AF26826ED78B",
+      "sourceRef": "sid-17F40C9F-8953-4F80-9347-C8D8EB048BE5",
+      "targetRef": "sid-FC963F02-20FF-4B3D-8BFA-B52F9B4AD3CD",
+      "condition": "mit Arbeitserlaubnis"
+    }
+  ],
+  "messageFlows": []
+}

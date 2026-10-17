@@ -1,0 +1,242 @@
+{
+  "tasks": [
+    {
+      "id": "sid-03B2799B-1310-491A-BA71-91E96B8E9F5D",
+      "name": "Start inspection",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-B522DF48-C59A-4843-8A5D-B545CDE21C29",
+      "name": "Open questionnaire form",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-20828D3D-60DD-4918-8139-C986C2DEA41A",
+      "name": "Display questions",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-C6CA7C90-D305-4384-845C-31A44CC1F002",
+      "name": "Press buttons manually",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-934DCA0B-0C19-4D74-8891-EE5204AF4A3B",
+      "name": "Ask additional questions",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-AD73B521-6019-4C66-859C-715A002C08BC",
+      "name": "Retrieve values",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-D7109E2C-F56C-428C-9196-4A06D99271ED",
+      "name": "Input value",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-1D3A7550-A367-4E9C-92AA-9A5FCF103508",
+      "name": "Q1 Filling volume",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-C4FC423E-4160-471E-A69F-519B6FB0099A",
+      "name": "Q2 Residual liquid",
+      "type": "scriptTask"
+    },
+    {
+      "id": "sid-F356DF95-AAF6-4E57-AE6F-D3390FD67037",
+      "name": "Input value",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-579C2C50-5DCC-4468-8AA8-1673E3CBFA9F",
+      "name": "Input value s",
+      "type": "userTask"
+    },
+    {
+      "id": "sid-84A261EC-2CC6-4D66-8E74-997F2429ECED",
+      "name": "Display values",
+      "type": "serviceTask"
+    },
+    {
+      "id": "sid-1CCF3D98-D28B-4627-BE4A-CFF79461A03C",
+      "name": "Terminate APP",
+      "type": "userTask"
+    }
+  ],
+  "events": [
+    {
+      "id": "sid-65752A04-79B9-41FF-9038-138525DC8E29",
+      "name": "Type of machine and serial number entered",
+      "type": "startEvent"
+    },
+    {
+      "id": "sid-9C980912-4859-4AA9-A53C-C2ED5E4EBDE6",
+      "name": "Value received",
+      "type": "intermediateCatchEvent",
+      "eventDefinitions": [
+        "messageEventDefinition"
+      ]
+    },
+    {
+      "id": "sid-1E46E110-1FD1-42B7-A990-1C4997BD5DCF",
+      "name": "Inspection completed",
+      "type": "endEvent"
+    }
+  ],
+  "gateways": [
+    {
+      "id": "sid-E7BD0B6C-7D7E-40DF-B452-A79AC75B1C51",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-14E91E1F-94EF-416B-9205-505BEA0DB152",
+      "type": "parallelGateway"
+    },
+    {
+      "id": "sid-48845FAF-36EA-4A14-97A2-73D45D0DC2DF",
+      "type": "exclusiveGateway",
+      "name": "Result ok"
+    }
+  ],
+  "pools": [
+    {
+      "id": "sid-1D13AAFC-4D8C-455F-A3EC-F5E6C3C39D37",
+      "name": "Inspection of an Energy Drink Bottling Machine via APP",
+      "lanes": [
+        {
+          "id": "sid-98EFF81F-D9D0-493F-802E-BEB3563252A2",
+          "name": "",
+          "elemRefs": [
+            "sid-65752A04-79B9-41FF-9038-138525DC8E29",
+            "sid-03B2799B-1310-491A-BA71-91E96B8E9F5D",
+            "sid-B522DF48-C59A-4843-8A5D-B545CDE21C29",
+            "sid-20828D3D-60DD-4918-8139-C986C2DEA41A",
+            "sid-E7BD0B6C-7D7E-40DF-B452-A79AC75B1C51",
+            "sid-9C980912-4859-4AA9-A53C-C2ED5E4EBDE6",
+            "sid-C6CA7C90-D305-4384-845C-31A44CC1F002",
+            "sid-934DCA0B-0C19-4D74-8891-EE5204AF4A3B",
+            "sid-AD73B521-6019-4C66-859C-715A002C08BC",
+            "sid-D7109E2C-F56C-428C-9196-4A06D99271ED",
+            "sid-1D3A7550-A367-4E9C-92AA-9A5FCF103508",
+            "sid-C4FC423E-4160-471E-A69F-519B6FB0099A",
+            "sid-14E91E1F-94EF-416B-9205-505BEA0DB152",
+            "sid-F356DF95-AAF6-4E57-AE6F-D3390FD67037",
+            "sid-579C2C50-5DCC-4468-8AA8-1673E3CBFA9F",
+            "sid-84A261EC-2CC6-4D66-8E74-997F2429ECED",
+            "sid-48845FAF-36EA-4A14-97A2-73D45D0DC2DF",
+            "sid-1CCF3D98-D28B-4627-BE4A-CFF79461A03C",
+            "sid-1E46E110-1FD1-42B7-A990-1C4997BD5DCF"
+          ]
+        }
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "sid-D1D33702-C015-43E3-87B0-82DDBFAF0BD2",
+      "sourceRef": "sid-65752A04-79B9-41FF-9038-138525DC8E29",
+      "targetRef": "sid-03B2799B-1310-491A-BA71-91E96B8E9F5D"
+    },
+    {
+      "id": "sid-CFD498C0-51A6-46E7-9D0B-856BB3A6E4F9",
+      "sourceRef": "sid-03B2799B-1310-491A-BA71-91E96B8E9F5D",
+      "targetRef": "sid-B522DF48-C59A-4843-8A5D-B545CDE21C29"
+    },
+    {
+      "id": "sid-B2047708-2B47-4E2E-B837-062FAB87AEFC",
+      "sourceRef": "sid-C6CA7C90-D305-4384-845C-31A44CC1F002",
+      "targetRef": "sid-AD73B521-6019-4C66-859C-715A002C08BC"
+    },
+    {
+      "id": "sid-E2E23C50-1783-43D8-A1F1-CE6E2CD223B0",
+      "sourceRef": "sid-84A261EC-2CC6-4D66-8E74-997F2429ECED",
+      "targetRef": "sid-48845FAF-36EA-4A14-97A2-73D45D0DC2DF"
+    },
+    {
+      "id": "sid-46317442-A433-4228-B2A6-895E27345E30",
+      "sourceRef": "sid-48845FAF-36EA-4A14-97A2-73D45D0DC2DF",
+      "targetRef": "sid-1CCF3D98-D28B-4627-BE4A-CFF79461A03C",
+      "condition": "Yes"
+    },
+    {
+      "id": "sid-B39DBA3A-A200-4314-AC7A-4D14EBCB5F7E",
+      "sourceRef": "sid-B522DF48-C59A-4843-8A5D-B545CDE21C29",
+      "targetRef": "sid-20828D3D-60DD-4918-8139-C986C2DEA41A"
+    },
+    {
+      "id": "sid-DE89C9F4-C3AA-4384-9750-3127596DA958",
+      "sourceRef": "sid-48845FAF-36EA-4A14-97A2-73D45D0DC2DF",
+      "targetRef": "sid-934DCA0B-0C19-4D74-8891-EE5204AF4A3B",
+      "condition": "No"
+    },
+    {
+      "id": "sid-0DF7AC12-776A-4989-82E5-E0522A3912A4",
+      "sourceRef": "sid-9C980912-4859-4AA9-A53C-C2ED5E4EBDE6",
+      "targetRef": "sid-C6CA7C90-D305-4384-845C-31A44CC1F002"
+    },
+    {
+      "id": "sid-191AA07E-8EA3-4652-9DFA-F4351A4A21DE",
+      "sourceRef": "sid-1CCF3D98-D28B-4627-BE4A-CFF79461A03C",
+      "targetRef": "sid-1E46E110-1FD1-42B7-A990-1C4997BD5DCF"
+    },
+    {
+      "id": "sid-814652BC-E6AE-4607-8A29-BE9888EA09EA",
+      "sourceRef": "sid-20828D3D-60DD-4918-8139-C986C2DEA41A",
+      "targetRef": "sid-E7BD0B6C-7D7E-40DF-B452-A79AC75B1C51"
+    },
+    {
+      "id": "sid-4C8E1C2A-7F9B-4A3D-B64A-52BEA4C4F82B",
+      "sourceRef": "sid-E7BD0B6C-7D7E-40DF-B452-A79AC75B1C51",
+      "targetRef": "sid-1D3A7550-A367-4E9C-92AA-9A5FCF103508"
+    },
+    {
+      "id": "sid-47DFE79B-88DB-4D6D-A03B-C1846FC9102D",
+      "sourceRef": "sid-E7BD0B6C-7D7E-40DF-B452-A79AC75B1C51",
+      "targetRef": "sid-C4FC423E-4160-471E-A69F-519B6FB0099A"
+    },
+    {
+      "id": "sid-31212367-21E1-4F55-BC95-0570F3117A51",
+      "sourceRef": "sid-1D3A7550-A367-4E9C-92AA-9A5FCF103508",
+      "targetRef": "sid-D7109E2C-F56C-428C-9196-4A06D99271ED"
+    },
+    {
+      "id": "sid-FDACAF1D-7771-4A21-9BAE-A057DCF5F4FF",
+      "sourceRef": "sid-C4FC423E-4160-471E-A69F-519B6FB0099A",
+      "targetRef": "sid-F356DF95-AAF6-4E57-AE6F-D3390FD67037"
+    },
+    {
+      "id": "sid-6BFFC56E-18F4-456E-B80E-441080141DAD",
+      "sourceRef": "sid-D7109E2C-F56C-428C-9196-4A06D99271ED",
+      "targetRef": "sid-14E91E1F-94EF-416B-9205-505BEA0DB152"
+    },
+    {
+      "id": "sid-4F3B2846-8ABB-4835-8CA9-E0F477D18B53",
+      "sourceRef": "sid-F356DF95-AAF6-4E57-AE6F-D3390FD67037",
+      "targetRef": "sid-14E91E1F-94EF-416B-9205-505BEA0DB152"
+    },
+    {
+      "id": "sid-331BAC86-0FB9-4CA3-9D45-8AAD13D1A9A7",
+      "sourceRef": "sid-14E91E1F-94EF-416B-9205-505BEA0DB152",
+      "targetRef": "sid-9C980912-4859-4AA9-A53C-C2ED5E4EBDE6"
+    },
+    {
+      "id": "sid-32BFC727-6042-4397-A94C-5F06A8AF76CC",
+      "sourceRef": "sid-579C2C50-5DCC-4468-8AA8-1673E3CBFA9F",
+      "targetRef": "sid-9C980912-4859-4AA9-A53C-C2ED5E4EBDE6"
+    },
+    {
+      "id": "sid-C0717C95-2F69-4E98-94E2-70E387427248",
+      "sourceRef": "sid-AD73B521-6019-4C66-859C-715A002C08BC",
+      "targetRef": "sid-84A261EC-2CC6-4D66-8E74-997F2429ECED"
+    },
+    {
+      "id": "sid-49C6285B-BC50-4722-AC19-73AE7C8D9D6F",
+      "sourceRef": "sid-934DCA0B-0C19-4D74-8891-EE5204AF4A3B",
+      "targetRef": "sid-579C2C50-5DCC-4468-8AA8-1673E3CBFA9F"
+    }
+  ],
+  "messageFlows": []
+}
